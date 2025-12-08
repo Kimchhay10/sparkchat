@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sparkworld": {
+    "sparkchat": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sparkworld",
+            "outputPath": "dist/sparkchat",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -62,16 +62,16 @@
           "options": {},
           "configurations": {
             "production": {
-              "buildTarget": "sparkworld:build:production"
+              "buildTarget": "sparkchat:build:production"
             },
             "development": {
-              "buildTarget": "sparkworld:build:development"
+              "buildTarget": "sparkchat:build:development"
             },
             "en": {
-              "buildTarget": "sparkworld:build:en"
+              "buildTarget": "sparkchat:build:en"
             },
             "km": {
-              "buildTarget": "sparkworld:build:km"
+              "buildTarget": "sparkchat:build:km"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/sparkworld/server",
+            "outputPath": "dist/sparkchat/server",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -102,12 +102,12 @@
           "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
-              "buildTarget": "sparkworld:build:development",
-              "serverTarget": "sparkworld:server:development"
+              "buildTarget": "sparkchat:build:development",
+              "serverTarget": "sparkchat:server:development"
             },
             "production": {
-              "buildTarget": "sparkworld:build:production",
-              "serverTarget": "sparkworld:server:production"
+              "buildTarget": "sparkchat:build:production",
+              "serverTarget": "sparkchat:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -119,10 +119,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "sparkworld:build:production"
+              "buildTarget": "sparkchat:build:production"
             },
             "development": {
-              "buildTarget": "sparkworld:build:development"
+              "buildTarget": "sparkchat:build:development"
             }
           },
           "defaultConfiguration": "production"

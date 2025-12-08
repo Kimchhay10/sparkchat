@@ -2,5 +2,33 @@
   "navigation": {
     "home": "Home",
     "blog": "Blog"
+  },
+  "chat": {
+    "welcome": "Welcome to SparkChat! ✨",
+    "enterUsername": "Enter your username to start chatting",
+    "username": "Username",
+    "random": "Random",
+    "joinChat": "Join Chat",
+    "noAccount": "No account needed! Just pick a username and start chatting",
+    "online": "online",
+    "typeMessage": "Type a message...",
+    "addCaption": "Add a caption (optional)...",
+    "settings": "Settings",
+    "search": "Search",
+    "emojiPicker": "Emoji Picker",
+    "gifPicker": "GIF Picker",
+    "send": "Send",
+    "logout": "Logout",
+    "searchMessages": "Search messages...",
+    "noResults": "No results found",
+    "loading": "Loading...",
+    "trending": "Trending",
+    "reactions": "Reactions",
+    "reply": "Reply",
+    "edit": "Edit",
+    "delete": "Delete",
+    "copy": "Copy",
+    "pin": "Pin",
+    "unpin": "Unpin"
   }
 }

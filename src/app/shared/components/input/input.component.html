@@ -1,0 +1,65 @@
+<div class="w-full mb-4">
+  @if (label()) {
+    <label 
+      class="block text-sm font-semibold mb-2 transition-all duration-300 text-white/90"
+      [class.text-purple-300]="isFocused()"
+      [class.-translate-y-0.5]="isFocused()"
+      [class.text-purple-200]="isFilled() && !isFocused()"
+      [class.text-red-400]="error()">
+      {{ label() }}
+      @if (required()) {
+        <span class="text-pink-400 ml-1 animate-pulse">*</span>
+      }
+    </label>
+  }
+  
+  <div 
+    class="relative w-full bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl transition-all duration-300 overflow-hidden"
+    [class.border-purple-400/60]="isFocused() && !error()"
+    [class.shadow-lg]="isFocused() && !error()"
+    [class.shadow-purple-500/30]="isFocused() && !error()"
+    [class.scale-[1.02]]="isFocused() && !error()"
+    [class.border-red-400/60]="error()"
+    [class.shadow-red-500/30]="error()"
+    [class.shadow-[0_0_20px_rgba(139,92,246,0.4)]]="variant() === 'glow'"
+    [class.shadow-[0_0_40px_rgba(139,92,246,0.8)]]="variant() === 'glow' && isFocused()"
+    [class.bg-gradient-to-br]="variant() === 'gradient'"
+    [class.from-indigo-500/30]="variant() === 'gradient'"
+    [class.via-purple-500/30]="variant() === 'gradient'"
+    [class.to-pink-500/30]="variant() === 'gradient'"
+    [class.from-indigo-500/50]="variant() === 'gradient' && isFocused()"
+    [class.via-purple-500/50]="variant() === 'gradient' && isFocused()"
+    [class.to-pink-500/50]="variant() === 'gradient' && isFocused()">
+    @if (icon()) {
+      <div 
+        class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 text-lg z-10 transition-all duration-300"
+        [class.text-purple-300]="isFocused()"
+        [class.scale-110]="isFocused()">
+        <i [class]="icon()"></i>
+      </div>
+    }
+    
+    <input
+      [type]="type()"
+      [placeholder]="placeholder()"
+      [value]="value()"
+      [disabled]="disabled()"
+      (input)="onInput($event)"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      class="w-full px-4 py-3.5 bg-transparent border-none outline-none text-white text-base font-medium transition-all duration-300 placeholder:text-white/50 focus:placeholder:text-white/30 disabled:opacity-50 disabled:cursor-not-allowed"
+      [class.pl-12]="icon()"
+    />
+    
+    @if (isFocused() && !error()) {
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 blur-2xl animate-pulse"></div>
+    }
+  </div>
+  
+  @if (error()) {
+    <div class="flex items-center gap-2 mt-2 text-red-400 text-sm font-medium animate-pulse">
+      <span class="text-lg">⚠️</span>
+      {{ error() }}
+    </div>
+  }
+</div>

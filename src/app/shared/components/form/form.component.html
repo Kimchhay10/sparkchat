@@ -1,0 +1,39 @@
+<div class="w-full max-w-md mx-auto p-8 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl animate-[float_6s_ease-in-out_infinite]">
+  @if (title()) {
+    <h2 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-[pulse-glow_3s_ease-in-out_infinite]">{{ title() }}</h2>
+  }
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="flex flex-col gap-6">
+    @for (field of fields(); track field.name; let i = $index) {
+      <div class="animate-[slideIn_0.5s_ease-out_both]" [style.animation-delay.ms]="(i + 1) * 100">
+        <app-input
+          [label]="field.label"
+          [type]="field.type"
+          [placeholder]="field.placeholder || ''"
+          [required]="field.required || false"
+          [icon]="field.icon || ''"
+          [error]="getFieldError(field.name)"
+          [formControlName]="field.name"
+          variant="glow"
+        />
+      </div>
+    }
+
+    <button
+      type="submit"
+      [disabled]="isSubmitting() || form.invalid"
+      class="group relative w-full py-4 px-6 mt-6 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 text-white font-bold text-lg rounded-xl border-none outline-none transition-all duration-300 overflow-hidden cursor-pointer shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/70 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:scale-100"
+      [class.animate-[pulse-glow_1.5s_ease-in-out_infinite]]="isSubmitting()">
+      <span class="relative z-10 flex items-center justify-center gap-2">
+        @if (isSubmitting()) {
+          <span class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+          <span>Submitting...</span>
+        } @else {
+          <span>{{ submitLabel() }}</span>
+          <span class="text-xl transition-transform duration-300 group-hover:translate-x-1">→</span>
+        }
+      </span>
+      <span class="absolute inset-0 -z-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 opacity-0 transition-opacity duration-300 blur-xl group-hover:opacity-100"></span>
+    </button>
+  </form>
+</div>
