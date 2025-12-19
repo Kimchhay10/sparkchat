@@ -1,0 +1,2901 @@
+{
+  "categories": [
+    { "name": "All", "nameKm": "ទាំងអស់", "icon": "🌟", "count": 6 },
+    {
+      "name": "Technology",
+      "nameKm": "បច្ចេកវិទ្យា",
+      "icon": "💻",
+      "count": 3
+    },
+    { "name": "Business", "nameKm": "អាជីវកម្ម", "icon": "💼", "count": 2 },
+    { "name": "Engineering", "nameKm": "វិស្វកម្ម", "icon": "🏗️", "count": 1 }
+  ],
+  "roadmaps": [
+    {
+      "id": "web-developer",
+      "title": "Web Developer",
+      "titleKm": "អ្នកអភិវឌ្ឍគេហទំព័រ",
+      "category": "Technology",
+      "categoryKm": "បច្ចេកវិទ្យា",
+      "icon": "💻",
+      "description": "Build modern websites and web applications",
+      "descriptionKm": "បង្កើតគេហទំព័រ និងកម្មវិធីវែបទំនើប",
+      "demandLevel": "High",
+      "demandLevelKm": "ត្រូវការខ្ពស់",
+      "averageSalary": "$800-2000/month",
+      "averageSalaryKm": "$៨០០-២០០០/ខែ",
+      "popularity": 95,
+      "steps": [
+        {
+          "id": "1",
+          "title": "HTML & CSS Basics",
+          "titleKm": "មូលដ្ឋាន HTML និង CSS",
+          "description": "Learn the foundation of web development",
+          "descriptionKm": "រៀនមូលដ្ឋានគ្រឹះនៃការអភិវឌ្ឍវែប",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": ["HTML5", "CSS3", "Responsive Design", "Flexbox & Grid"],
+          "skillsKm": ["HTML5", "CSS3", "ការរចនាឆ្លើយតប", "Flexbox & Grid"],
+          "resources": [
+            {
+              "title": "HTML Fundamentals",
+              "titleKm": "មូលដ្ឋាន HTML",
+              "type": "Complete Guide",
+              "typeKm": "មគ្គុទ្ទេសក៍ពេញលេញ",
+              "description": "Learn HTML5 structure, semantic elements, forms, and accessibility best practices",
+              "descriptionKm": "រៀនរចនាសម្ព័ន្ធ HTML5, ធាតុ semantic, ទម្រង់, និងការអនុវត្តល្អបំផុតនៃការចូលប្រើប្រាស់",
+              "topics": [
+                "HTML Structure",
+                "Semantic Tags",
+                "Forms & Validation",
+                "Accessibility",
+                "SEO Basics"
+              ],
+              "topicsKm": [
+                "រចនាសម្ព័ន្ធ HTML",
+                "ស្លាក Semantic",
+                "ទម្រង់ & ការផ្ទៀងផ្ទាត់",
+                "ការចូលប្រើប្រាស់",
+                "មូលដ្ឋាន SEO"
+              ]
+            },
+            {
+              "title": "CSS Styling & Layout",
+              "titleKm": "ការរចនា & ប្លង់ CSS",
+              "type": "Interactive Course",
+              "typeKm": "វគ្គសិក្សាអន្តរកម្ម",
+              "description": "Master CSS selectors, box model, flexbox, grid, and responsive design techniques",
+              "descriptionKm": "ស្ទាត់ជំនាញ CSS selectors, box model, flexbox, grid, និងបច្ចេកទេសរចនាឆ្លើយតប",
+              "topics": [
+                "CSS Selectors",
+                "Box Model",
+                "Flexbox Layout",
+                "CSS Grid",
+                "Media Queries",
+                "Animations"
+              ],
+              "topicsKm": [
+                "CSS Selectors",
+                "Box Model",
+                "ប្លង់ Flexbox",
+                "CSS Grid",
+                "Media Queries",
+                "ចលនា"
+              ]
+            },
+            {
+              "title": "Responsive Web Design",
+              "titleKm": "ការរចនាវែបឆ្លើយតប",
+              "type": "Project-Based",
+              "typeKm": "ផ្អែកលើគម្រោង",
+              "description": "Build mobile-first responsive websites that work on all devices and screen sizes",
+              "descriptionKm": "បង្កើតគេហទំព័រឆ្លើយតបដែលដំណើរការលើឧបករណ៍ និងទំហំអេក្រង់ទាំងអស់",
+              "topics": [
+                "Mobile-First Design",
+                "Breakpoints",
+                "Flexible Images",
+                "Responsive Typography",
+                "Testing Tools"
+              ],
+              "topicsKm": [
+                "ការរចនា Mobile-First",
+                "Breakpoints",
+                "រូបភាពបត់បែន",
+                "អក្សរសាស្រ្តឆ្លើយតប",
+                "ឧបករណ៍សាកល្បង"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "JavaScript Fundamentals",
+          "titleKm": "មូលដ្ឋាន JavaScript",
+          "description": "Master JavaScript programming language",
+          "descriptionKm": "ស្ទាត់ជំនាញភាសាសរសេរកម្មវិធី JavaScript",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": [
+            "JavaScript ES6+",
+            "DOM Manipulation",
+            "Async/Await",
+            "APIs"
+          ],
+          "skillsKm": [
+            "JavaScript ES6+",
+            "ការរៀបចំ DOM",
+            "Async/Await",
+            "APIs"
+          ],
+          "resources": [
+            {
+              "title": "JavaScript.info",
+              "titleKm": "JavaScript.info",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Comprehensive JavaScript tutorial covering basics to advanced concepts",
+              "descriptionKm": "មេរៀន JavaScript ពេញលេញពីមូលដ្ឋានដល់គំនិតកម្រិតខ្ពស់",
+              "topics": [
+                "Variables & Types",
+                "Functions",
+                "Objects",
+                "Async Programming"
+              ],
+              "topicsKm": [
+                "អថេរ & ប្រភេទ",
+                "មុខងារ",
+                "វត្ថុ",
+                "ការសរសេរកម្មវិធី Async"
+              ]
+            },
+            {
+              "title": "Eloquent JavaScript",
+              "titleKm": "Eloquent JavaScript",
+              "type": "Free Book",
+              "typeKm": "សៀវភៅឥតគិតថ្លៃ",
+              "description": "A modern introduction to programming with JavaScript",
+              "descriptionKm": "ការណែនាំទំនើបអំពីការសរសេរកម្មវិធីជាមួយ JavaScript",
+              "topics": [
+                "Program Structure",
+                "Data Structures",
+                "Higher-Order Functions",
+                "Project-Based Learning"
+              ],
+              "topicsKm": [
+                "រចនាសម្ព័ន្ធកម្មវិធី",
+                "រចនាសម្ព័ន្ធទិន្នន័យ",
+                "មុខងារកម្រិតខ្ពស់",
+                "ការរៀនផ្អែកលើគម្រោង"
+              ]
+            },
+            {
+              "title": "JavaScript30",
+              "titleKm": "JavaScript30",
+              "type": "Challenge",
+              "typeKm": "សំណួរប្រកួត",
+              "description": "30 day vanilla JavaScript coding challenge",
+              "descriptionKm": "បញ្ហាប្រឈមសរសេរកូដ JavaScript ៣០ ថ្ងៃ",
+              "topics": [
+                "DOM Manipulation",
+                "Event Handling",
+                "APIs",
+                "Real Projects"
+              ],
+              "topicsKm": [
+                "ការរៀបចំ DOM",
+                "ការគ្រប់គ្រងព្រឹត្តិការណ៍",
+                "APIs",
+                "គម្រោងពិតប្រាកដ"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Frontend Framework",
+          "titleKm": "ក្របខ័ណ្ឌផ្នែកខាងមុខ",
+          "description": "Learn React, Vue, or Angular",
+          "descriptionKm": "រៀន React, Vue ឬ Angular",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": [
+            "React/Vue/Angular",
+            "Component Design",
+            "State Management",
+            "Routing"
+          ],
+          "skillsKm": [
+            "React/Vue/Angular",
+            "ការរចនា Component",
+            "ការគ្រប់គ្រង State",
+            "Routing"
+          ],
+          "resources": [
+            {
+              "title": "React Official Docs",
+              "titleKm": "ឯកសារផ្លូវការ React",
+              "type": "Documentation",
+              "typeKm": "ឯកសារ",
+              "description": "Official React documentation with interactive examples and comprehensive guides for building modern user interfaces",
+              "descriptionKm": "ឯកសារផ្លូវការ React ជាមួយឧទាហរណ៍អន្តរកម្ម និងការណែនាំលម្អិតសម្រាប់បង្កើតចំណុចប្រទាក់អ្នកប្រើប្រាស់សម័យទំនើប",
+              "topics": [
+                "Component Basics",
+                "Hooks & State",
+                "Props & Events",
+                "JSX Syntax",
+                "Virtual DOM",
+                "React Router"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋានគ្រឹះសមាសភាគ",
+                "Hooks និង State",
+                "Props និងព្រឹត្តិការណ៍",
+                "វាក្យសម្ព័ន្ធ JSX",
+                "Virtual DOM",
+                "React Router"
+              ]
+            },
+            {
+              "title": "Vue Mastery",
+              "titleKm": "Vue Mastery",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Master Vue.js framework with video courses covering basics to advanced patterns",
+              "descriptionKm": "ស្ទាត់ជំនាញ Vue.js framework តាមរយៈវគ្គសិក្សាវីដេអូពីមូលដ្ឋានគ្រឹះរហូតដល់គំរូកម្រិតខ្ពស់",
+              "topics": [
+                "Vue Components",
+                "Composition API",
+                "Vuex State",
+                "Vue Router",
+                "Performance",
+                "Best Practices"
+              ],
+              "topicsKm": [
+                "សមាសភាគ Vue",
+                "Composition API",
+                "Vuex State",
+                "Vue Router",
+                "ភាពសមត្ថភាព",
+                "ការអនុវត្តល្អបំផុត"
+              ]
+            },
+            {
+              "title": "Angular University",
+              "titleKm": "Angular University",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Complete Angular training from fundamentals to enterprise applications",
+              "descriptionKm": "ការបណ្តុះបណ្តាល Angular ពេញលេញពីមូលដ្ឋានគ្រឹះរហូតដល់កម្មវិធីសហគ្រាស",
+              "topics": [
+                "TypeScript",
+                "Components",
+                "Services",
+                "RxJS",
+                "Forms",
+                "HTTP Requests"
+              ],
+              "topicsKm": [
+                "TypeScript",
+                "សមាសភាគ",
+                "សេវាកម្ម",
+                "RxJS",
+                "ទម្រង់",
+                "សំណើ HTTP"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "title": "Backend & Databases",
+          "titleKm": "ខាងក្រោយ និងមូលដ្ឋានទិន្នន័យ",
+          "description": "Build server-side applications",
+          "descriptionKm": "បង្កើតកម្មវិធីផ្នែកម៉ាស៊ីនមេ",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": [
+            "Node.js/Express",
+            "MongoDB/PostgreSQL",
+            "REST APIs",
+            "Authentication"
+          ],
+          "skillsKm": [
+            "Node.js/Express",
+            "MongoDB/PostgreSQL",
+            "REST APIs",
+            "ការផ្ទៀងផ្ទាត់"
+          ],
+          "resources": [
+            {
+              "title": "Node.js Docs",
+              "titleKm": "ឯកសារ Node.js",
+              "type": "Documentation",
+              "typeKm": "ឯកសារ",
+              "description": "Official Node.js documentation with guides for building scalable server-side applications",
+              "descriptionKm": "ឯកសារផ្លូវការ Node.js ជាមួយការណែនាំសម្រាប់បង្កើតកម្មវិធីផ្នែកម៉ាស៊ីនមេដែលអាចពង្រីកបាន",
+              "topics": [
+                "Event Loop",
+                "Modules",
+                "File System",
+                "HTTP Server",
+                "NPM Packages",
+                "Async Programming"
+              ],
+              "topicsKm": [
+                "Event Loop",
+                "ម៉ូឌុល",
+                "ប្រព័ន្ធឯកសារ",
+                "ម៉ាស៊ីនមេ HTTP",
+                "កញ្ចប់ NPM",
+                "ការសរសេរកម្មវិធីអសមកាល"
+              ]
+            },
+            {
+              "title": "MongoDB University",
+              "titleKm": "MongoDB University",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free MongoDB courses covering database design, queries, and scaling strategies",
+              "descriptionKm": "វគ្គសិក្សា MongoDB ឥតគិតថ្លៃអំពីការរចនាមូលដ្ឋានទិន្នន័យ សំណួរ និងយុទ្ធសាស្ត្រពង្រីក",
+              "topics": [
+                "CRUD Operations",
+                "Data Modeling",
+                "Indexing",
+                "Aggregation",
+                "Replication",
+                "Sharding"
+              ],
+              "topicsKm": [
+                "ប្រតិបត្តិការ CRUD",
+                "ការធ្វើគំរូទិន្នន័យ",
+                "ការធ្វើលិបិក្រម",
+                "ការប្រមូល",
+                "ការចម្លង",
+                "Sharding"
+              ]
+            },
+            {
+              "title": "REST API Tutorial",
+              "titleKm": "មេរៀន REST API",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Complete guide to building RESTful APIs with best practices and real examples",
+              "descriptionKm": "ការណែនាំពេញលេញក្នុងការបង្កើត RESTful APIs ជាមួយការអនុវត្តល្អបំផុត និងឧទាហរណ៍ពិត",
+              "topics": [
+                "HTTP Methods",
+                "Status Codes",
+                "Authentication",
+                "API Design",
+                "Error Handling",
+                "Versioning"
+              ],
+              "topicsKm": [
+                "វិធីសាស្ត្រ HTTP",
+                "កូដស្ថានភាព",
+                "ការផ្ទៀងផ្ទាត់",
+                "ការរចនា API",
+                "ការគ្រប់គ្រងកំហុស",
+                "ការកំណត់កំណែ"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "title": "Portfolio & Job Ready",
+          "titleKm": "Portfolio និងត្រៀមការងារ",
+          "description": "Build portfolio and apply for jobs",
+          "descriptionKm": "បង្កើត Portfolio និងដាក់ពាក្យការងារ",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Git & GitHub",
+            "Deployment",
+            "Portfolio Projects",
+            "Interview Prep"
+          ],
+          "skillsKm": [
+            "Git & GitHub",
+            "ការដាក់ឱ្យដំណើរការ",
+            "គម្រោង Portfolio",
+            "ត្រៀមសម្ភាសន៍"
+          ],
+          "resources": [
+            {
+              "title": "GitHub Learning Lab",
+              "titleKm": "GitHub Learning Lab",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Interactive tutorials for mastering Git version control and GitHub collaboration",
+              "descriptionKm": "មេរៀនអន្តរកម្មសម្រាប់ស្ទាត់ជំនាញការគ្រប់គ្រងកំណែ Git និងការសហការ GitHub",
+              "topics": [
+                "Git Basics",
+                "Branches",
+                "Pull Requests",
+                "Merge Conflicts",
+                "GitHub Actions",
+                "Collaboration"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋាន Git",
+                "សាខា",
+                "សំណើ Pull",
+                "ជម្លោះ Merge",
+                "GitHub Actions",
+                "ការសហការ"
+              ]
+            },
+            {
+              "title": "Vercel/Netlify Docs",
+              "titleKm": "ឯកសារ Vercel/Netlify",
+              "type": "Documentation",
+              "typeKm": "ឯកសារ",
+              "description": "Deploy web applications instantly with modern hosting platforms",
+              "descriptionKm": "ដាក់ឱ្យដំណើរការកម្មវិធីបណ្តាញភ្លាមៗជាមួយវេទិកា hosting សម័យទំនើប",
+              "topics": [
+                "Deployment",
+                "CI/CD",
+                "Environment Variables",
+                "Custom Domains",
+                "Edge Functions",
+                "Performance"
+              ],
+              "topicsKm": [
+                "ការដាក់ឱ្យដំណើរការ",
+                "CI/CD",
+                "អថេរបរិស្ថាន",
+                "ដែនផ្ទាល់ខ្លួន",
+                "Edge Functions",
+                "ភាពសមត្ថភាព"
+              ]
+            },
+            {
+              "title": "Interviewing.io",
+              "titleKm": "Interviewing.io",
+              "type": "Interview Practice",
+              "typeKm": "ការហាត់សម្ភាសន៍",
+              "description": "Practice technical interviews with real engineers and get feedback",
+              "descriptionKm": "ហាត់សម្ភាសន៍បច្ចេកទេសជាមួយវិស្វករពិត និងទទួលបានមតិកែលម្អ",
+              "topics": [
+                "Coding Problems",
+                "System Design",
+                "Behavioral Questions",
+                "Mock Interviews",
+                "Feedback",
+                "Interview Tips"
+              ],
+              "topicsKm": [
+                "បញ្ហាសរសេរកូដ",
+                "ការរចនាប្រព័ន្ធ",
+                "សំណួរអាកប្បកិរិយា",
+                "សម្ភាសន៍សាកល្បង",
+                "មតិកែលម្អ",
+                "ដំបូន្មានសម្ភាសន៍"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing",
+      "titleKm": "ទីផ្សារឌីជីថល",
+      "category": "Business",
+      "categoryKm": "អាជីវកម្ម",
+      "icon": "📱",
+      "description": "Master online marketing and social media",
+      "descriptionKm": "ជំនាញទីផ្សារតាមអ៊ីនធឺណិត និងប្រព័ន្ធផ្សព្វផ្សាយសង្គម",
+      "demandLevel": "High",
+      "demandLevelKm": "ត្រូវការខ្ពស់",
+      "averageSalary": "$600-1500/month",
+      "averageSalaryKm": "$៦០០-១៥០០/ខែ",
+      "popularity": 88,
+      "steps": [
+        {
+          "id": "1",
+          "title": "Marketing Basics",
+          "titleKm": "មូលដ្ឋានទីផ្សារ",
+          "description": "Learn marketing fundamentals",
+          "descriptionKm": "រៀនមូលដ្ឋានគ្រឹះទីផ្សារ",
+          "duration": "1-2 months",
+          "durationKm": "១-២ ខែ",
+          "skills": [
+            "Marketing Strategy",
+            "Consumer Behavior",
+            "Branding",
+            "Market Research"
+          ],
+          "skillsKm": [
+            "យុទ្ធសាស្រ្តទីផ្សារ",
+            "អាកប្បកិរិយាអ្នកប្រើប្រាស់",
+            "ការបង្កើតយីហោ",
+            "ការស្រាវជ្រាវទីផ្សារ"
+          ],
+          "resources": [
+            {
+              "title": "Google Digital Garage",
+              "titleKm": "Google Digital Garage",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free digital marketing certification from Google covering all marketing fundamentals",
+              "descriptionKm": "វិញ្ញាបនប័ត្រទីផ្សារឌីជីថលឥតគិតថ្លៃពី Google គ្របដណ្តប់លើមូលដ្ឋានគ្រឹះទីផ្សារទាំងអស់",
+              "topics": [
+                "Digital Strategy",
+                "SEO Basics",
+                "SEM",
+                "Social Media",
+                "Analytics",
+                "Content Marketing"
+              ],
+              "topicsKm": [
+                "យុទ្ធសាស្ត្រឌីជីថល",
+                "មូលដ្ឋាន SEO",
+                "SEM",
+                "ប្រព័ន្ធផ្សព្វផ្សាយសង្គម",
+                "ការវិភាគ",
+                "ទីផ្សារមាតិកា"
+              ]
+            },
+            {
+              "title": "HubSpot Academy",
+              "titleKm": "HubSpot Academy",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Comprehensive inbound marketing courses with certifications",
+              "descriptionKm": "វគ្គសិក្សាទីផ្សារ inbound ពេញលេញជាមួយវិញ្ញាបនប័ត្រ",
+              "topics": [
+                "Inbound Marketing",
+                "Content Strategy",
+                "Email Marketing",
+                "Lead Generation",
+                "CRM",
+                "Marketing Automation"
+              ],
+              "topicsKm": [
+                "ទីផ្សារ Inbound",
+                "យុទ្ធសាស្ត្រមាតិកា",
+                "ទីផ្សារតាមអ៊ីមែល",
+                "ការបង្កើតអតិថិជន",
+                "CRM",
+                "ស្វ័យប្រវត្តិកម្មទីផ្សារ"
+              ]
+            },
+            {
+              "title": "Marketing91",
+              "titleKm": "Marketing91",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Practical marketing tutorials and strategies for beginners",
+              "descriptionKm": "មេរៀនទីផ្សារជាក់ស្តែង និងយុទ្ធសាស្ត្រសម្រាប់អ្នកចាប់ផ្តើម",
+              "topics": [
+                "Marketing Mix",
+                "SWOT Analysis",
+                "Market Segmentation",
+                "Product Strategy",
+                "Pricing",
+                "Distribution"
+              ],
+              "topicsKm": [
+                "ការរួមបញ្ចូលទីផ្សារ",
+                "ការវិភាគ SWOT",
+                "ការបែងចែកទីផ្សារ",
+                "យុទ្ធសាស្ត្រផលិតផល",
+                "ការកំណត់តម្លៃ",
+                "ការចែកចាយ"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Social Media Marketing",
+          "titleKm": "ទីផ្សារប្រព័ន្ធផ្សព្វផ្សាយសង្គម",
+          "description": "Master Facebook, Instagram, TikTok",
+          "descriptionKm": "ស្ទាត់ជំនាញ Facebook, Instagram, TikTok",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Facebook Ads",
+            "Instagram Marketing",
+            "TikTok Strategy",
+            "Content Creation"
+          ],
+          "skillsKm": [
+            "ការផ្សាយពាណិជ្ជកម្ម Facebook",
+            "ទីផ្សារ Instagram",
+            "យុទ្ធសាស្រ្ត TikTok",
+            "ការបង្កើតមាតិកា"
+          ],
+          "resources": [
+            {
+              "title": "Facebook Blueprint",
+              "titleKm": "Facebook Blueprint",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Official Facebook advertising courses covering all ad formats and targeting",
+              "descriptionKm": "វគ្គសិក្សាផ្សាយពាណិជ្ជកម្មផ្លូវការ Facebook គ្របដណ្តប់លើទម្រង់ផ្សព្វផ្សាយ និងការកំណត់គោលដៅទាំងអស់",
+              "topics": [
+                "Facebook Ads",
+                "Audience Targeting",
+                "Campaign Optimization",
+                "Ad Creative",
+                "Instagram Ads",
+                "Analytics"
+              ],
+              "topicsKm": [
+                "ការផ្សាយពាណិជ្ជកម្ម Facebook",
+                "ការកំណត់គោលដៅទស្សនិកជន",
+                "ការបង្កើនប្រសិទ្ធភាពយុទ្ធនាការ",
+                "ការបង្កើតផ្សព្វផ្សាយ",
+                "ការផ្សាយពាណិជ្ជកម្ម Instagram",
+                "ការវិភាគ"
+              ]
+            },
+            {
+              "title": "Canva Design School",
+              "titleKm": "Canva Design School",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Create stunning social media graphics and marketing materials easily",
+              "descriptionKm": "បង្កើតក្រាហ្វិកប្រព័ន្ធផ្សព្វផ្សាយសង្គម និងសម្ភារៈទីផ្សារស្រស់ស្អាតយ៉ាងងាយស្រួល",
+              "topics": [
+                "Design Principles",
+                "Color Theory",
+                "Typography",
+                "Social Media Templates",
+                "Brand Identity",
+                "Visual Content"
+              ],
+              "topicsKm": [
+                "គោលការណ៍រចនា",
+                "ទ្រឹស្តីពណ៌",
+                "ការសរសេរអក្សរ",
+                "គំរូប្រព័ន្ធផ្សព្វផ្សាយសង្គម",
+                "អត្តសញ្ញាណម៉ាក",
+                "មាតិកាចក្ខុវិស័យ"
+              ]
+            },
+            {
+              "title": "Later Blog",
+              "titleKm": "Later Blog",
+              "type": "Blog",
+              "typeKm": "ប្លុក",
+              "description": "Social media scheduling tips and Instagram marketing strategies",
+              "descriptionKm": "ដំបូន្មានកំណត់ពេលប្រព័ន្ធផ្សព្វផ្សាយសង្គម និងយុទ្ធសាស្ត្រទីផ្សារ Instagram",
+              "topics": [
+                "Content Calendar",
+                "Instagram Strategy",
+                "Post Scheduling",
+                "Hashtag Research",
+                "Analytics",
+                "Best Practices"
+              ],
+              "topicsKm": [
+                "ប្រតិទិនមាតិកា",
+                "យុទ្ធសាស្ត្រ Instagram",
+                "កំណត់ពេលបង្ហោះ",
+                "ការស្រាវជ្រាវ Hashtag",
+                "ការវិភាគ",
+                "ការអនុវត្តល្អបំផុត"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "title": "SEO & Content Marketing",
+          "titleKm": "SEO និងទីផ្សារមាតិកា",
+          "description": "Learn search engine optimization",
+          "descriptionKm": "រៀនបច្ចេកទេសកែលម្អការស្វែងរក",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "SEO Basics",
+            "Keyword Research",
+            "Content Writing",
+            "Link Building"
+          ],
+          "skillsKm": [
+            "មូលដ្ឋាន SEO",
+            "ការស្រាវជ្រាវពាក្យគន្លឹះ",
+            "ការសរសេរមាតិកា",
+            "ការបង្កើតតំណភ្ជាប់"
+          ],
+          "resources": [
+            {
+              "title": "Moz SEO Guide",
+              "titleKm": "មគ្គុទ្ទេសក៍ Moz SEO",
+              "type": "Guide",
+              "typeKm": "មគ្គុទ្ទេសក៍",
+              "description": "Comprehensive beginner-friendly guide to search engine optimization principles",
+              "descriptionKm": "មគ្គុទ្ទេសក៍ពេញលេញសម្រាប់អ្នកចាប់ផ្តើមអំពីគោលការណ៍កែល្មអម៉ាស៊ីនស្វែងរក",
+              "topics": [
+                "Keyword Research",
+                "On-Page SEO",
+                "Technical SEO",
+                "Link Building",
+                "Content Strategy",
+                "SEO Tools"
+              ],
+              "topicsKm": [
+                "ការស្រាវជ្រាវពាក្យគន្លឹះ",
+                "On-Page SEO",
+                "Technical SEO",
+                "ការបង្កើតតំណភ្ជាប់",
+                "យុទ្ធសាស្ត្រមាតិកា",
+                "ឧបករណ៍ SEO"
+              ]
+            },
+            {
+              "title": "Ahrefs Blog",
+              "titleKm": "Ahrefs Blog",
+              "type": "Blog",
+              "typeKm": "ប្លុក",
+              "description": "Advanced SEO strategies, case studies, and data-driven marketing insights",
+              "descriptionKm": "យុទ្ធសាស្ត្រ SEO កម្រិតខ្ពស់ ករណីសិក្សា និងការយល់ដឹងទីផ្សារដោយដំណើរទិន្នន័យ",
+              "topics": [
+                "Link Building",
+                "Keyword Analysis",
+                "Competitor Research",
+                "Content Marketing",
+                "Backlink Strategy",
+                "SEO Tools"
+              ],
+              "topicsKm": [
+                "ការបង្កើតតំណភ្ជាប់",
+                "ការវិភាគពាក្យគន្លឹះ",
+                "ការស្រាវជ្រាវគូសប្រខង",
+                "ទីផ្សារមាតិកា",
+                "យុទ្ធសាស្ត្រ Backlink",
+                "ឧបករណ៍ SEO"
+              ]
+            },
+            {
+              "title": "Yoast SEO",
+              "titleKm": "Yoast SEO",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "WordPress SEO plugin tutorials and content optimization best practices",
+              "descriptionKm": "មេរៀន plugin SEO សម្រាប់ WordPress និងការអនុវត្តល្អបំផុតកែល្មអមាតិកា",
+              "topics": [
+                "WordPress SEO",
+                "Content Optimization",
+                "Meta Tags",
+                "Readability",
+                "Schema Markup",
+                "SEO Analysis"
+              ],
+              "topicsKm": [
+                "WordPress SEO",
+                "ការកែល្មអមាតិកា",
+                "Meta Tags",
+                "ការអានងាយស្រួល",
+                "Schema Markup",
+                "ការវិភាគ SEO"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "title": "Google & Facebook Ads",
+          "titleKm": "ការផ្សាយពាណិជ្ជកម្ម Google និង Facebook",
+          "description": "Run paid advertising campaigns",
+          "descriptionKm": "បង្កើតយុទ្ធនាការផ្សាយពាណិជ្ជកម្ម",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Google Ads",
+            "Facebook Ads Manager",
+            "Campaign Optimization",
+            "Analytics"
+          ],
+          "skillsKm": [
+            "Google Ads",
+            "Facebook Ads Manager",
+            "ការកែលម្អយុទ្ធនាការ",
+            "ការវិភាគ"
+          ],
+          "resources": [
+            {
+              "title": "Google Ads Skillshop",
+              "titleKm": "Google Ads Skillshop",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Official Google Ads certification courses covering search, display, and video advertising",
+              "descriptionKm": "វគ្គសិក្សាវិញ្ញាបនប័ត្រ Google Ads ផ្លូវការគ្របដណ្តប់ការផ្សាយពាណិជ្ជកម្មស្វែងរក បង្ហាញ និងវីដេអូ",
+              "topics": [
+                "Search Ads",
+                "Display Network",
+                "Video Ads",
+                "Shopping Ads",
+                "Campaign Management",
+                "Google Analytics"
+              ],
+              "topicsKm": [
+                "ការផ្សាយពាណិជ្ជកម្មស្វែងរក",
+                "បណ្តាញយបង្ហាញ",
+                "ការផ្សាយពាណិជ្ជកម្មវីដេអូ",
+                "ការផ្សាយពាណិជ្ជកម្មទិញ",
+                "ការគ្រប់គ្រងយុទ្ធនាការ",
+                "Google Analytics"
+              ]
+            },
+            {
+              "title": "Facebook Ads Guide",
+              "titleKm": "មគ្គុទ្ទេសក៍ Facebook Ads",
+              "type": "Guide",
+              "typeKm": "មគ្គុទ្ទេសក៍",
+              "description": "Complete guide to Facebook ad formats, targeting options, and campaign strategies",
+              "descriptionKm": "មគ្គុទ្ទេសក៍ពេញលេញអំពីទម្រង់ផ្សព្វផ្សាយ Facebook ជម្រើសកំណត់គោលដៅ និងយុទ្ធសាស្ត្រយុទ្ធនាការ",
+              "topics": [
+                "Ad Formats",
+                "Custom Audiences",
+                "Lookalike Audiences",
+                "Pixel Tracking",
+                "Budget Optimization",
+                "Ad Performance"
+              ],
+              "topicsKm": [
+                "ទម្រង់ផ្សព្វផ្សាយ",
+                "ទស្សនិកជនតាមកំណត់",
+                "ទស្សនិកជនស្រដិងគ្នា",
+                "Pixel Tracking",
+                "ការកែល្មអថវិកា",
+                "ប្រសិទ្ធភាពផ្សព្វផ្សាយ"
+              ]
+            },
+            {
+              "title": "WordStream Blog",
+              "titleKm": "WordStream Blog",
+              "type": "Blog",
+              "typeKm": "ប្លុក",
+              "description": "PPC advertising strategies, tips, and industry news for Google and Facebook Ads",
+              "descriptionKm": "យុទ្ធសាស្ត្រផ្សាយពាណិជ្ជកម្ម PPC ដំបូន្មាន និងផ្ទេកពាត៌មានអ៊ុស្សាហកម្មសម្រាប់ Google និង Facebook Ads",
+              "topics": [
+                "PPC Strategy",
+                "Ad Copy",
+                "Landing Pages",
+                "Quality Score",
+                "Bid Management",
+                "Conversion Optimization"
+              ],
+              "topicsKm": [
+                "យុទ្ធសាស្ត្រ PPC",
+                "មាតិកាផ្សព្វផ្សាយ",
+                "ទំព័រចុះចត",
+                "Quality Score",
+                "ការគ្រប់គ្រងការផ្តេរតម្លៃ",
+                "ការកែល្មអការប្តូរ"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "title": "Portfolio & Clients",
+          "titleKm": "Portfolio និងអតិថិជន",
+          "description": "Build portfolio and get clients",
+          "descriptionKm": "បង្កើត Portfolio និងស្វែងរកអតិថិជន",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Case Studies",
+            "Client Management",
+            "Reporting",
+            "Freelancing"
+          ],
+          "skillsKm": [
+            "ករណីសិក្សា",
+            "ការគ្រប់គ្រងអតិថិជន",
+            "របាយការណ៍",
+            "ការងារឯករាជ្យ"
+          ],
+          "resources": [
+            {
+              "title": "Behance",
+              "titleKm": "Behance",
+              "type": "Portfolio Platform",
+              "typeKm": "វេទិកា Portfolio",
+              "description": "Showcase your creative work and get inspired by top designers worldwide",
+              "descriptionKm": "បង្ហាញការងាររបស់អ្នក និងទទួលបានកំហុងចិត្តពីអ្នករច័កម៉ុកកម្រិតខ្ពស់អន្តរជាតិ",
+              "topics": [
+                "Portfolio Building",
+                "Design Inspiration",
+                "Creative Community",
+                "Project Presentation",
+                "Client Discovery",
+                "Design Trends"
+              ],
+              "topicsKm": [
+                "ការបង្កើត Portfolio",
+                "កំហុងចិត្តរច័កម៉ុក",
+                "សហគម្នអ្នកបង្កើតសរ្សែរ",
+                "ការតំណាងគម្រោង",
+                "ការស្វែងរកអតិថិជន",
+                "ទេន្ទង់រច័កម៉ុក"
+              ]
+            },
+            {
+              "title": "Upwork",
+              "titleKm": "Upwork",
+              "type": "Freelance Platform",
+              "typeKm": "វេទិកាការងារឯករាជ្យ",
+              "description": "Find freelance clients and digital marketing projects from businesses worldwide",
+              "descriptionKm": "ស្វែងរកអតិថិជនការងារឯករាជ្យ និងគម្រោងទីផ្សារឌីជីថលពីអាជីវកម្មទូទៅពិភពលោក",
+              "topics": [
+                "Profile Optimization",
+                "Proposal Writing",
+                "Client Communication",
+                "Project Management",
+                "Payment Protection",
+                "Feedback System"
+              ],
+              "topicsKm": [
+                "ការកែល្មអប្រវត្តិរូប",
+                "ការសរសេរសំណើ",
+                "ការទំនាក់ទំនងអតិថិជន",
+                "ការគ្រប់គ្រងគម្រោង",
+                "ការគាំទ្រការទូទាត់",
+                "ប្រព័ន្ធមតិកែលម្អ"
+              ]
+            },
+            {
+              "title": "Google Analytics",
+              "titleKm": "Google Analytics",
+              "type": "Tool",
+              "typeKm": "ឧបករណ៍",
+              "description": "Track website performance and user behavior with powerful analytics platform",
+              "descriptionKm": "តាមដានសមត្ថភាពគេហទំព័រ និងអាកប្បកិរិយាអ្នកប្រើប្រាស់ជាមួយវេទិកាវិភាគមានអំណាចខ្លាំង",
+              "topics": [
+                "Traffic Analysis",
+                "User Behavior",
+                "Conversion Tracking",
+                "Goal Setting",
+                "Custom Reports",
+                "E-commerce Tracking"
+              ],
+              "topicsKm": [
+                "ការវិភាគចរាចរ",
+                "អាកប្បកិរិយាអ្នកប្រើ",
+                "ការតាមដានប្តូរ",
+                "ការកំណត់គោលដៅ",
+                "របាយការណ៍តាមកំណត់",
+                "ការតាមដានអ៊ី-commerce"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-analyst",
+      "title": "Data Analyst",
+      "titleKm": "អ្នកវិភាគទិន្នន័យ",
+      "category": "Technology",
+      "categoryKm": "បច្ចេកវិទ្យា",
+      "icon": "📊",
+      "description": "Analyze data and create insights",
+      "descriptionKm": "វិភាគទិន្នន័យ និងបង្កើតការយល់ដឹង",
+      "demandLevel": "Growing",
+      "demandLevelKm": "កំពុងរីកចម្រើន",
+      "averageSalary": "$700-1800/month",
+      "averageSalaryKm": "$៧០០-១៨០០/ខែ",
+      "popularity": 82,
+      "steps": [
+        {
+          "id": "1",
+          "title": "Statistics & Math",
+          "titleKm": "ស្ថិតិ និងគណិតវិទ្យា",
+          "description": "Learn statistical foundations",
+          "descriptionKm": "រៀនមូលដ្ឋានស្ថិតិ",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": ["Statistics", "Probability", "Linear Algebra", "Calculus"],
+          "skillsKm": ["ស្ថិតិ", "ប្រូបាប", "ពីជគណិត", "ឌីផេរ៉ង់ស្យែល"],
+          "resources": [
+            {
+              "title": "Khan Academy",
+              "titleKm": "Khan Academy",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free math courses from basic arithmetic to calculus and linear algebra",
+              "descriptionKm": "វគ្គសិក្សាគណិតវិទ្យាឥតគិតថ្លៃពីគណិតសាស្ត្រមូលដ្ឋានរហូតដល់អ៊ីឌៀផៈរ៉ង់ស្យែល និងពីជគណិត",
+              "topics": [
+                "Statistics",
+                "Probability",
+                "Calculus",
+                "Linear Algebra",
+                "Data Analysis",
+                "Practice Exercises"
+              ],
+              "topicsKm": [
+                "ស្ថិតិ",
+                "ប្រូបាប",
+                "អ៊ីឌៀផៈរ៉ង់ស្យែល",
+                "ពីជគណិត",
+                "ការវិភាគទិន្នន័យ",
+                "លិទ្ធហាត់ហោម"
+              ]
+            },
+            {
+              "title": "Statistics How To",
+              "titleKm": "Statistics How To",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Step-by-step statistics tutorials with simple explanations and examples",
+              "descriptionKm": "មេរៀនស្ថិតិមួយមុខម្តំហាន់រជាមួយការប្រឰភ្រឺយងាយស្រួល និងឧទាហរណ៍",
+              "topics": [
+                "Descriptive Statistics",
+                "Hypothesis Testing",
+                "Regression Analysis",
+                "Distributions",
+                "Sampling",
+                "Statistical Tests"
+              ],
+              "topicsKm": [
+                "ស្ថិតិពិពរណ៌នា",
+                "ការសោទធនគម្រោងសម្មតិថាន",
+                "ការវិភាគ Regression",
+                "ការចែកចាយ",
+                "ការយកគំរូ",
+                "ការសោទធស្ថិតិ"
+              ]
+            },
+            {
+              "title": "3Blue1Brown",
+              "titleKm": "3Blue1Brown",
+              "type": "Video",
+              "typeKm": "វីដេអូ",
+              "description": "Visually engaging math videos explaining complex concepts intuitively",
+              "descriptionKm": "វីដេអូគណិតវិទ្យាជាមួយរូបភាពជាក់ស្តែង ប្រឰភ្រឺយគំនិតពិបាកយ៉ាងងាយស្រួល",
+              "topics": [
+                "Linear Algebra",
+                "Calculus",
+                "Neural Networks",
+                "Mathematical Intuition",
+                "Visual Proofs",
+                "Complex Concepts"
+              ],
+              "topicsKm": [
+                "ពីជគណិត",
+                "អ៊ីឌៀផៈរ៉ង់ស្យែល",
+                "បណ្តាញច្រកព័ន្ធសេប្សៃ",
+                "ការយល់ដឹងគណិតវិទ្យា",
+                "ការបង្ហាញជារូបភាព",
+                "គំនិតពិបាក"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Excel & SQL",
+          "titleKm": "Excel និង SQL",
+          "description": "Master data manipulation tools",
+          "descriptionKm": "ស្ទាត់ជំនាញឧបករណ៍រៀបចំទិន្នន័យ",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Excel Advanced",
+            "SQL Queries",
+            "Data Cleaning",
+            "Pivot Tables"
+          ],
+          "skillsKm": [
+            "Excel កម្រិតខ្ពស់",
+            "SQL Queries",
+            "ការសម្អាតទិន្នន័យ",
+            "តារាង Pivot"
+          ],
+          "resources": [
+            {
+              "title": "Excel Easy",
+              "titleKm": "Excel Easy",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Learn Excel from basics to advanced formulas, charts, and pivot tables",
+              "descriptionKm": "រៀន Excel ពីមូលដ្ឋានរហូតដល់រូបមន្តកម្រិតខ្ពស់ ក្រាហ្វិក និងតារាង Pivot",
+              "topics": [
+                "Formulas & Functions",
+                "Data Analysis",
+                "Pivot Tables",
+                "Charts & Graphs",
+                "Conditional Formatting",
+                "VBA Macros"
+              ],
+              "topicsKm": [
+                "រូបមន្ត & មុខងារ",
+                "ការវិភាគទិន្នន័យ",
+                "តារាង Pivot",
+                "ក្រាហ្វិក",
+                "ការតំណងតាមលក្ខខណ្ឌ",
+                "VBA Macros"
+              ]
+            },
+            {
+              "title": "Mode SQL Tutorial",
+              "titleKm": "មេរៀន Mode SQL",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Interactive SQL tutorial with real datasets and practical exercises",
+              "descriptionKm": "មេរៀន SQL អន្តរកម្មជាមួយចំណុចទិន្នន័យពិត និងលិទ្ធហាត់ហោមជាក់ស្តែង",
+              "topics": [
+                "SELECT Queries",
+                "JOINs",
+                "Aggregations",
+                "Subqueries",
+                "Window Functions",
+                "Query Optimization"
+              ],
+              "topicsKm": [
+                "សំណួរ SELECT",
+                "JOIN",
+                "ការប្រមូល",
+                "Subqueries",
+                "Window Functions",
+                "ការកែល្មអសំណួរ"
+              ]
+            },
+            {
+              "title": "SQLBolt",
+              "titleKm": "SQLBolt",
+              "type": "Interactive",
+              "typeKm": "អន្តរកម្ម",
+              "description": "Learn SQL with interactive lessons and exercises in your browser",
+              "descriptionKm": "រៀន SQL ជាមួយមេរៀនអន្តរកម្ម និងលិទ្ធហាត់ហោមក្នុងកម្មវិធីរកស់របស់អ្នក",
+              "topics": [
+                "SQL Basics",
+                "Filtering & Sorting",
+                "Multi-table Queries",
+                "Database Design",
+                "CRUD Operations",
+                "Performance Tips"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋាន SQL",
+                "ការតរោង & ស្រាប់",
+                "សំណួរច្រើនតារាង",
+                "ការរចនាមូលដ្ឋានទិន្នន័យ",
+                "ប្រតិបត្តិការ CRUD",
+                "ដំបូន្មានសមត្ថភាព"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Python for Data",
+          "titleKm": "Python សម្រាប់ទិន្នន័យ",
+          "description": "Learn Python and pandas",
+          "descriptionKm": "រៀន Python និង pandas",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": ["Python", "Pandas", "NumPy", "Data Wrangling"],
+          "skillsKm": ["Python", "Pandas", "NumPy", "ការរៀបចំទិន្នន័យ"],
+          "resources": [
+            {
+              "title": "Python.org Tutorial",
+              "titleKm": "មេរៀន Python.org",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Official Python tutorial covering language fundamentals and core concepts",
+              "descriptionKm": "មេរៀន Python ផ្លូវការគ្របដណ្តប់មូលដ្ឋានភាសា និងគំនិតសំខាន់",
+              "topics": [
+                "Python Basics",
+                "Data Structures",
+                "Functions",
+                "Modules",
+                "File Handling",
+                "Error Handling"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋាន Python",
+                "រចនាសម្ពន្ធទិន្នន័យ",
+                "មុខងារ",
+                "ម៉ូឌុល",
+                "ការគ្រប់គ្រងឯកសារ",
+                "ការគ្រប់គ្រងកំហុស"
+              ]
+            },
+            {
+              "title": "Pandas Documentation",
+              "titleKm": "ឯកសារ Pandas",
+              "type": "Documentation",
+              "typeKm": "ឯកសារ",
+              "description": "Comprehensive guide to data manipulation and analysis with Pandas library",
+              "descriptionKm": "ការណែនាំពេញលេញអំពីការរៀបចំទិន្នន័យ និងការវិភាគជាមួយ Pandas library",
+              "topics": [
+                "DataFrames",
+                "Data Cleaning",
+                "Grouping & Aggregation",
+                "Merging Data",
+                "Time Series",
+                "Data Visualization"
+              ],
+              "topicsKm": [
+                "DataFrames",
+                "ការសម្អាតទិន្នន័យ",
+                "ការក្រុម & ប្រមូល",
+                "ការរួមទិន្នន័យ",
+                "តំណពេល",
+                "ការធ្វើមើលអាចមើលទិន្នន័យ"
+              ]
+            },
+            {
+              "title": "DataCamp",
+              "titleKm": "DataCamp",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Interactive data science courses covering Python, R, SQL, and machine learning",
+              "descriptionKm": "វគ្គសិក្សាវិទ្យាសាស្ត្រទិន្នន័យអន្តរកម្មគ្របដណ្តប់ Python, R, SQL និងការសិក្សាម៉ាស៊ីន",
+              "topics": [
+                "Python Programming",
+                "Pandas & NumPy",
+                "Data Visualization",
+                "SQL",
+                "Statistics",
+                "Machine Learning"
+              ],
+              "topicsKm": [
+                "ការសរសេរកម្មវិធី Python",
+                "Pandas & NumPy",
+                "ការធ្វើមើលអាចមើលទិន្នន័យ",
+                "SQL",
+                "ស្ថិតិ",
+                "ការសិក្សាម៉ាស៊ីន"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "title": "Data Visualization",
+          "titleKm": "ការធ្វើមើលឃើញទិន្នន័យ",
+          "description": "Create charts and dashboards",
+          "descriptionKm": "បង្កើតក្រាហ្វិក និងផ្ទាំងគ្រប់គ្រង",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Tableau/Power BI",
+            "Matplotlib",
+            "Seaborn",
+            "Dashboard Design"
+          ],
+          "skillsKm": [
+            "Tableau/Power BI",
+            "Matplotlib",
+            "Seaborn",
+            "ការរចនាផ្ទាំងគ្រប់គ្រង"
+          ],
+          "resources": [
+            {
+              "title": "Tableau Public",
+              "titleKm": "Tableau Public",
+              "type": "Free Tool",
+              "typeKm": "ឧបករណ៍ឥតគិតថ្លៃ",
+              "description": "Create interactive data visualizations and dashboards with free Tableau software",
+              "descriptionKm": "បង្កើតការធ្វើមើលអាចមើលទិន្នន័យអន្តរកម្ម និងផ្ទាំគ្រប់គ្រងជាមួយកម្មវិធី Tableau ឥតគិតថ្លៃ",
+              "topics": [
+                "Visual Analytics",
+                "Dashboard Design",
+                "Interactive Charts",
+                "Data Connections",
+                "Calculated Fields",
+                "Storytelling"
+              ],
+              "topicsKm": [
+                "ការវិភាគជារូបភាព",
+                "ការរចនាផ្ទាំគ្រប់គ្រង",
+                "ក្រាហ្វិកអន្តរកម្ម",
+                "ការភ្ជាប់ទិន្នន័យ",
+                "ក្របទគណនា",
+                "ការប្រាប់រឿង"
+              ]
+            },
+            {
+              "title": "Power BI Learning",
+              "titleKm": "Power BI Learning",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Microsoft official training for Power BI business intelligence platform",
+              "descriptionKm": "ការបញ្ជូនបញ្ជាតិផ្លូវការ Microsoft សម្រាប់វេទិកាបូរាណសេចក្តីអាជីវកម្ម Power BI",
+              "topics": [
+                "Data Modeling",
+                "DAX Formulas",
+                "Power Query",
+                "Report Design",
+                "Dashboards",
+                "Data Refresh"
+              ],
+              "topicsKm": [
+                "ការធ្វើគំរូទិន្នន័យ",
+                "រូបមន្ត DAX",
+                "Power Query",
+                "ការរចនារបាយការណ៍",
+                "ផ្ទាំគ្រប់គ្រង",
+                "ការធ្វើបច្ចុប្បន្នទិន្នន័យ"
+              ]
+            },
+            {
+              "title": "Data Viz Project",
+              "titleKm": "Data Viz Project",
+              "type": "Examples",
+              "typeKm": "ឧទាហរណ៍",
+              "description": "Gallery of data visualization types with use cases and examples",
+              "descriptionKm": "ព័ន្ធអង្ការធ្វើមើលអាចមើលទិន្នន័យជាមួយករណីប្រើ និងឧទាហរណ៍",
+              "topics": [
+                "Chart Types",
+                "Visual Selection",
+                "Use Cases",
+                "Best Practices",
+                "Design Inspiration",
+                "Data Stories"
+              ],
+              "topicsKm": [
+                "ប្រភេទក្រាហ្វិក",
+                "ការជ្រើសរើសជារូបភាព",
+                "ករណីប្រើ",
+                "ការអនុវត្តល្អបំផុត",
+                "កំហុងចិត្តរច័កម៉ុក",
+                "រឿងទិន្នន័យ"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "title": "Portfolio & Projects",
+          "titleKm": "Portfolio និងគម្រោង",
+          "description": "Build data analysis portfolio",
+          "descriptionKm": "បង្កើត Portfolio វិភាគទិន្នន័យ",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Data Projects",
+            "GitHub",
+            "Business Insights",
+            "Presentation"
+          ],
+          "skillsKm": [
+            "គម្រោងទិន្នន័យ",
+            "GitHub",
+            "ការយល់ដឹងអាជីវកម្ម",
+            "ការបង្ហាញ"
+          ],
+          "resources": [
+            {
+              "title": "Kaggle",
+              "titleKm": "Kaggle",
+              "type": "Platform",
+              "typeKm": "វេទិកា",
+              "description": "Data science competitions, datasets, and collaborative coding notebooks",
+              "descriptionKm": "ការប្រកួតវិទ្យាសាស្ត្រទិន្នន័យ ចំណុចទិន្នន័យ និងកំណត់ត្រាកូដសហការ",
+              "topics": [
+                "Data Competitions",
+                "Public Datasets",
+                "Notebooks",
+                "ML Models",
+                "Community Learning",
+                "Portfolio Projects"
+              ],
+              "topicsKm": [
+                "ការប្រកួតទិន្នន័យ",
+                "ចំណុចទិន្នន័យសាធារណៈ",
+                "កំណត់ត្រា",
+                "គំរូ ML",
+                "ការសិក្សាសហគម្ន៍",
+                "គម្រោង Portfolio"
+              ]
+            },
+            {
+              "title": "GitHub",
+              "titleKm": "GitHub",
+              "type": "Platform",
+              "typeKm": "វេទិកា",
+              "description": "Host your data analysis projects and build a professional portfolio",
+              "descriptionKm": "មេជស្ធាយគម្រោងវិភាគទិន្នន័យរបស់អ្នក និងបង្កើត Portfolio អាជីពជំនាញ",
+              "topics": [
+                "Version Control",
+                "Code Sharing",
+                "Collaboration",
+                "Project Documentation",
+                "Portfolio Building",
+                "Open Source"
+              ],
+              "topicsKm": [
+                "ការគ្រប់គ្រងកំណែ",
+                "ការចែករូមកូដ",
+                "ការសហការ",
+                "ឧកសារគម្រោង",
+                "ការបង្កើត Portfolio",
+                "កូដបើកចេហ"
+              ]
+            },
+            {
+              "title": "Towards Data Science",
+              "titleKm": "Towards Data Science",
+              "type": "Blog",
+              "typeKm": "ប្លុក",
+              "description": "Medium publication with data science articles, tutorials, and industry insights",
+              "descriptionKm": "ការផ្សាយលើ Medium ជាមួយអត្ថបទវិទ្យាសាស្ត្រទិន្នន័យ មេរៀន និងការយល់ដឹងអំពីអ៊ុស្សាហកម្ម",
+              "topics": [
+                "Data Analysis",
+                "Machine Learning",
+                "Python Tutorials",
+                "Career Advice",
+                "Industry Trends",
+                "Project Ideas"
+              ],
+              "topicsKm": [
+                "ការវិភាគទិន្នន័យ",
+                "ការសិក្សាម៉ាស៊ីន",
+                "មេរៀន Python",
+                "ដំបូន្មានអាជីព",
+                "ទេន្ទង់អ៊ុស្សាហកម្ម",
+                "គំនិតគម្រោង"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business-management",
+      "title": "Business Management",
+      "titleKm": "ការគ្រប់គ្រងអាជីវកម្ម",
+      "category": "Business",
+      "categoryKm": "អាជីវកម្ម",
+      "icon": "💼",
+      "description": "Lead teams and manage businesses",
+      "descriptionKm": "ដឹកនាំក្រុម និងគ្រប់គ្រងអាជីវកម្ម",
+      "demandLevel": "Medium",
+      "demandLevelKm": "ត្រូវការមធ្យម",
+      "averageSalary": "$500-1500/month",
+      "averageSalaryKm": "$៥០០-១៥០០/ខែ",
+      "popularity": 75,
+      "steps": [
+        {
+          "id": "1",
+          "title": "Business Fundamentals",
+          "titleKm": "មូលដ្ឋានអាជីវកម្ម",
+          "description": "Learn core business concepts",
+          "descriptionKm": "រៀនគោលគំនិតអាជីវកម្មមូលដ្ឋាន",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Business Strategy",
+            "Economics",
+            "Operations",
+            "Marketing"
+          ],
+          "skillsKm": [
+            "យុទ្ធសាស្រ្តអាជីវកម្ម",
+            "សេដ្ឋកិច្ច",
+            "ប្រតិបត្តិការ",
+            "ទីផ្សារ"
+          ],
+          "resources": [
+            {
+              "title": "Coursera Business",
+              "titleKm": "Coursera Business",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Top university business courses covering strategy, finance, and management",
+              "descriptionKm": "វគ្គសិក្សាអាជីវកម្មពីសាកលវិទ្យាល័យគ្របដណ្តប់យុទ្ធសាស្ត្រ ហិរញ្ញវត្ថុ និងការគ្រប់គ្រង",
+              "topics": [
+                "Business Strategy",
+                "Financial Management",
+                "Operations",
+                "Marketing Fundamentals",
+                "Leadership",
+                "Entrepreneurship"
+              ],
+              "topicsKm": [
+                "យុទ្ធសាស្ត្រអាជីវកម្ម",
+                "ការគ្រប់គ្រងហិរញ្ញវត្ថុ",
+                "ប្រតិបត្តិការ",
+                "មូលដ្ឋានទីផ្សារ",
+                "ទិក្ខដឹកនាំ",
+                "ការបង្កើតសហគ្រាស"
+              ]
+            },
+            {
+              "title": "Harvard Business Review",
+              "titleKm": "Harvard Business Review",
+              "type": "Articles",
+              "typeKm": "អត្ថបទ",
+              "description": "Leading business articles on strategy, innovation, and management from Harvard",
+              "descriptionKm": "អត្ថបទអាជីវកម្មខ្ពស់ហ្និងការយុទ្ធសាស្ត្រ នវនិយកម្ម និងការគ្រប់គ្រងពី Harvard",
+              "topics": [
+                "Business Strategy",
+                "Innovation",
+                "Leadership",
+                "Change Management",
+                "Digital Transformation",
+                "Management Tips"
+              ],
+              "topicsKm": [
+                "យុទ្ធសាស្ត្រអាជីវកម្ម",
+                "នវនិយកម្ម",
+                "ទិក្ខដឹកនាំ",
+                "ការគ្រប់គ្រងការផ្លាស់ប្តូរ",
+                "ការផ្លាស់ប្តូរឌីជីថល",
+                "ដំបូន្មានការគ្រប់គ្រង"
+              ]
+            },
+            {
+              "title": "Khan Academy Economics",
+              "titleKm": "Khan Academy សេដ្ឋកិច្ច",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free economics courses from microeconomics to macroeconomics and finance",
+              "descriptionKm": "វគ្គសិក្សាសេដ្ឋកិច្ចឥតគិតថ្លៃពីសេដ្ឋកិច្ចពេក ទៅសេដ្ឋកិច្ចស្មុហ និងហិរញ្ញវត្ថុ",
+              "topics": [
+                "Supply & Demand",
+                "Market Forces",
+                "Fiscal Policy",
+                "Monetary Policy",
+                "Trade",
+                "Economic Growth"
+              ],
+              "topicsKm": [
+                "អតិប្រមាណ & តម្រូវការ",
+                "កំលាំងទីផ្សារ",
+                "គោលនេយអបាយករ",
+                "គោលនេយរូបិយវត្ថុ",
+                "ទំនាក់ទំនង",
+                "ការរីកចំរើនសេដ្ឋកិច្ច"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Leadership Skills",
+          "titleKm": "ជំនាញភាពជាអ្នកដឹកនាំ",
+          "description": "Develop team leadership abilities",
+          "descriptionKm": "អភិវឌ្ឍសមត្ថភាពដឹកនាំក្រុម",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": [
+            "Team Leadership",
+            "Communication",
+            "Decision Making",
+            "Conflict Resolution"
+          ],
+          "skillsKm": [
+            "ការដឹកនាំក្រុម",
+            "ការទំនាក់ទំនង",
+            "ការសម្រេចចិត្ត",
+            "ដោះស្រាយជម្លោះ"
+          ],
+          "resources": [
+            {
+              "title": "MindTools Leadership",
+              "titleKm": "MindTools Leadership",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Practical leadership, management, and career skills tutorials",
+              "descriptionKm": "មេរៀនជំនាញដឹកនាំ ការគ្រប់គ្រង និងទៅអាជីពជាក់ស្តែង",
+              "topics": [
+                "Leadership Styles",
+                "Team Management",
+                "Communication",
+                "Problem Solving",
+                "Decision Making",
+                "Time Management"
+              ],
+              "topicsKm": [
+                "របៀបដឹកនាំ",
+                "ការគ្រប់គ្រងក្រុម",
+                "ការទំនាក់ទំនង",
+                "ការដោហស្រាយបញ្ហា",
+                "ការស្រេចចិត្ត",
+                "ការគ្រប់គ្រងពេលវេលា"
+              ]
+            },
+            {
+              "title": "TED Talks Leadership",
+              "titleKm": "TED Talks Leadership",
+              "type": "Videos",
+              "typeKm": "វីដេអូ",
+              "description": "Inspiring talks from world leaders on management and innovation",
+              "descriptionKm": "ការនិយាយកំហុងចិត្តពីអ្នកដឹកនាំពិភពលោកអំពីការគ្រប់គ្រង និងនវនិយកម្ម",
+              "topics": [
+                "Inspiring Leadership",
+                "Team Building",
+                "Motivation",
+                "Change Leadership",
+                "Vision & Strategy",
+                "Personal Growth"
+              ],
+              "topicsKm": [
+                "ទិក្ខដឹកនាំកំហុងចិត្ត",
+                "ការបង្កើតក្រុម",
+                "ការលំហុងចិត្ត",
+                "ទិក្ខដឹកនាំការផ្លាស់ប្តូរ",
+                "ចក្ខុវិស័យ & យុទ្ធសាស្ត្រ",
+                "ការរិកចំរើនខ្លួនក្លា"
+              ]
+            },
+            {
+              "title": "Dale Carnegie",
+              "titleKm": "Dale Carnegie",
+              "type": "Book",
+              "typeKm": "សៀវភៅ",
+              "description": "Classic books and training on leadership, communication, and influence",
+              "descriptionKm": "សៀវភៅក្លាស៊ីក និងការបញ្ជូនបញ្ជាតិអំពីទិក្ខដឹកនាំ ការទំនាក់ទំនង និងអិទ្ធិពល",
+              "topics": [
+                "Public Speaking",
+                "Interpersonal Skills",
+                "Persuasion",
+                "Confidence Building",
+                "People Skills",
+                "Influence"
+              ],
+              "topicsKm": [
+                "ការនិយាយក្នុងសាធារណៈ",
+                "ជំនាញអន្តរបុគ្គល",
+                "ការធ្វើឱ្យធ្វើស្រេច",
+                "ការបង្កើតទំនុកចិត្ត",
+                "ជំនាញអន្តរអន្តរបុគ្គល",
+                "អិទ្ធិពល"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Finance & Accounting",
+          "titleKm": "ហិរញ្ញវត្ថុ និងគណនេយ្យ",
+          "description": "Understand financial management",
+          "descriptionKm": "យល់ដឹងការគ្រប់គ្រងហិរញ្ញវត្ថុ",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": [
+            "Financial Statements",
+            "Budgeting",
+            "Cost Management",
+            "ROI Analysis"
+          ],
+          "skillsKm": [
+            "របាយការណ៍ហិរញ្ញវត្ថុ",
+            "ថវិកា",
+            "ការគ្រប់គ្រងថ្លៃដើម",
+            "ការវិភាគ ROI"
+          ],
+          "resources": [
+            {
+              "title": "Investopedia",
+              "titleKm": "Investopedia",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Comprehensive financial education covering investing, markets, and personal finance",
+              "descriptionKm": "ការអប់រំហិរញ្ញវត្ថុពេញលេញគ្របដណ្តប់ការវិនិយូគ ទីផ្សារ និងហិរញ្ញវត្ថុផ្ទាល់ខ្លួន",
+              "topics": [
+                "Investing Basics",
+                "Stock Market",
+                "Personal Finance",
+                "Financial Terms",
+                "Trading",
+                "Economic Indicators"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋានវិនិយូគ",
+                "ទីផ្សារសេហំ",
+                "ហិរញ្ញវត្ថុផ្ទាល់ខ្លួន",
+                "ពាក្យហិរញ្ញវត្ថុ",
+                "ការទិញ",
+                "អន្តរហិរញ្ញសេឌ្ឋកិច្ច"
+              ]
+            },
+            {
+              "title": "Accounting Coach",
+              "titleKm": "Accounting Coach",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free accounting lessons covering fundamental principles and practical applications",
+              "descriptionKm": "មេរៀនគណនេយ្យឥតគិតថ្លៃគ្របដណ្តប់គោលការណ៍មូលដ្ឋាន និងការអនុវត្តជាក់ស្តែង",
+              "topics": [
+                "Debits & Credits",
+                "Financial Statements",
+                "Journal Entries",
+                "Trial Balance",
+                "Adjusting Entries",
+                "Cash Flow"
+              ],
+              "topicsKm": [
+                "ឥណទាន & ឥណពន្ធ",
+                "របាយការណ៍ហិរញ្ញវត្ថុ",
+                "ការកត់ត្រា",
+                "សមតុល្យសាកល្បង",
+                "ការកែតម្រូវ",
+                "លំហូរសាច់ប្រាក់"
+              ]
+            },
+            {
+              "title": "CFI Finance Courses",
+              "titleKm": "វគ្គសិក្សា CFI Finance",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Corporate finance courses covering financial modeling, valuation, and analysis",
+              "descriptionKm": "វគ្គសិក្សាហិរញ្ញវត្ថុសហគ្រាសគ្របដណ្តប់ការធ្វើគំរូហិរញ្ញវត្ថុ ការវាយតម្លៃ និងការវិភាគ",
+              "topics": [
+                "Financial Modeling",
+                "Valuation",
+                "Financial Analysis",
+                "Excel Skills",
+                "FP&A",
+                "Investment Banking"
+              ],
+              "topicsKm": [
+                "គំរូហិរញ្ញវត្ថុ",
+                "ការវាយតម្លៃ",
+                "ការវិភាគហិរញ្ញវត្ថុ",
+                "ជំនាញ Excel",
+                "FP&A",
+                "ធនាគារវិនិយោគ"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "title": "Project Management",
+          "titleKm": "ការគ្រប់គ្រងគម្រោង",
+          "description": "Manage projects effectively",
+          "descriptionKm": "គ្រប់គ្រងគម្រោងប្រកបដោយប្រសិទ្ធភាព",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Agile/Scrum",
+            "Project Planning",
+            "Risk Management",
+            "Stakeholder Management"
+          ],
+          "skillsKm": [
+            "Agile/Scrum",
+            "ការរៀបចំផែនការគម្រោង",
+            "ការគ្រប់គ្រងហានិភ័យ",
+            "ការគ្រប់គ្រងអ្នកពាក់ព័ន្ធ"
+          ],
+          "resources": [
+            {
+              "title": "PMI Resources",
+              "titleKm": "ធនធាន PMI",
+              "type": "Resources",
+              "typeKm": "ធនធាន",
+              "description": "Project Management Institute resources and PMP certification preparation",
+              "descriptionKm": "ធនធានវិទ្យាស្ថានគ្រប់គ្រងគម្រោង និងការត្រៀមសម្រាប់វិញ្ញាបនបត្រ PMP",
+              "topics": [
+                "Project Management",
+                "PMP Certification",
+                "Agile Methods",
+                "Risk Management",
+                "Stakeholder Management",
+                "Best Practices"
+              ],
+              "topicsKm": [
+                "ការគ្រប់គ្រងគម្រោង",
+                "វិញ្ញាបនបត្រ PMP",
+                "វិធីសាស្រ្ត Agile",
+                "ការគ្រប់គ្រងហានិភ័យ",
+                "ការគ្រប់គ្រងអ្នកពាក់ព័ន្ធ",
+                "ការអនុវត្តល្អបំផុត"
+              ]
+            },
+            {
+              "title": "Trello Project Guide",
+              "titleKm": "មគ្គុទ្ទេសក៍ Trello",
+              "type": "Guide",
+              "typeKm": "មគ្គុទ្ទេសក៍",
+              "description": "Visual project management with boards, lists, and cards for team collaboration",
+              "descriptionKm": "ការគ្រប់គ្រងគម្រោងដោយចក្ខុវិស័យជាមួយក្តារ បញ្ជី និងកាតសម្រាប់ការសហការក្រុម",
+              "topics": [
+                "Kanban Boards",
+                "Task Management",
+                "Team Collaboration",
+                "Workflow Automation",
+                "Project Templates",
+                "Power-Ups"
+              ],
+              "topicsKm": [
+                "ក្តារ Kanban",
+                "ការគ្រប់គ្រងភារកិច្ច",
+                "ការសហការក្រុម",
+                "ស្វ័យប្រវត្តិការងារ",
+                "គំរូគម្រោង",
+                "Power-Ups"
+              ]
+            },
+            {
+              "title": "Scrum.org",
+              "titleKm": "Scrum.org",
+              "type": "Certification",
+              "typeKm": "វិញ្ញាបនបត្រ",
+              "description": "Professional Scrum certifications and agile project management training",
+              "descriptionKm": "វិញ្ញាបនបត្រ Scrum វិជ្ជាជីវៈ និងការបណ្តុះបណ្តាលការគ្រប់គ្រងគម្រោង Agile",
+              "topics": [
+                "Scrum Framework",
+                "Sprint Planning",
+                "Daily Standups",
+                "Sprint Reviews",
+                "Retrospectives",
+                "Product Backlog"
+              ],
+              "topicsKm": [
+                "ក្របខ័ណ្ឌ Scrum",
+                "ការរៀបចំ Sprint",
+                "ការប្រជុំប្រចាំថ្ងៃ",
+                "ការពិនិត្យ Sprint",
+                "ការពិនិត្យឡើងវិញ",
+                "បញ្ជីកិច្ចការផលិតផល"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "title": "Career Growth",
+          "titleKm": "ការរីកចម្រើនអាជីព",
+          "description": "Build experience and network",
+          "descriptionKm": "បង្កើតបទពិសោធន៍ និងបណ្តាញ",
+          "duration": "6+ months",
+          "durationKm": "៦+ ខែ",
+          "skills": [
+            "Internships",
+            "Networking",
+            "Professional Development",
+            "Certifications"
+          ],
+          "skillsKm": [
+            "ការកម្មសិក្សា",
+            "ការបង្កើតបណ្តាញ",
+            "ការអភិវឌ្ឍវិជ្ជាជីវៈ",
+            "វិញ្ញាបនបត្រ"
+          ],
+          "resources": [
+            {
+              "title": "LinkedIn Learning",
+              "titleKm": "LinkedIn Learning",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Professional development courses covering business, technology, and creative skills",
+              "descriptionKm": "វគ្គសិក្សាអភិវឌ្ឍវិជ្ជាជីវៈគ្របដណ្តប់អាជីវកម្ម បច្ចេកវិទ្យា និងជំនាញច្នៃប្រឌិត",
+              "topics": [
+                "Business Skills",
+                "Leadership",
+                "Career Development",
+                "Software Training",
+                "Communication",
+                "Professional Networking"
+              ],
+              "topicsKm": [
+                "ជំនាញអាជីវកម្ម",
+                "ទិក្ខដឹកនាំ",
+                "ការអភិវឌ្ឍវិជ្ជាជីវៈ",
+                "ការបណ្តុះបណ្តាលកម្មវិធី",
+                "ការទំនាក់ទំនង",
+                "បណ្តាញវិជ្ជាជីវៈ"
+              ]
+            },
+            {
+              "title": "Glassdoor",
+              "titleKm": "Glassdoor",
+              "type": "Job Platform",
+              "typeKm": "វេទិកាការងារ",
+              "description": "Job search platform with company reviews, salary insights, and interview tips",
+              "descriptionKm": "វេទិកាស្វែងរកការងារជាមួយការពិនិត្យក្រុមហ៊ុន ការយល់ដឹងខាងប្រាក់បៀវត្ស និងដំបូន្មានសម្ភាសន៍",
+              "topics": [
+                "Job Search",
+                "Company Reviews",
+                "Salary Information",
+                "Interview Questions",
+                "Career Insights",
+                "Employee Benefits"
+              ],
+              "topicsKm": [
+                "ការស្វែងរកការងារ",
+                "ការពិនិត្យក្រុមហ៊ុន",
+                "ព័ត៌មានប្រាក់បៀវត្ស",
+                "សំណួរសម្ភាសន៍",
+                "ការយល់ដឹងអាជីវៈ",
+                "អត្ថប្រយោជន៍បុគ្គលិក"
+              ]
+            },
+            {
+              "title": "SHRM Certification",
+              "titleKm": "វិញ្ញាបនបត្រ SHRM",
+              "type": "Certification",
+              "typeKm": "វិញ្ញាបនបត្រ",
+              "description": "Society for Human Resource Management professional certifications and HR training",
+              "descriptionKm": "វិញ្ញាបនបត្រវិជ្ជាជីវៈសមាគមគ្រប់គ្រងធនធានមនុស្ស និងការបណ្តុះបណ្តាល HR",
+              "topics": [
+                "HR Management",
+                "Recruitment",
+                "Employee Relations",
+                "Compensation & Benefits",
+                "Training & Development",
+                "HR Compliance"
+              ],
+              "topicsKm": [
+                "ការគ្រប់គ្រង HR",
+                "ការជ្រើសរើសបុគ្គលិក",
+                "ទំនាក់ទំនងបុគ្គលិក",
+                "ប្រាក់ & អត្ថប្រយោជន៍",
+                "ការបណ្តុះបណ្តាល & អភិវឌ្ឍ",
+                "ការអនុលោម HR"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "civil-engineering",
+      "title": "Civil Engineering",
+      "titleKm": "វិស្វកម្មសំណង់",
+      "category": "Engineering",
+      "categoryKm": "វិស្វកម្ម",
+      "icon": "🏗️",
+      "description": "Design and build infrastructure",
+      "descriptionKm": "រចនា និងសាងសង់ហេដ្ឋារចនាសម្ព័ន្ធ",
+      "demandLevel": "High",
+      "demandLevelKm": "ត្រូវការខ្ពស់",
+      "averageSalary": "$600-1800/month",
+      "averageSalaryKm": "$៦០០-១៨០០/ខែ",
+      "popularity": 78,
+      "steps": [
+        {
+          "id": "1",
+          "title": "Engineering Basics",
+          "titleKm": "មូលដ្ឋានវិស្វកម្ម",
+          "description": "Learn fundamental engineering",
+          "descriptionKm": "រៀនវិស្វកម្មមូលដ្ឋាន",
+          "duration": "6-12 months",
+          "durationKm": "៦-១២ ខែ",
+          "skills": [
+            "Physics",
+            "Mathematics",
+            "Engineering Drawing",
+            "Materials Science"
+          ],
+          "skillsKm": [
+            "រូបវិទ្យា",
+            "គណិតវិទ្យា",
+            "គំនូសវិស្វកម្ម",
+            "វិទ្យាសាស្រ្តវត្ថុធាតុ"
+          ],
+          "resources": [
+            {
+              "title": "MIT OpenCourseWare",
+              "titleKm": "MIT OpenCourseWare",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free MIT engineering courses covering mathematics, physics, and engineering fundamentals",
+              "descriptionKm": "វគ្គសិក្សាវិស្វកម្ម MIT ឥតគិតថ្លៃគ្របដណ្តប់គណិតវិទ្យា រូបវិទ្យា និងមូលដ្ឋានវិស្វកម្ម",
+              "topics": [
+                "Engineering Math",
+                "Physics",
+                "Mechanics",
+                "Thermodynamics",
+                "Materials Science",
+                "Structural Analysis"
+              ],
+              "topicsKm": [
+                "គណិតវិស្វកម្ម",
+                "រូបវិទ្យា",
+                "ម៉េកានិក",
+                "ថេរ្មូឌីនាមីក",
+                "វិទ្យាសាស្ត្រសម្ភារៈ",
+                "ការវិភាគរចនាសម្ពន្ធ"
+              ]
+            },
+            {
+              "title": "Engineering Toolbox",
+              "titleKm": "Engineering Toolbox",
+              "type": "Reference",
+              "typeKm": "ឯកសារយោង",
+              "description": "Comprehensive engineering reference with formulas, tables, and calculators",
+              "descriptionKm": "ឯកសារយោងវិស្វកម្មពេញលេញជាមួយរូបមន្ត តារាង និងឧបករណ៍គណនា",
+              "topics": [
+                "Engineering Formulas",
+                "Material Properties",
+                "Unit Conversions",
+                "Design Tables",
+                "Calculators",
+                "Technical Data"
+              ],
+              "topicsKm": [
+                "រូបមន្តវិស្វកម្ម",
+                "តម្លៃសម្ភារៈ",
+                "ការប្តូរឯកបប្រមាណ",
+                "តារាងរចនា",
+                "ឧបករណ៍គណនា",
+                "ទិន្នន័យបច្ចេកទេស"
+              ]
+            },
+            {
+              "title": "Khan Academy Physics",
+              "titleKm": "Khan Academy រូបវិទ្យា",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free physics courses covering mechanics, electricity, magnetism, and thermodynamics",
+              "descriptionKm": "វគ្គសិក្សារូបវិទ្យាឥតគិតថ្លៃគ្របដណ្តប់ម៉េកានិក អ៊ីលឹកត្រីស៊ីទេ ម៉ាញ៉េទិស្ម និងថេរ្មូឌីនាមីក",
+              "topics": [
+                "Classical Mechanics",
+                "Electricity & Magnetism",
+                "Thermodynamics",
+                "Waves & Sound",
+                "Modern Physics",
+                "Quantum Mechanics"
+              ],
+              "topicsKm": [
+                "ម៉េកានិកបុរាណ",
+                "អ៊ីលឹកត្រីស៊ីទេ & ម៉ាញ៉េទិស្ម",
+                "ថេរ្មូឌីនាមីក",
+                "រលក & សំលេង",
+                "រូបវិទ្យាសម័យទំនើប",
+                "ម៉េកានិកក្វ៉ាន់តុម"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Structural Design",
+          "titleKm": "ការរចនារចនាសម្ព័ន្ធ",
+          "description": "Master structural engineering",
+          "descriptionKm": "ស្ទាត់ជំនាញវិស្វកម្មរចនាសម្ព័ន្ធ",
+          "duration": "6-12 months",
+          "durationKm": "៦-១២ ខែ",
+          "skills": [
+            "Structural Analysis",
+            "Concrete Design",
+            "Steel Structures",
+            "Building Codes"
+          ],
+          "skillsKm": [
+            "ការវិភាគរចនាសម្ព័ន្ធ",
+            "ការរចនាបេតុង",
+            "រចនាសម្ព័ន្ធដែក",
+            "ច្បាប់សំណង់"
+          ],
+          "resources": [
+            {
+              "title": "Structural Engineering Basics",
+              "titleKm": "មូលដ្ឋានវិស្វកម្មរចនាសម្ព័ន្ធ",
+              "type": "Book",
+              "typeKm": "សៀវភៅ",
+              "description": "Structural engineering fundamentals including analysis and design principles",
+              "descriptionKm": "មូលដ្ឋានវិស្វកម្មរចនាសម្ពន្ធរួមមានការវិភាគ និងគោលការណ៍រចនា",
+              "topics": [
+                "Structural Analysis",
+                "Load Calculations",
+                "Beam Design",
+                "Column Design",
+                "Foundation Design",
+                "Building Codes"
+              ],
+              "topicsKm": [
+                "ការវិភាគរចនាសម្ពន្ធ",
+                "ការគណនាបំរុង",
+                "ការរចនាគ្រេ",
+                "ការរចនាជំរះ",
+                "ការរចនាមូលដ្ឋាន",
+                "ច្បាប់សំណង់"
+              ]
+            },
+            {
+              "title": "ASCE Resources",
+              "titleKm": "ធនធាន ASCE",
+              "type": "Resources",
+              "typeKm": "ធនធាន",
+              "description": "American Society of Civil Engineers resources, standards, and professional development",
+              "descriptionKm": "ធនធានសមាគមវិស្វករស៊ីវិលអាមេរិក ស្តង់ដា និងការអភិវឌ្ឍវិជ្ជាជីវៈ",
+              "topics": [
+                "Engineering Standards",
+                "Technical Papers",
+                "Professional Development",
+                "Industry News",
+                "Certifications",
+                "Networking Events"
+              ],
+              "topicsKm": [
+                "ស្តង់ដាវិស្វកម្ម",
+                "ស្ររឡើងបច្ចេកទេស",
+                "ការអភិវឌ្ឍវិជ្ជាជីវៈ",
+                "ផ្ទេកពាត៌មានអ៊ុស្សាហកម្ម",
+                "វិញ្ញាបនបត្រ",
+                "សកម្មភាពបណ្តាញ"
+              ]
+            },
+            {
+              "title": "Structural Guide",
+              "titleKm": "មគ្គុទ្ទេសក៍រចនាសម្ព័ន្ធ",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Online structural engineering guides covering design, analysis, and construction",
+              "descriptionKm": "មគ្គុទ្ទេសក៍វិស្វកម្មរចនាសម្ពន្ធលើបណ្តាញគ្របដណ្តប់ការរចនា វិភាគ និងការសំណង់",
+              "topics": [
+                "Design Methods",
+                "Structural Systems",
+                "Load Paths",
+                "Material Selection",
+                "Code Compliance",
+                "Construction Details"
+              ],
+              "topicsKm": [
+                "វិធីសាស្ត្ររចនា",
+                "ប្រព័ន្ធរចនាសម្ពន្ធ",
+                "ផ្លូវបំរុង",
+                "ការជ្រើសរើសសម្ភារៈ",
+                "ការអនុលោមច្បាប់",
+                "ស្ណាក់លម្អិតសំណង់"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "title": "CAD & Software",
+          "titleKm": "CAD និងកម្មវិធី",
+          "description": "Learn design software",
+          "descriptionKm": "រៀនកម្មវិធីរចនា",
+          "duration": "3-6 months",
+          "durationKm": "៣-៦ ខែ",
+          "skills": ["AutoCAD", "Revit", "SAP2000", "ETABS"],
+          "skillsKm": ["AutoCAD", "Revit", "SAP2000", "ETABS"],
+          "resources": [
+            {
+              "title": "Autodesk Learning",
+              "titleKm": "Autodesk Learning",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Official AutoCAD, Revit, and structural analysis software tutorials",
+              "descriptionKm": "មេរៀនផ្លូវការ AutoCAD, Revit និងកម្មវិធីវិភាគរចនាសម្ព័ន្ធ",
+              "topics": [
+                "AutoCAD 2D/3D",
+                "Revit BIM",
+                "Drawing Standards",
+                "Layer Management",
+                "Blocks & Attributes",
+                "Plotting"
+              ],
+              "topicsKm": [
+                "AutoCAD 2D/3D",
+                "Revit BIM",
+                "ស្តង់ដារគំនូរ",
+                "ការគ្រប់គ្រងស្រទាប់",
+                "Blocks & Attributes",
+                "Plotting"
+              ]
+            },
+            {
+              "title": "LinkedIn Learning CAD",
+              "titleKm": "LinkedIn Learning CAD",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Professional CAD software courses for engineers and designers",
+              "descriptionKm": "វគ្គសិក្សាកម្មវិធី CAD វិជ្ជាជីវៈសម្រាប់វិស្វករ និងអ្នករចនា",
+              "topics": [
+                "CAD Fundamentals",
+                "Technical Drawing",
+                "3D Modeling",
+                "CAD Standards",
+                "Collaboration",
+                "Productivity Tips"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋាន CAD",
+                "ការគូរបច្ចេកទេស",
+                "ការធ្វើគំរូ 3D",
+                "ស្តង់ដារ CAD",
+                "ការសហការ",
+                "ដំបូនម្មានផលិតភាព"
+              ]
+            },
+            {
+              "title": "CSI Software Training",
+              "titleKm": "ការបណ្តុះបណ្តាល CSI",
+              "type": "Training",
+              "typeKm": "ការបណ្តុះបណ្តាល",
+              "description": "Training for SAP2000, ETABS, and SAFE structural analysis software",
+              "descriptionKm": "ការបណ្តុះបណ្តាលសម្រាប់កម្មវិធី SAP2000, ETABS និង SAFE វិភាគរចនាសម្ព័ន្ធ",
+              "topics": [
+                "SAP2000",
+                "ETABS",
+                "SAFE Foundation",
+                "Structural Modeling",
+                "Analysis & Design",
+                "Report Generation"
+              ],
+              "topicsKm": [
+                "SAP2000",
+                "ETABS",
+                "SAFE Foundation",
+                "ការធ្វើគំរូរចនាសម្ព័ន្ធ",
+                "ការវិភាគ & រចនា",
+                "ការបង្កើតរបាយការណ៍"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "title": "Real Projects",
+          "titleKm": "គម្រោងពិតប្រាកដ",
+          "description": "Work on construction projects",
+          "descriptionKm": "ធ្វើការលើគម្រោងសំណង់",
+          "duration": "6-12 months",
+          "durationKm": "៦-១២ ខែ",
+          "skills": [
+            "Site Supervision",
+            "Quality Control",
+            "Project Coordination",
+            "Safety Standards"
+          ],
+          "skillsKm": [
+            "ការត្រួតពិនិត្យទីតាំង",
+            "ការត្រួតពិនិត្យគុណភាព",
+            "ការសម្របសម្រួលគម្រោង",
+            "ស្តង់ដារសុវត្ថិភាព"
+          ],
+          "resources": [
+            {
+              "title": "OSHA Training",
+              "titleKm": "ការបណ្តុះបណ្តាល OSHA",
+              "type": "Certification",
+              "typeKm": "វិញ្ញាបនបត្រ",
+              "description": "Occupational Safety and Health Administration training for construction site safety. Learn safety regulations, hazard identification, and workplace safety management for construction projects.",
+              "descriptionKm": "ការបណ្តុះបណ្តាលរបស់ទីភ្នាក់ងារសុវត្ថិភាព និងសុខភាពការងារសម្រាប់សុវត្ថិភាពក្នុងទីសំណង់។ រៀនបទប្បញ្ញត្តិសុវត្ថិភាព ការកំណត់អត្តសញ្ញាណគ្រោះថ្នាក់ និងការគ្រប់គ្រងសុវត្ថិភាពនៅកន្លែងធ្វើការសម្រាប់គម្រោងសំណង់។",
+              "topics": [
+                "Safety Regulations",
+                "Hazard Identification",
+                "PPE Requirements",
+                "Fall Protection",
+                "Scaffolding Safety",
+                "OSHA Standards"
+              ],
+              "topicsKm": [
+                "បទប្បញ្ញត្តិសុវត្ថិភាព",
+                "ការកំណត់គ្រោះថ្នាក់",
+                "តម្រូវការ PPE",
+                "ការការពារការធ្លាក់",
+                "សុវត្ថិភាពធ្នើរ",
+                "ស្តង់ដារ OSHA"
+              ]
+            },
+            {
+              "title": "Construction Management",
+              "titleKm": "ការគ្រប់គ្រងសំណង់",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Comprehensive construction management courses covering project planning, scheduling, cost control, and quality management. Learn to manage construction projects from conception to completion.",
+              "descriptionKm": "វគ្គសិក្សាគ្រប់គ្រងសំណង់ពេញលេញគ្របដណ្តប់ការរៀបចំផែនការគម្រោង ការកំណត់កាលវិភាគ ការគ្រប់គ្រងថ្លៃដើម និងការគ្រប់គ្រងគុណភាព។ រៀនគ្រប់គ្រងគម្រោងសំណង់ពីការចាប់ផ្តើមរហូតដល់ការបញ្ចប់។",
+              "topics": [
+                "Project Planning",
+                "CPM Scheduling",
+                "Cost Estimating",
+                "Quality Control",
+                "Contract Management",
+                "Risk Management"
+              ],
+              "topicsKm": [
+                "ការរៀបចំផែនការគម្រោង",
+                "កាលវិភាគ CPM",
+                "ការប៉ាន់ស្មានថ្លៃដើម",
+                "ការគ្រប់គ្រងគុណភាព",
+                "ការគ្រប់គ្រងកិច្ចសន្យា",
+                "ការគ្រប់គ្រងហានិភ័យ"
+              ]
+            },
+            {
+              "title": "Engineering News-Record",
+              "titleKm": "Engineering News-Record",
+              "type": "News",
+              "typeKm": "ព័ត៌មាន",
+              "description": "Leading construction industry news source covering projects, companies, technology, and trends. Stay updated with the latest developments in construction and engineering.",
+              "descriptionKm": "ប្រភពព័ត៌មានឧស្សាហកម្មសំណង់ឈានមុខគេដែលគ្របដណ្តប់គម្រោង ក្រុមហ៊ុន បច្ចេកវិទ្យា និងនិន្នាការ។ ធ្វើបច្ចុប្បន្នភាពជាមួយការអភិវឌ្ឍន៍ថ្មីៗក្នុងការសំណង់ និងវិស្វកម្ម។",
+              "topics": [
+                "Construction News",
+                "Top Contractors",
+                "Project Updates",
+                "Industry Trends",
+                "Technology Innovation",
+                "Best Practices"
+              ],
+              "topicsKm": [
+                "ព័ត៌មានសំណង់",
+                "អ្នកម៉ៅការឈានមុខ",
+                "បច្ចុប្បន្នភាពគម្រោង",
+                "និន្នាការឧស្សាហកម្ម",
+                "ការច្នៃប្រឌិតបច្ចេកវិទ្យា",
+                "ការអនុវត្តល្អបំផុត"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "title": "PE License",
+          "titleKm": "អាជ្ញាប័ណ្ណ PE",
+          "description": "Get professional certification",
+          "descriptionKm": "ទទួលបានវិញ្ញាបនបត្រវិជ្ជាជីវៈ",
+          "duration": "4+ years",
+          "durationKm": "៤+ ឆ្នាំ",
+          "skills": [
+            "FE Exam",
+            "Work Experience",
+            "PE Exam",
+            "Continuing Education"
+          ],
+          "skillsKm": [
+            "ប្រឡង FE",
+            "បទពិសោធន៍ការងារ",
+            "ប្រឡង PE",
+            "ការអប់រំបន្ត"
+          ],
+          "resources": [
+            {
+              "title": "NCEES",
+              "titleKm": "NCEES",
+              "type": "Exam Board",
+              "typeKm": "គណៈកម្មការប្រឡង",
+              "description": "National Council of Examiners for Engineering and Surveying - official PE and FE exam provider. Register for exams, access study materials, and track your licensing progress.",
+              "descriptionKm": "ក្រុមប្រឹក្សាជាតិនៃអ្នកពិនិត្យសម្រាប់វិស្វកម្ម និងការស្ទង់ទី - អ្នកផ្តល់ប្រឡង PE និង FE ផ្លូវការ។ ចុះឈ្មោះប្រឡង ទទួលបានសម្ភារៈសិក្សា និងតាមដានវឌ្ឍនភាពអាជ្ញាបណ្ណរបស់អ្នក។",
+              "topics": [
+                "PE Exam Registration",
+                "FE Exam",
+                "Exam Specifications",
+                "Study Resources",
+                "License Requirements",
+                "Exam Results"
+              ],
+              "topicsKm": [
+                "ការចុះឈ្មោះប្រឡង PE",
+                "ប្រឡង FE",
+                "លក្ខណៈពិសេសប្រឡង",
+                "ធនធានសិក្សា",
+                "តម្រូវការអាជ្ញាបណ្ណ",
+                "លទ្ធផលប្រឡង"
+              ]
+            },
+            {
+              "title": "PE Review Courses",
+              "titleKm": "វគ្គពិនិត្យ PE",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Comprehensive PE exam preparation courses with practice problems, study guides, and exam strategies. Maximize your chances of passing the Professional Engineer exam on your first attempt.",
+              "descriptionKm": "វគ្គសិក្សារៀបចំប្រឡង PE ពេញលេញជាមួយបញ្ហាអនុវត្ត មគ្គុទ្ទេសក៍សិក្សា និងយុទ្ធសាស្រ្តប្រឡង។ បង្កើនឱកាសរបស់អ្នកក្នុងការឆ្លងកាត់ប្រឡងវិស្វករវិជ្ជាជីវៈក្នុងការប៉ុនប៉ងលើកដំបូងរបស់អ្នក។",
+              "topics": [
+                "Exam Strategies",
+                "Practice Problems",
+                "Technical Review",
+                "Time Management",
+                "Reference Materials",
+                "Mock Exams"
+              ],
+              "topicsKm": [
+                "យុទ្ធសាស្ត្រប្រឡង",
+                "បញ្ហាអនុវត្ត",
+                "ការពិនិត្យបច្ចេកទេស",
+                "ការគ្រប់គ្រងពេលវេលា",
+                "សម្ភារៈយោង",
+                "ប្រឡងសាកល្បង"
+              ]
+            },
+            {
+              "title": "ASCE Membership",
+              "titleKm": "សមាជិកភាព ASCE",
+              "type": "Professional Org",
+              "typeKm": "អង្គការវិជ្ជាជីវៈ",
+              "description": "American Society of Civil Engineers membership providing professional development, networking, publications, and technical resources. Connect with civil engineering professionals worldwide and advance your career.",
+              "descriptionKm": "សមាជិកភាពសង្គមវិស្វករស៊ីវិលអាមេរិកដែលផ្តល់ការអភិវឌ្ឍន៍វិជ្ជាជីវៈ បណ្តាញ ការបោះពុម្ព និងធនធានបច្ចេកទេស។ ភ្ជាប់ជាមួយអ្នកជំនាញវិស្វកម្មស៊ីវិលទូទាំងពិភពលោក និងជំរុញអាជីពរបស់អ្នក។",
+              "topics": [
+                "Professional Development",
+                "Networking Events",
+                "Technical Publications",
+                "Continuing Education",
+                "Industry Standards",
+                "Career Resources"
+              ],
+              "topicsKm": [
+                "ការអភិវឌ្ឍន៍វិជ្ជាជីវៈ",
+                "ព្រឹត្តិការណ៍បណ្តាញ",
+                "ការបោះពុម្ពបច្ចេកទេស",
+                "ការអប់រំបន្ត",
+                "ស្តង់ដារឧស្សាហកម្ម",
+                "ធនធានអាជីព"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "graphic-design",
+      "title": "Graphic Design",
+      "titleKm": "ការរចនាក្រាហ្វិក",
+      "category": "Technology",
+      "categoryKm": "បច្ចេកវិទ្យា",
+      "icon": "🎨",
+      "description": "Create visual content and designs",
+      "descriptionKm": "បង្កើតមាតិកានិងការរចនាមើលឃើញ",
+      "demandLevel": "High",
+      "demandLevelKm": "ត្រូវការខ្ពស់",
+      "averageSalary": "$500-1400/month",
+      "averageSalaryKm": "$៥០០-១៤០០/ខែ",
+      "popularity": 85,
+      "steps": [
+        {
+          "id": "1",
+          "title": "Design Fundamentals",
+          "titleKm": "មូលដ្ឋានការរចនា",
+          "description": "Learn basic design principles",
+          "descriptionKm": "រៀនគោលការណ៍រចនាមូលដ្ឋាន",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Color Theory",
+            "Typography",
+            "Composition",
+            "Visual Hierarchy"
+          ],
+          "skillsKm": [
+            "ទ្រឹស្តីពណ៌",
+            "អក្សរសាស្រ្ត",
+            "ការផ្សំ",
+            "លំដាប់ថ្នាក់មើលឃើញ"
+          ],
+          "resources": [
+            {
+              "title": "Canva Design School",
+              "titleKm": "សាលារចនា Canva",
+              "type": "Free Course",
+              "typeKm": "វគ្គសិក្សាឥតគិតថ្លៃ",
+              "description": "Free online design courses covering graphic design fundamentals, color theory, typography, and composition. Perfect for beginners to learn design principles through practical tutorials.",
+              "descriptionKm": "វគ្គសិក្សារចនាឥតគិតថ្លៃលើបណ្តាញណ៍ដែលគ្របដណ្តប់មូលដ្ឋានការរចនាគ្រាផិក ទ្រឹស្តីពណ៌ អក្សរសាស្រ្ត និងការផ្សំ។ សមរម្យសម្រាប់អ្នកចាប់ផ្តើមក្នុងការរៀនគេលការណ៍រចនាតាមរយៈមេរៀនប្រយុក្ត។",
+              "topics": [
+                "Design Principles",
+                "Color Theory",
+                "Typography Basics",
+                "Layout Composition",
+                "Visual Hierarchy",
+                "Design Tools"
+              ],
+              "topicsKm": [
+                "គេលការណ៍រចនា",
+                "ទ្រឹស្តីពណ៌",
+                "មូលដ្ឋានអក្សរសាស្រ្ត",
+                "ការផ្សំពិន្យព្រៀ",
+                "លំដាប់ថ្នាក់មើលឃើញ",
+                "ឧបករណ៍រចនា"
+              ]
+            },
+            {
+              "title": "Adobe Color",
+              "titleKm": "Adobe Color",
+              "type": "Tool",
+              "typeKm": "ឧបករណ៍",
+              "description": "Professional color palette generator and color wheel tool for creating harmonious color schemes. Explore trending palettes, extract colors from images, and test accessibility standards.",
+              "descriptionKm": "ឧបករណ៍បង្កើតភ្នៀពណ៌ និងកោពណ៌វិជ្ជាជីវៈសម្រាប់បង្កើតរបបពណ៌ដែលមានសម្រសម្រួល។ ស្រេកជំរេរសម្រណ៌ពណ៌ដែលកំពុងរូបមោតរកម្ម ប៉េតពណ៌ពីរូបភាព និងពិសោដ្ឈស្តង់ដារការចូលដំណើរការ។",
+              "topics": [
+                "Color Harmonies",
+                "Color Schemes",
+                "Palette Creation",
+                "Color Accessibility",
+                "Trending Colors",
+                "Image Color Extract"
+              ],
+              "topicsKm": [
+                "សម្រសម្រួលពណ៌",
+                "របបពណ៌",
+                "ការបង្កើតភ្នៀពណ៌",
+                "ការចូលដំណើរការពណ៌",
+                "ពណ៌កំពុងរូបមោតរកម្ម",
+                "ប៉េតពណ៌ពីរូបភាព"
+              ]
+            },
+            {
+              "title": "Dribbble",
+              "titleKm": "Dribbble",
+              "type": "Inspiration",
+              "typeKm": "ការបំផុសគំនិត",
+              "description": "Leading design community showcasing creative work from designers worldwide. Browse millions of design inspirations, connect with designers, and showcase your own work.",
+              "descriptionKm": "សង្គមការរច្នាមុខគេដែលបង្ហាញការងារបង្កើតសរ្សេរពីអ្នករច្នាទូទាំងពិភពលោក។ ស្រេកមើលរកការបំផុសគំនិតការរច្នារយៈលាន ភ្ជាប់ជាមួយអ្នករច្នា និងបង្ហាញការងាររបស់អ្នកឥឡង។",
+              "topics": [
+                "Design Inspiration",
+                "Portfolio Examples",
+                "UI/UX Designs",
+                "Illustration",
+                "Branding Work",
+                "Design Trends"
+              ],
+              "topicsKm": [
+                "បំផុសគំនិតការរច្នា",
+                "គំរូ Portfolio",
+                "ការរច្នា UI/UX",
+                "ការជូរកូរ",
+                "ការងារបង្កើតម៉ាក",
+                "និន្នាការរច្នា"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "title": "Adobe Creative Suite",
+          "titleKm": "Adobe Creative Suite",
+          "description": "Master Photoshop, Illustrator",
+          "descriptionKm": "ស្ទាត់ជំនាញ Photoshop, Illustrator",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": ["Photoshop", "Illustrator", "InDesign", "Photo Editing"],
+          "skillsKm": [
+            "Photoshop",
+            "Illustrator",
+            "InDesign",
+            "ការកែសម្រួលរូបភាព"
+          ],
+          "resources": [
+            {
+              "title": "Adobe Tutorials",
+              "titleKm": "មេរៀន Adobe",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Official Adobe tutorials for Photoshop, Illustrator, and InDesign covering essential tools, techniques, and workflows. Master the industry-standard creative software suite.",
+              "descriptionKm": "មេរៀន Adobe ផ្លូវការសម្រាប់ Photoshop, Illustrator និង InDesign ដែលគ្របដណ្តប់ឧបករណ៍សំខាន់ៗ បច្ចេកទេស និងលំដាប់ការងារ។ ស្ទាត់ជំនាញកម្មវិធីបង្កើតសរសេរស្តង់ដារឧស្សាហកម្ម។",
+              "topics": [
+                "Photoshop Basics",
+                "Illustrator Tools",
+                "InDesign Layout",
+                "Layer Management",
+                "Effects & Filters",
+                "Export Settings"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋាន Photoshop",
+                "ឧបករណ៍ Illustrator",
+                "ពិន្យព្រៀ InDesign",
+                "ការគ្រប់គ្រងស្រទាត់",
+                "ធ្និតំឡៃក និងម៉ាស៊ីន",
+                "ការកំណត់នឹងការនាំចេញ"
+              ]
+            },
+            {
+              "title": "Phlearn",
+              "titleKm": "Phlearn",
+              "type": "Video Course",
+              "typeKm": "វីដេអូវគ្គសិក្សា",
+              "description": "Premium Photoshop and photography tutorials with step-by-step video lessons. Learn professional photo editing, retouching, compositing, and special effects techniques.",
+              "descriptionKm": "មេរីយន Photoshop និងការចូលរូបភាពផ្រីមឫរម៍ជាមួយមេរីយនវីដេអូមុខមោរយៈមោរយ។ រៀនការកែសម្រួលរូបភាពវិជ្ជាជីវៈ ការកែសម្រួលសុទ្ធ ការបង្កើតសំពុត់ និងបច្ចេកទេសធ្និតំឡៃកពិសេស។",
+              "topics": [
+                "Photo Retouching",
+                "Color Grading",
+                "Compositing",
+                "Portrait Editing",
+                "Special Effects",
+                "Workflow Tips"
+              ],
+              "topicsKm": [
+                "ការកែសម្រួលរូបភាព",
+                "ការកំណត់ពណ៌",
+                "ការបង្កើតសំពុត់",
+                "ការកែសម្រួលបោរត្រេត",
+                "ធ្និតំឡៃកពិសេស",
+                "យុក្តិលំដាប់ការងារ"
+              ]
+            },
+            {
+              "title": "Tutsplus",
+              "titleKm": "Tutsplus",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Comprehensive design and development tutorials covering Adobe Creative Suite, web design, and digital art. Thousands of tutorials for all skill levels from beginner to advanced.",
+              "descriptionKm": "មេរៀនការរចនា និងការអភិវឌ្ឍន៍ពេញលេញដែលគ្របដណ្តប់ Adobe Creative Suite ការរចនាគេហទំព័រ និងសិល្បៈដិជិតាល។ មេរៀនរយៈពាន់សម្រាប់គ្រប់កម្រិតជំនាញពីអ្នកចាប់ផ្តើមរហូតដល់កម្រិតខ្ពស់។",
+              "topics": [
+                "Adobe Software",
+                "Web Design",
+                "Digital Illustration",
+                "Vector Graphics",
+                "Design Techniques",
+                "Project Tutorials"
+              ],
+              "topicsKm": [
+                "កម្មវិធី Adobe",
+                "ការរចនាគេហទំព័រ",
+                "ការជូរកូរដិជិតាល",
+                "គ្រាផិកវ៉ែកធឺរ",
+                "បច្ចេកទេសរចនា",
+                "មេរៀនគម្រោង"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "title": "Branding & Identity",
+          "titleKm": "ការបង្កើតម៉ាក និងអត្តសញ្ញាណ",
+          "description": "Create brand identities",
+          "descriptionKm": "បង្កើតអត្តសញ្ញាណម៉ាក",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Logo Design",
+            "Brand Guidelines",
+            "Mockups",
+            "Presentations"
+          ],
+          "skillsKm": [
+            "ការរចនាឡូហ្គោ",
+            "គោលការណ៍ម៉ាក",
+            "ការធ្វើគំរូ",
+            "ការបង្ហាញ"
+          ],
+          "resources": [
+            {
+              "title": "Logo Design Love",
+              "titleKm": "Logo Design Love",
+              "type": "Blog",
+              "typeKm": "ប្លុក",
+              "description": "Professional logo design blog featuring case studies, design process insights, and branding inspiration. Learn from real-world logo design projects and industry best practices.",
+              "descriptionKm": "ប្លុកការរចនាឡូហ្គោវិជ្ជាជីវៈដែលមានករណីសិក្សា ការយល់ដឹងអំពីដំណើរការរចនា និងការបំផុសគំនិតម៉ាក។ រៀនពីគម្រោងរចនាឡូហ្គោពិតប្រាកដ និងការអនុវត្តល្អបំផុតក្នុងឧស្សាហកម្ម។",
+              "topics": [
+                "Logo Design",
+                "Brand Identity",
+                "Design Process",
+                "Case Studies",
+                "Typography",
+                "Color in Branding"
+              ],
+              "topicsKm": [
+                "ការរចនាឡូហ្គោ",
+                "អត្តសញ្ញាណម៉ាក",
+                "ដំណើរការរចនា",
+                "ករណីសិក្សា",
+                "អក្សរសាស្រ្ត",
+                "ពណ៌ក្នុងម៉ាក"
+              ]
+            },
+            {
+              "title": "Brand New",
+              "titleKm": "Brand New",
+              "type": "Inspiration",
+              "typeKm": "ការបំផុសគំនិត",
+              "description": "Leading brand identity blog reviewing and analyzing corporate rebrands and new brand launches. Stay current with branding trends and learn from professional brand evolution.",
+              "descriptionKm": "ប្លុកអត្តសញ្ញាណម៉ាកមុខគេដែលពិនិត្យ និងវិភាគការបង្កើតម៉ាកសាជីវកម្មកម្ម និងការចាប់ផ្តើមម៉ាកថ្មី។ ធ្វើបច្ចុប្បន្នភាពជាមួយនិន្នាការម៉ាក និងរៀនពីការវិវត្តន៍ម៉ាកវិជ្ជាជីវៈ។",
+              "topics": [
+                "Brand Redesign",
+                "Corporate Identity",
+                "Logo Evolution",
+                "Brand Reviews",
+                "Identity Systems",
+                "Brand Strategy"
+              ],
+              "topicsKm": [
+                "ការរចនាម៉ាកឡើងវិញ",
+                "អត្តសញ្ញាណសាជីវកម្ម",
+                "ការវិវត្តន៍ឡូហ្គោ",
+                "ការពិនិត្យម៉ាក",
+                "ប្រព័ន្ធអត្តសញ្ញាណ",
+                "យុទ្ធសាស្ត្រម៉ាក"
+              ]
+            },
+            {
+              "title": "Behance",
+              "titleKm": "Behance",
+              "type": "Portfolio",
+              "typeKm": "Portfolio",
+              "description": "Leading design community showcasing creative work from designers worldwide. Browse millions of design inspirations, connect with designers, and showcase your own work.",
+              "descriptionKm": "សងគមការរចនាមុខគេដែលបង្ហាញការងារបង្កើតសរសេរពីអ្នករចនាទូទាំងពិភពលោក។ ស្រេកមើលរកការបំផុសគំនិតការរចនារយៈលាន ភ្ជាប់ជាមួយអ្នករចនា និងបង្ហាញការងាររបស់អ្នកឯឯង។",
+              "topics": [
+                "Design Inspiration",
+                "Portfolio Examples",
+                "Branding Projects",
+                "Creative Showcase",
+                "Designer Network",
+                "Project Presentation"
+              ],
+              "topicsKm": [
+                "បំផុសគំនិតការរចនា",
+                "គំរូ Portfolio",
+                "គម្រោងម៉ាក",
+                "ការបង្ហាញសរសេរ",
+                "បណ្តាញអ្នករចនា",
+                "ការបង្ហាញគម្រោង"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "title": "UI/UX Design",
+          "titleKm": "ការរចនា UI/UX",
+          "description": "Design user interfaces",
+          "descriptionKm": "រចនាចំណុចប្រទាក់អ្នកប្រើប្រាស់",
+          "duration": "3-4 months",
+          "durationKm": "៣-៤ ខែ",
+          "skills": ["Figma/XD", "Wireframing", "Prototyping", "User Research"],
+          "skillsKm": [
+            "Figma/XD",
+            "ការបង្កើតស៊ុមខ្សែ",
+            "ការបង្កើតគំរូ",
+            "ការស្រាវជ្រាវអ្នកប្រើប្រាស់"
+          ],
+          "resources": [
+            {
+              "title": "Figma Learn",
+              "titleKm": "Figma Learn",
+              "type": "Tutorial",
+              "typeKm": "មេរៀន",
+              "description": "Official Figma tutorials teaching interface design, prototyping, and collaboration. Master the industry-leading UI/UX design tool with hands-on lessons and real-world examples.",
+              "descriptionKm": "មេរៀន Figma ផ្លូវការដែលបង្រៀនការរចនាចំណុចប្រទាក់ ការបង្កើតគំរូ និងការសហការ។ ស្ទាត់ជំនាញឧបករណ៍រចនា UI/UX ឈានមុខក្នុងឧស្សាហកម្មជាមួយមេរៀនអនុវត្តជាក់ស្តែង និងគំរូពិតប្រាកដ។",
+              "topics": [
+                "Figma Basics",
+                "Prototyping",
+                "Component Design",
+                "Auto Layout",
+                "Design Systems",
+                "Collaboration"
+              ],
+              "topicsKm": [
+                "មូលដ្ឋាន Figma",
+                "ការបង្កើតគំរូ",
+                "ការរចនាសមាសភាគ",
+                "ពិន្យស្វ័យប្រវត្តិ",
+                "ប្រព័ន្ធរចនា",
+                "ការសហការ"
+              ]
+            },
+            {
+              "title": "UX Design Institute",
+              "titleKm": "UX Design Institute",
+              "type": "Course",
+              "typeKm": "វគ្គសិក្សា",
+              "description": "Professional UX design certification courses teaching user research, information architecture, wireframing, and usability testing. Learn industry-standard UX methodologies and best practices.",
+              "descriptionKm": "វគ្គសិក្សាវិញ្ញាបនបត្រការរចនា UX វិជ្ជាជីវៈដែលបង្រៀនការស្រាវជ្រាវអ្នកប្រើប្រាស់ ស្ថាបត្យកម្មព័ត៌មាន ការបង្កើតស៊ុមខ្សែ និងការសាកល្បងភាពងាយស្រួល។ រៀនវិធីសាស្រ្ត UX ស្តង់ដារឧស្សាហកម្ម និងការអនុវត្តល្អបំផុត។",
+              "topics": [
+                "User Research",
+                "Information Architecture",
+                "Wireframing",
+                "Usability Testing",
+                "UX Strategy",
+                "Design Thinking"
+              ],
+              "topicsKm": [
+                "ការស្រាវជ្រាវអ្នកប្រើ",
+                "ស្ថាបត្យកម្មព័ត៌មាន",
+                "ការបង្កើតស៊ុមខ្សែ",
+                "ការសាកល្បងភាពងាយស្រួល",
+                "យុទ្ធសាស្ត្រ UX",
+                "ការគិតរចនា"
+              ]
+            },
+            {
+              "title": "Nielsen Norman Group",
+              "titleKm": "Nielsen Norman Group",
+              "type": "Research",
+              "typeKm": "ការស្រាវជ្រាវ",
+              "description": "Leading UX research and consulting firm providing evidence-based UX guidelines, articles, and reports. Access authoritative insights on user experience best practices and usability principles.",
+              "descriptionKm": "ក្រុមហ៊ុនស្រាវជ្រាវ និងប្រឹក្សាយោបល់ UX ឈានមុខដែលផ្តល់គោលការណ៍ណែនាំ UX ផ្អែកលើភស្តុតាង អត្ថបទ និងរបាយការណ៍។ ចូលដំណើរការការយល់ដឹងមានសិទ្ធិអំណាចលើការអនុវត្តល្អបំផុតបទពិសោធន៍អ្នកប្រើ និងគោលការណ៍ភាពងាយស្រួលប្រើ។",
+              "topics": [
+                "UX Research",
+                "Usability Guidelines",
+                "User Testing",
+                "Best Practices",
+                "Accessibility",
+                "UX Reports"
+              ],
+              "topicsKm": [
+                "ការស្រាវជ្រាវ UX",
+                "គោលការណ៍ណែនាំភាពងាយស្រួល",
+                "ការសាកល្បងអ្នកប្រើ",
+                "ការអនុវត្តល្អ",
+                "ការចូលដំណើរការ",
+                "របាយការណ៍ UX"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "title": "Portfolio & Clients",
+          "titleKm": "Portfolio និងអតិថិជន",
+          "description": "Build portfolio and get work",
+          "descriptionKm": "បង្កើត Portfolio និងស្វែងរកការងារ",
+          "duration": "2-3 months",
+          "durationKm": "២-៣ ខែ",
+          "skills": [
+            "Portfolio Website",
+            "Client Communication",
+            "Freelancing",
+            "Social Media"
+          ],
+          "skillsKm": [
+            "គេហទំព័រ Portfolio",
+            "ការទំនាក់ទំនងអតិថិជន",
+            "ការងារឯករាជ្យ",
+            "ប្រព័ន្ធផ្សព្វផ្សាយសង្គម"
+          ],
+          "resources": [
+            {
+              "title": "Behance",
+              "titleKm": "Behance",
+              "type": "Portfolio",
+              "typeKm": "Portfolio",
+              "description": "Leading design portfolio platform for showcasing creative work and connecting with clients. Build your professional portfolio, gain exposure, and discover job opportunities.",
+              "descriptionKm": "វេទិកា portfolio ការរចនាឈានមុខសម្រាប់បង្ហាញការងារបង្កើតសរសេរ និងភ្ជាប់ជាមួយអតិថិជន។ បង្កើត portfolio វិជ្ជាជីវៈរបស់អ្នក ទទួលបានការលេចធ្លោ និងស្វែងរកឱកាសការងារ។",
+              "topics": [
+                "Portfolio Building",
+                "Creative Showcase",
+                "Client Discovery",
+                "Networking",
+                "Job Opportunities",
+                "Design Community"
+              ],
+              "topicsKm": [
+                "ការបង្កើត Portfolio",
+                "ការបង្ហាញសរសេរ",
+                "ការស្វែងរកអតិថិជន",
+                "បណ្តាញ",
+                "ឱកាសការងារ",
+                "សងគមការរចនា"
+              ]
+            },
+            {
+              "title": "Upwork",
+              "titleKm": "Upwork",
+              "type": "Freelance",
+              "typeKm": "ការងារឯករាជ្យ",
+              "description": "Leading freelance marketplace connecting designers with clients worldwide. Find freelance design projects, build your reputation, and grow your independent design business.",
+              "descriptionKm": "ទីផ្សារការងារឯករាជ្យឈានមុខដែលភ្ជាប់អ្នករចនាជាមួយអតិថិជនទូទាំងពិភពលោក។ ស្វែងរកគម្រោងរចនាឯករាជ្យ បង្កើតកេរ្តិ៍ឈ្មោះរបស់អ្នក និងពង្រីកអាជីវកម្មរចនាឯករាជ្យរបស់អ្នក។",
+              "topics": [
+                "Freelance Projects",
+                "Client Management",
+                "Proposals",
+                "Portfolio",
+                "Rates & Pricing",
+                "Reviews & Ratings"
+              ],
+              "topicsKm": [
+                "គម្រោងឯករាជ្យ",
+                "ការគ្រប់គ្រងអតិថិជន",
+                "សំណើ",
+                "Portfolio",
+                "តម្លៃ និងការកំណត់តម្លៃ",
+                "ការពិនិត្យ និងការវាយតម្លៃ"
+              ]
+            },
+            {
+              "title": "Fiverr",
+              "titleKm": "Fiverr",
+              "type": "Marketplace",
+              "typeKm": "ទីផ្សារ",
+              "description": "Popular freelance services marketplace for offering design services globally. Create service packages, showcase your skills, and build a client base with flexible pricing options.",
+              "descriptionKm": "ទីផ្សារសេវាកម្មឯករាជ្យពេញនិយមសម្រាប់ផ្តល់សេវាកម្មរចនាជាសកល។ បង្កើតកញ្ចប់សេវាកម្ម បង្ហាញជំនាញរបស់អ្នក និងបង្កើតមូលដ្ឋានអតិថិជនជាមួយជម្រើសតម្លៃបត់បែន។",
+              "topics": [
+                "Service Packages",
+                "Gig Creation",
+                "Client Communication",
+                "Delivery Management",
+                "Seller Levels",
+                "Marketing"
+              ],
+              "topicsKm": [
+                "កញ្ចប់សេវាកម្ម",
+                "ការបង្កើតការងារ",
+                "ការទំនាក់ទំនងអតិថិជន",
+                "ការគ្រប់គ្រងការចែកចាយ",
+                "កម្រិតអ្នកលក់",
+                "ទីផ្សារកម្ម"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+<div class="w-full bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
+  <!-- Header -->
+  <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+    <div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+      <!-- Search -->
+      @if (config().showSearch) {
+        <div class="relative flex-1 max-w-md">
+          <input
+            type="text"
+            [value]="state().searchTerm"
+            (input)="onSearch($any($event.target).value)"
+            placeholder="Search..."
+            class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+          />
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      }
+
+      <!-- Actions -->
+      <div class="flex gap-2">
+        <!-- Column Toggle -->
+        @if (config().showColumnToggle) {
+          <div class="relative group">
+            <button
+              class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              title="Toggle Columns"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+              </svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+              <div class="p-2 space-y-1">
+                @for (column of config().columns; track column.key) {
+                  <label class="flex items-center px-2 py-1.5 hover:bg-gray-50 dark:hover:bg-gray-700 rounded cursor-pointer">
+                    <input
+                      type="checkbox"
+                      [checked]="isColumnVisible(column.key)"
+                      (change)="toggleColumn(column.key)"
+                      class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    />
+                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">{{ column.label }}</span>
+                  </label>
+                }
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Export -->
+        @if (config().showExport) {
+          <div class="relative group">
+            <button
+              class="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              title="Export"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </button>
+            <div class="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+              <button
+                (click)="onExport('csv')"
+                class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-700 first:rounded-t-lg"
+              >
+                Export CSV
+              </button>
+              <button
+                (click)="onExport('excel')"
+                class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-700"
+              >
+                Export Excel
+              </button>
+              <button
+                (click)="onExport('pdf')"
+                class="w-full px-4 py-2 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-700 last:rounded-b-lg"
+              >
+                Export PDF
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Container -->
+  <div
+    class="overflow-x-auto"
+    [class.max-h-[600px]]="config().stickyHeader"
+    [class.overflow-y-auto]="config().stickyHeader"
+    [ngClass]="config().maxHeight || ''"
+  >
+    <table class="w-full">
+      <!-- Table Header -->
+      <thead
+        class="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700"
+        [ngClass]="{ 'sticky top-0 z-10': config().stickyHeader }"
+      >
+        <tr>
+          <!-- Select All Checkbox -->
+          @if (config().selectable && config().multiSelect) {
+            <th class="px-4 py-3 w-12">
+              <input
+                type="checkbox"
+                [checked]="allSelected()"
+                [indeterminate]="someSelected()"
+                (change)="onSelectAll()"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+            </th>
+          }
+
+          <!-- Expand Column -->
+          @if (config().expandable) {
+            <th class="px-4 py-3 w-12"></th>
+          }
+
+          <!-- Data Columns -->
+          @for (column of config().columns; track column.key) {
+            @if (isColumnVisible(column.key)) {
+              <th
+                [ngClass]="{
+                  'text-left': column.align === 'left' || !column.align,
+                  'text-center': column.align === 'center',
+                  'text-right': column.align === 'right',
+                  'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700': column.sortable,
+                }"
+                [style.width]="column.width"
+                [style.min-width]="column.minWidth"
+                [style.max-width]="column.maxWidth"
+                (click)="onSort(column)"
+                class="px-4 py-3 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider"
+              >
+                <div class="flex items-center gap-2" [ngClass]="{ 'justify-center': column.align === 'center', 'justify-end': column.align === 'right' }">
+                  <span>{{ column.label }}</span>
+                  @if (column.sortable) {
+                    <span class="inline-flex flex-col">
+                      <svg
+                        class="w-3 h-3 -mb-1"
+                        [ngClass]="{ 'text-blue-600': state().sortColumn === column.key && state().sortDirection === 'asc', 'text-gray-400': state().sortColumn !== column.key || state().sortDirection !== 'asc' }"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                      </svg>
+                      <svg
+                        class="w-3 h-3 rotate-180"
+                        [ngClass]="{ 'text-blue-600': state().sortColumn === column.key && state().sortDirection === 'desc', 'text-gray-400': state().sortColumn !== column.key || state().sortDirection !== 'desc' }"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                      </svg>
+                    </span>
+                  }
+                </div>
+              </th>
+            }
+          }
+        </tr>
+      </thead>
+
+      <!-- Table Body -->
+      <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+        @if (config().loading) {
+          <tr>
+            <td [colSpan]="config().columns.length + (config().selectable ? 1 : 0) + (config().expandable ? 1 : 0)" class="px-4 py-12 text-center">
+              <div class="flex items-center justify-center gap-3">
+                <svg class="animate-spin h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="text-gray-500 dark:text-gray-400">Loading...</span>
+              </div>
+            </td>
+          </tr>
+        } @else if (paginatedData().length === 0) {
+          <tr>
+            <td [colSpan]="config().columns.length + (config().selectable ? 1 : 0) + (config().expandable ? 1 : 0)" class="px-4 py-12 text-center text-gray-500 dark:text-gray-400">
+              {{ config().emptyMessage || 'No data available' }}
+            </td>
+          </tr>
+        } @else {
+          @for (row of paginatedData(); track row; let i = $index) {
+            <tr
+              [ngClass]="{
+                'bg-white dark:bg-gray-900': !config().striped,
+                'bg-gray-50 dark:bg-gray-800': config().striped && i % 2 === 1,
+                'hover:bg-gray-50 dark:hover:bg-gray-800': config().hoverable,
+                'cursor-pointer': config().selectable || config().expandable,
+                'bg-blue-50 dark:bg-blue-900/20': isRowSelected(row),
+              }"
+              (click)="onRowClick(row)"
+              class="transition-colors"
+            >
+              <!-- Select Checkbox -->
+              @if (config().selectable) {
+                <td class="px-4 py-3">
+                  <input
+                    type="checkbox"
+                    [checked]="isRowSelected(row)"
+                    (change)="onRowSelect(row, $event)"
+                    (click)="$event.stopPropagation()"
+                    class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                </td>
+              }
+
+              <!-- Expand Button -->
+              @if (config().expandable) {
+                <td class="px-4 py-3">
+                  <button
+                    (click)="toggleRowExpansion(i); $event.stopPropagation()"
+                    class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-transform"
+                    [ngClass]="{ 'rotate-90': isRowExpanded(i) }"
+                  >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </td>
+              }
+
+              <!-- Data Columns -->
+              @for (column of config().columns; track column.key) {
+                @if (isColumnVisible(column.key)) {
+                  <td
+                    [ngClass]="{
+                      'text-left': column.align === 'left' || !column.align,
+                      'text-center': column.align === 'center',
+                      'text-right': column.align === 'right',
+                    }"
+                    class="px-4 py-3 text-sm text-gray-900 dark:text-gray-100"
+                  >
+                    @if (column.type === 'badge') {
+                      <span
+                        class="inline-flex px-2 py-1 text-xs font-semibold rounded-full"
+                        [ngClass]="getBadgeColor(column, getCellValue(row, column.key), row)"
+                      >
+                        {{ formatCellValue(getCellValue(row, column.key), column, row) }}
+                      </span>
+                    } @else if (column.type === 'image') {
+                      <img
+                        [src]="getCellValue(row, column.key)"
+                        alt=""
+                        class="w-10 h-10 rounded-full object-cover"
+                      />
+                    } @else if (column.type === 'boolean') {
+                      <span class="inline-flex items-center">
+                        @if (getCellValue(row, column.key)) {
+                          <svg class="w-5 h-5 text-brand" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                          </svg>
+                        } @else {
+                          <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                          </svg>
+                        }
+                      </span>
+                    } @else if (column.render) {
+                      <ng-container>{{ column.render(getCellValue(row, column.key), row) }}</ng-container>
+                    } @else {
+                      {{ formatCellValue(getCellValue(row, column.key), column, row) }}
+                    }
+                  </td>
+                }
+              }
+            </tr>
+
+            <!-- Expanded Row -->
+            @if (config().expandable && isRowExpanded(i)) {
+              <tr class="bg-gray-50 dark:bg-gray-800">
+                <td [colSpan]="config().columns.length + 2" class="px-4 py-3">
+                  <div class="p-4">
+                    <!-- Custom expand template content goes here -->
+                    <pre class="text-xs">{{ row | json }}</pre>
+                  </div>
+                </td>
+              </tr>
+            }
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer / Pagination -->
+  @if (config().showPagination && !config().loading && paginatedData().length > 0) {
+    <div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-4 justify-between items-center">
+      <!-- Page Size Selector -->
+      <div class="flex items-center gap-2">
+        <span class="text-sm text-gray-700 dark:text-gray-300">Rows per page:</span>
+        <select
+          [value]="state().pageSize"
+          (change)="onPageSizeChange(+$any($event.target).value)"
+          class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-800 text-sm"
+        >
+          @for (size of config().pageSizes || [10, 25, 50, 100]; track size) {
+            <option [value]="size">{{ size }}</option>
+          }
+        </select>
+      </div>
+
+      <!-- Pagination Info -->
+      <div class="text-sm text-gray-700 dark:text-gray-300">
+        Showing {{ pagination().from }} to {{ pagination().to }} of {{ pagination().total }} results
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="flex items-center gap-1">
+        <!-- Previous Button -->
+        <button
+          (click)="onPageChange(state().page - 1)"
+          [disabled]="state().page === 1"
+          class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <!-- Page Numbers -->
+        @for (page of getPageNumbers(); track page) {
+          @if (page === -1) {
+            <span class="px-3 py-1.5 text-gray-500">...</span>
+          } @else {
+            <button
+              (click)="onPageChange(page)"
+              [ngClass]="{
+                'bg-blue-600 text-white': page === state().page,
+                'hover:bg-gray-50 dark:hover:bg-gray-800': page !== state().page
+              }"
+              class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg transition-colors"
+            >
+              {{ page }}
+            </button>
+          }
+        }
+
+        <!-- Next Button -->
+        <button
+          (click)="onPageChange(state().page + 1)"
+          [disabled]="state().page === pagination().totalPages"
+          class="px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  }
+</div>

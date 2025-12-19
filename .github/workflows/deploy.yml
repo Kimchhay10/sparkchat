@@ -32,11 +32,11 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build:angular -- --base-href /sparkchat/
+        run: npm run build:angular -- --base-href /phenka/
 
       - name: Create 404.html for GitHub Pages routing
         run: |
-          cp dist/sparkchat/browser/index.html dist/sparkchat/browser/404.html
+          cp dist/phenka/browser/index.html dist/phenka/browser/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -44,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist/sparkchat/browser"
+          path: "./dist/phenka/browser"
 
   deploy:
     environment:

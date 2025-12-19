@@ -1,18 +1,18 @@
 {
-  "name": "sparkchat",
+  "name": "phenka",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:sparkchat": "node dist/sparkchat/server/server.mjs",
-    "start": "ng serve --port 4400",
+    "serve:ssr:phenka": "node dist/phenka/server/server.mjs",
     "dev": "vite",
     "build": "ng build",
     "build:angular": "ng build",
     "build:vite": "vite build",
     "preview": "vite preview",
-    "serve": "ng serve --port 4400"
+    "start:dev": "ng serve --port 4200 --configuration development",
+    "start:prod": "ng serve --port 4200 --configuration production"
   },
   "private": true,
   "type": "commonjs",

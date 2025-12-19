@@ -13,9 +13,9 @@ export class LangService {
 
   constructor() {
     this.tranService.addLangs(['en', 'km']);
-    
+
     // Load saved language or default to Khmer
-    const savedLang = localStorage.getItem('sparkchat_lang') || 'km';
+    const savedLang = localStorage.getItem('phenka_lang') || 'km';
     this.tranService.use(savedLang);
     this.lang.next(savedLang);
     this.currentLang.set(savedLang);
@@ -26,7 +26,7 @@ export class LangService {
     this.tranService.use(newLang);
     this.lang.next(newLang);
     this.currentLang.set(newLang);
-    localStorage.setItem('sparkchat_lang', newLang);
+    localStorage.setItem('phenka_lang', newLang);
   }
 
   getCurrentLang(): string {

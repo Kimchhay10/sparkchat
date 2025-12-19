@@ -1,0 +1,23 @@
+<!-- Loading Screen -->
+@if (isLoading()) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-950 transition-opacity duration-300">
+    <div class="flex flex-col items-center gap-4">
+      <div class="relative w-16 h-16">
+        <div class="absolute inset-0 border-4 border-blue-200 dark:border-blue-900 rounded-full"></div>
+        <div class="absolute inset-0 border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
+      </div>
+      <p class="text-sm text-gray-600 dark:text-gray-400 animate-pulse">{{ 'common.loading' | translate }}</p>
+    </div>
+  </div>
+}
+
+<!-- Main Layout -->
+<div class="w-full h-full" [class.fade-in]="!isLoading()">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Content -->
+  <div class="ml-[20px] lg:ml-[220px] ml-0 transition-all duration-300 mr-[20px] mt-[20px]">
+      <router-outlet></router-outlet>
+  </div>
+</div>

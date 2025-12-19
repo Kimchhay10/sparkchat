@@ -1,0 +1,64 @@
+<div class="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+  <div class="w-full max-w-md rounded-2xl bg-white shadow-lg border border-slate-200 p-6 md:p-8">
+    <div class="mb-6 text-center">
+      <h1 class="text-2xl font-semibold text-slate-900">Create your account</h1>
+      <p class="mt-2 text-sm text-slate-600">
+        Join Phenka to track your learning, community activity, and startup journey.
+      </p>
+    </div>
+
+    <form class="space-y-4" [formGroup]="registerForm" (submit)="onSubmitRegister()">
+      <div>
+        <label for="username" class="block mb-1.5 text-sm font-medium text-slate-800">Username</label>
+        <app-input-field
+          id="username"
+          placeholder="yourname"
+          formControlName="username"
+          [isError]="isUsernameError()"
+        ></app-input-field>
+      </div>
+
+      <div>
+        <label for="password" class="block mb-1.5 text-sm font-medium text-slate-800">Password</label>
+        <app-input-field
+          id="password"
+          [type]="'password'"
+          placeholder="••••••••"
+          formControlName="password"
+          [isError]="isPasswordError()"
+        ></app-input-field>
+        <p class="mt-1 text-xs text-slate-500">Must be at least 4 characters.</p>
+      </div>
+
+      <div>
+        <label for="confirmPassword" class="block mb-1.5 text-sm font-medium text-slate-800">Confirm password</label>
+        <app-input-field
+          id="confirmPassword"
+          [type]="'password'"
+          placeholder="••••••••"
+          formControlName="confirmPassword"
+          [isError]="isConfirmPasswordError()"
+        ></app-input-field>
+        <p *ngIf="passwordMismatch" class="mt-1 text-xs text-red-600">Passwords do not match.</p>
+      </div>
+
+      <div *ngIf="errorMessage" class="rounded-md bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-700">
+        {{ errorMessage }}
+      </div>
+
+      <app-button
+        class="mt-2"
+        [isLoading]="loading"
+        [fullWidth]="true"
+        (click)="onSubmitRegister()"
+      >
+        Sign up
+      </app-button>
+    </form>
+
+    <p class="mt-4 text-center text-xs text-slate-600">
+      Already have an account?
+      <a routerLink="/login" class="font-medium text-emerald-700 hover:underline">Sign in</a>
+    </p>
+  </div>
+</div>

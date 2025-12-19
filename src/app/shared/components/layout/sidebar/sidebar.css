@@ -1,0 +1,78 @@
+/* Animated Navigation Indicator */
+.nav-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 48px;
+  border-radius: 0 4px 4px 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+/* Active Link Styles */
+a.active {
+  background-color: rgba(14, 97, 61, 0.1) !important;
+  color: #0e613d;
+}
+
+a.active .nav-icon svg {
+  fill: #0e613d;
+}
+
+/* Navigation Icon Wrapper */
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-icon svg {
+  fill: #4b5563;
+  transition: fill 0.3s ease;
+}
+
+/* Dark mode icon color */
+:global(.dark) .nav-icon svg {
+  fill: #9ca3af;
+}
+
+/* Hover Effects */
+a:hover .nav-icon svg {
+  fill: #0e613d;
+  transform: scale(1.1);
+}
+
+:global(.dark) a:hover .nav-icon svg {
+  fill: #10b981;
+}
+
+/* New Badge Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.new-label {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth Transitions */
+a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrollbar Styles */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

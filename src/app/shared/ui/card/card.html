@@ -1,0 +1,50 @@
+<div [class]="getCardClasses()" (click)="onClick()">
+  @if (loading()) {
+    <div class="flex items-center justify-center py-8">
+      <svg class="animate-spin h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </div>
+  } @else {
+    <!-- Header -->
+    @if (title() || icon() || headerAction()) {
+      <div class="flex items-start justify-between mb-4">
+        <div class="flex items-center gap-3">
+          @if (icon()) {
+            <div class="flex-shrink-0">
+              <span [class]="iconColor()" class="text-2xl">{{ icon() }}</span>
+            </div>
+          }
+          <div>
+            @if (title()) {
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {{ title() }}
+              </h3>
+            }
+            @if (subtitle()) {
+              <p class="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+                {{ subtitle() }}
+              </p>
+            }
+          </div>
+        </div>
+        @if (headerAction()) {
+          <div class="flex-shrink-0">
+            <ng-content select="[header-action]"></ng-content>
+          </div>
+        }
+      </div>
+    }
+
+    <!-- Content -->
+    <div class="card-content">
+      <ng-content></ng-content>
+    </div>
+
+    <!-- Footer -->
+    <div class="card-footer">
+      <ng-content select="[footer]"></ng-content>
+    </div>
+  }
+</div>

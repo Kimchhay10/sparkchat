@@ -1,0 +1,195 @@
+
+/* Datatable Component Styles */
+
+/* Smooth transitions */
+table {
+  transition: all 0.2s;
+}
+
+/* Sticky header shadow */
+thead.sticky {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom scrollbar */
+.overflow-x-auto::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+  border-radius: 0.25rem;
+}
+
+:global(.dark) .overflow-x-auto::-webkit-scrollbar-track,
+:global(.dark) .overflow-y-auto::-webkit-scrollbar-track {
+  background-color: #1f2937;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover,
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+}
+
+:global(.dark) .overflow-x-auto::-webkit-scrollbar-thumb,
+:global(.dark) .overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+}
+
+:global(.dark) .overflow-x-auto::-webkit-scrollbar-thumb:hover,
+:global(.dark) .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+/* Hover effects */
+tbody tr {
+  transition: all 0.15s;
+}
+
+/* Checkbox indeterminate state */
+input[type="checkbox"]:indeterminate {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+/* Sort indicator animation */
+svg {
+  transition: all 0.2s;
+}
+
+/* Expand button animation */
+button svg {
+  transition: transform 0.2s;
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    #f3f4f6 0%,
+    #e5e7eb 20%,
+    #f3f4f6 40%,
+    #f3f4f6 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Dropdown menu animation */
+.group:hover > div {
+  transition: all 0.2s;
+}
+
+/* Table cell padding for compact mode */
+.compact td,
+.compact th {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Bordered table */
+.bordered {
+  border-collapse: collapse;
+}
+
+.bordered td,
+.bordered th {
+  border: 1px solid #e5e7eb;
+}
+
+:global(.dark) .bordered td,
+:global(.dark) .bordered th {
+  border-color: #374151;
+}
+
+/* Selected row highlight */
+tr.selected {
+  background-color: #eff6ff;
+  border-left: 4px solid #2563eb;
+}
+
+:global(.dark) tr.selected {
+  background-color: rgba(30, 58, 138, 0.2);
+}
+
+/* Custom badge colors */
+.badge-success {
+  background-color: rgba(14, 97, 61, 0.1);
+  color: #0e613d;
+}
+
+:global(.dark) .badge-success {
+  background-color: rgba(14, 97, 61, 0.2);
+  color: #10b981;
+}
+
+.badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+:global(.dark) .badge-warning {
+  background-color: #78350f;
+  color: #fcd34d;
+}
+
+.badge-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+:global(.dark) .badge-error {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.badge-info {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+:global(.dark) .badge-info {
+  background-color: #1e3a8a;
+  color: #93c5fd;
+}
+
+/* Responsive table */
+@media (max-width: 640px) {
+  table {
+    font-size: 0.875rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+}

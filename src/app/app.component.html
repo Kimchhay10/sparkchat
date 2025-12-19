@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<div class="w-full h-full">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Toast Container -->
+<app-toast-container
+  [toasts]="toastService.toasts()"
+  [position]="toastService.position()"
+  [onClose]="onToastClose"
+/>

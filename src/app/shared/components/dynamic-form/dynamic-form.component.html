@@ -1,0 +1,273 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  [class]="config().formClass"
+  class="w-full space-y-6"
+>
+  <!-- Form Fields -->
+  <div
+    [ngClass]="{
+      'space-y-4': config().layout === 'vertical',
+      'grid gap-4': config().layout === 'grid',
+      'space-y-3': config().layout === 'horizontal'
+    }"
+    [class]="config().layout === 'grid' ? gridClass() : ''"
+  >
+    @for (field of config().fields; track field.name) {
+      <div
+        [class]="getColSpanClass(field.col)"
+        [ngClass]="{ 'hidden': field.type === 'checkbox' && config().layout === 'grid' }"
+        class="form-field"
+      >
+        <!-- Label -->
+        @if (field.showLabel !== false && field.label && field.type !== 'checkbox') {
+          <label
+            [for]="field.name"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+          >
+            {{ field.label }}
+            @if (field.required) {
+              <span class="text-red-500 ml-0.5">*</span>
+            }
+          </label>
+        }
+
+        <!-- Field Wrapper -->
+        <div class="relative">
+          <!-- Prefix Icon -->
+          @if (field.icon && field.iconPosition !== 'right') {
+            <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+              <span class="text-lg">{{ field.icon }}</span>
+            </div>
+          }
+
+          <!-- Text/Email/Password/Number/Tel/URL Input -->
+          @if (field.type === 'text' || field.type === 'email' || field.type === 'password' || field.type === 'number' || field.type === 'tel' || field.type === 'url' || !field.type) {
+            <input
+              [id]="field.name"
+              [formControlName]="field.name"
+              [type]="field.type || 'text'"
+              [placeholder]="field.placeholder || ''"
+              [readonly]="field.readonly || false"
+              [min]="field.min"
+              [max]="field.max"
+              [step]="field.step"
+              [ngClass]="{
+                'pl-10': field.icon && field.iconPosition !== 'right',
+                'pr-10': field.icon && field.iconPosition === 'right' || field.suffix,
+                'border-red-500 focus:border-red-500 focus:ring-red-500': isFieldInvalid(field.name),
+                'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500': !isFieldInvalid(field.name)
+              }"
+              class="w-full rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              [class]="getFieldSizeClass(field.size) + ' ' + getFieldVariantClass(field.variant)"
+            />
+          }
+
+          <!-- Date/Time Inputs -->
+          @if (field.type === 'date' || field.type === 'time' || field.type === 'datetime-local') {
+            <input
+              [id]="field.name"
+              [formControlName]="field.name"
+              [type]="field.type"
+              [readonly]="field.readonly || false"
+              [min]="field.min"
+              [max]="field.max"
+              [ngClass]="{
+                'border-red-500 focus:border-red-500 focus:ring-red-500': isFieldInvalid(field.name),
+                'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500': !isFieldInvalid(field.name)
+              }"
+              class="w-full rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 disabled:opacity-50"
+              [class]="getFieldSizeClass(field.size) + ' ' + getFieldVariantClass(field.variant)"
+            />
+          }
+
+          <!-- Color Input -->
+          @if (field.type === 'color') {
+            <input
+              [id]="field.name"
+              [formControlName]="field.name"
+              type="color"
+              [class]="field.customClass"
+              class="w-full h-10 rounded-lg cursor-pointer disabled:opacity-50"
+            />
+          }
+
+          <!-- Range Input -->
+          @if (field.type === 'range') {
+            <div class="space-y-2">
+              <input
+                [id]="field.name"
+                [formControlName]="field.name"
+                type="range"
+                [min]="field.min || 0"
+                [max]="field.max || 100"
+                [step]="field.step || 1"
+                [class]="field.customClass"
+                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-blue-500"
+              />
+              <div class="text-sm text-gray-600 dark:text-gray-400 text-center">
+                {{ getFieldControl(field.name)?.value }}
+              </div>
+            </div>
+          }
+
+          <!-- Textarea -->
+          @if (field.type === 'textarea') {
+            <textarea
+              [id]="field.name"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              [readonly]="field.readonly || false"
+              [rows]="field.rows || 3"
+              [cols]="field.cols"
+              [ngClass]="{
+                'border-red-500 focus:border-red-500 focus:ring-red-500': isFieldInvalid(field.name),
+                'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500': !isFieldInvalid(field.name)
+              }"
+              class="w-full rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 resize-y disabled:opacity-50"
+              [class]="getFieldSizeClass(field.size) + ' ' + getFieldVariantClass(field.variant)"
+            ></textarea>
+          }
+
+          <!-- Select -->
+          @if (field.type === 'select') {
+            <select
+              [id]="field.name"
+              [formControlName]="field.name"
+              [multiple]="field.multiple || false"
+              [ngClass]="{
+                'border-red-500 focus:border-red-500 focus:ring-red-500': isFieldInvalid(field.name),
+                'border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:ring-blue-500': !isFieldInvalid(field.name)
+              }"
+              class="w-full rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 disabled:opacity-50"
+              [class]="getFieldSizeClass(field.size) + ' ' + getFieldVariantClass(field.variant)"
+            >
+              <option value="" disabled selected>{{ field.placeholder || 'Select an option' }}</option>
+              @for (option of field.options; track option.value) {
+                <option [value]="option.value" [disabled]="option.disabled || false">
+                  {{ option.label }}
+                </option>
+              }
+            </select>
+          }
+
+          <!-- Radio Buttons -->
+          @if (field.type === 'radio') {
+            <div class="space-y-2">
+              @for (option of field.options; track option.value) {
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input
+                    [formControlName]="field.name"
+                    type="radio"
+                    [value]="option.value"
+                    [disabled]="option.disabled || false"
+                    class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 dark:border-gray-600 dark:focus:ring-blue-600"
+                  />
+                  <span class="text-sm text-gray-700 dark:text-gray-300">{{ option.label }}</span>
+                </label>
+              }
+            </div>
+          }
+
+          <!-- Checkbox -->
+          @if (field.type === 'checkbox') {
+            <label class="flex items-center space-x-2 cursor-pointer">
+              <input
+                [id]="field.name"
+                [formControlName]="field.name"
+                type="checkbox"
+                [class]="field.customClass"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:border-gray-600 dark:focus:ring-blue-600"
+              />
+              <span class="text-sm text-gray-700 dark:text-gray-300">
+                {{ field.label }}
+                @if (field.required) {
+                  <span class="text-red-500 ml-0.5">*</span>
+                }
+              </span>
+            </label>
+          }
+
+          <!-- File Input -->
+          @if (field.type === 'file') {
+            <input
+              [id]="field.name"
+              [formControlName]="field.name"
+              type="file"
+              [accept]="field.accept"
+              [multiple]="field.multiple || false"
+              [class]="field.customClass"
+              class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-blue-900 dark:file:text-blue-300"
+            />
+          }
+
+          <!-- Suffix Icon -->
+          @if (field.icon && field.iconPosition === 'right') {
+            <div class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+              <span class="text-lg">{{ field.icon }}</span>
+            </div>
+          }
+
+          <!-- Prefix Text -->
+          @if (field.prefix) {
+            <div class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 pointer-events-none">
+              {{ field.prefix }}
+            </div>
+          }
+
+          <!-- Suffix Text -->
+          @if (field.suffix) {
+            <div class="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-500 pointer-events-none">
+              {{ field.suffix }}
+            </div>
+          }
+        </div>
+
+        <!-- Hint Text -->
+        @if (field.hint && !isFieldInvalid(field.name)) {
+          <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            {{ field.hint }}
+          </p>
+        }
+
+        <!-- Error Message -->
+        @if (isFieldInvalid(field.name)) {
+          <p class="mt-1 text-xs text-red-500 flex items-center gap-1">
+            <span>⚠</span>
+            <span>{{ getFieldErrorMessage(field, getFieldControl(field.name)!) }}</span>
+          </p>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="flex items-center gap-3 pt-4">
+    <button
+      type="submit"
+      [disabled]="isSubmitting()"
+      [class]="config().submitButtonClass"
+      class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+    >
+      @if (isSubmitting()) {
+        <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      }
+      <span>{{ config().submitLabel || 'Submit' }}</span>
+    </button>
+
+    @if (config().showCancel) {
+      <button
+        type="button"
+        (click)="onCancel()"
+        [disabled]="isSubmitting()"
+        [class]="config().cancelButtonClass"
+        class="px-6 py-2.5 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 disabled:opacity-50"
+      >
+        {{ config().cancelLabel || 'Cancel' }}
+      </button>
+    }
+  </div>
+</form>

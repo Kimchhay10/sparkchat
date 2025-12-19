@@ -1,0 +1,17 @@
+.card-content:empty {
+  display: none;
+}
+
+.card-footer:empty {
+  display: none;
+}
+
+.card-footer:not(:empty) {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(229 231 235 / 1);
+}
+
+.dark .card-footer:not(:empty) {
+  border-top-color: rgb(55 65 81 / 1);
+}

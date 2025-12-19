@@ -1,0 +1,260 @@
+<div class="min-h-screen bg-slate-50 text-slate-900">
+  <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
+      <div class="flex items-center gap-2">
+        <!-- Reuse sidebar-style logo for consistency -->
+        <svg
+          height="40"
+          width="40"
+          viewBox="0 0 512 512"
+          aria-hidden="true"
+          class="rounded-lg bg-amber-50 p-1 shadow-sm"
+        >
+          <g>
+            <path
+              fill="#FFE477"
+              d="M439.668,183.652c0,55.541-24.821,107.52-68.118,142.581c-16.14,13.023-28.27,31.499-32.056,52.202 H172.537c-3.674-20.703-15.804-39.068-31.833-51.979C88.167,283.938,63.569,218.49,75.146,151.263 C87.946,76.355,146.825,16.807,221.4,3.117C232.974,1.002,244.551,0,256.015,0c42.852,0.111,84.37,14.915,117.538,42.518 C415.514,77.579,439.668,129.002,439.668,183.652z"
+            />
+            <path
+              fill="#FFB655"
+              d="M439.668,183.652c0,55.541-24.821,107.52-68.118,142.581c-16.14,13.023-28.27,31.499-32.056,52.202 h-83.478V0c42.852,0.111,84.37,14.915,117.538,42.518C415.514,77.579,439.668,129.002,439.668,183.652z"
+            />
+            <path
+              fill="#79695A"
+              d="M256.015,512c-9.217,0-16.696-7.473-16.696-16.696v-33.391c0-9.223,7.479-16.696,16.696-16.696 c9.217,0,16.696,7.473,16.696,16.696v33.391C272.711,504.527,265.232,512,256.015,512z"
+            />
+            <path
+              fill="#6C5B52"
+              d="M272.711,495.304v-33.391c0-9.223-7.479-16.696-16.696-16.696V512 C265.232,512,272.711,504.527,272.711,495.304z"
+            />
+            <path
+              fill="#DDDD47"
+              d="M256.015,411.826c-9.217,0-16.696-7.473-16.696-16.696V250.435c0-9.223,7.479-16.696,16.696-16.696 c9.217,0,16.696,7.473,16.696,16.696V395.13C272.711,404.353,265.232,411.826,256.015,411.826z"
+            />
+            <path
+              fill="#C7D100"
+              d="M272.711,395.13V250.435c0-9.223-7.479-16.696-16.696-16.696v178.087 C265.232,411.826,272.711,404.353,272.711,395.13z"
+            />
+            <path
+              fill="#DBE1F1"
+              d="M289.407,478.609h-66.783c-27.662,0-50.087-22.424-50.087-50.087v-50.087h166.956v50.087 C339.494,456.184,317.068,478.609,289.407,478.609z"
+            />
+            <path
+              fill="#D0D5E5"
+              d="M256.015,478.609h33.391c27.664,0,50.087-22.424,50.087-50.087v-50.087h-83.478V478.609z"
+            />
+            <path
+              fill="#7CCC92"
+              d="M356.189,133.565h-33.391c-27.27,0-51.534,13.245-66.783,33.614 c-15.249-20.369-39.513-33.614-66.783-33.614h-33.391c-9.239,0-16.696,7.457-16.696,16.696v33.391 c0,46.08,37.398,83.478,83.478,83.478h66.783c46.08,0,83.478-37.398,83.478-83.478v-33.391 C372.885,141.023,365.427,133.565,356.189,133.565z"
+            />
+            <path
+              fill="#34B772"
+              d="M372.885,150.261v33.391c0,46.08-37.398,83.478-83.478,83.478h-33.391v-99.951 c15.249-20.369,39.513-33.614,66.783-33.614h33.391C365.427,133.565,372.885,141.023,372.885,150.261z"
+            />
+          </g>
+        </svg>
+        <div class="leading-tight">
+          <div class="text-sm font-semibold tracking-tight text-slate-900">
+            Phenka ផែនការ
+          </div>
+          <div class="text-xs text-slate-500">
+            Youth Career &amp; Startup Platform
+          </div>
+        </div>
+      </div>
+      <nav class="hidden items-center gap-6 text-sm font-medium text-slate-500 md:flex">
+        <a routerLink="/" class="hover:text-slate-900">
+          {{ 'navigation.home' | translate }}
+        </a>
+        <a routerLink="/roadmap" class="hover:text-slate-900">
+          {{ 'navigation.roadmap' | translate }}
+        </a>
+        <a routerLink="/admin/learning" class="hover:text-slate-900">
+          {{ 'navigation.learning' | translate }}
+        </a>
+        <a routerLink="/admin/community" class="hover:text-slate-900">
+          {{ 'navigation.community' | translate }}
+        </a>
+      </nav>
+      <div class="flex items-center gap-2 md:gap-3">
+        <div class="flex items-center rounded-full border border-slate-200 bg-white p-0.5 text-xs font-medium text-slate-500 shadow-sm">
+          <button
+            type="button"
+            class="rounded-full px-2.5 py-1 transition-colors"
+            [class.bg-emerald-500]="isKhmer()"
+            [class.text-white]="isKhmer()"
+            [class.text-slate-600]="!isKhmer()"
+            (click)="switchToKhmer()"
+          >
+            ខ្មែរ
+          </button>
+          <button
+            type="button"
+            class="rounded-full px-2.5 py-1 transition-colors"
+            [class.bg-emerald-500]="!isKhmer()"
+            [class.text-white]="!isKhmer()"
+            [class.text-slate-600]="isKhmer()"
+            (click)="switchToEnglish()"
+          >
+            EN
+          </button>
+        </div>
+        <a routerLink="/roadmap" class="hidden text-sm font-medium text-slate-500 hover:text-slate-900 md:inline">View Roadmap</a>
+        <app-button [variant]="'primary'" [size]="'sm'" [fullWidth]="false" routerLink="/login">
+          Sign in
+        </app-button>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 pb-16 pt-10 md:pt-16">
+    <!-- Hero -->
+    <section class="grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          Designed for Cambodian Youth
+        </div>
+        <div>
+          @if (isKhmer()) {
+            <h1 class="text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              បម្លែងចំណង់ចំណូលចិត្តរបស់អ្នកទៅជា
+              <span class="text-emerald-600">ផែនទីអាជីពច្បាស់លាស់</span>
+            </h1>
+            <p class="mt-4 max-w-xl text-sm text-slate-600 sm:text-base">
+              Phenka ជាវេទិកាដ៏ទូលំទូលាយសម្រាប់យុវជនកម្ពុជា ចាប់ពីការរៀនសូត្រ សហគមន៍ ដល់ការចាប់ផ្តើមគម្រោង និងសហគ្រាសសំណង់ពិត។
+            </p>
+          } @else {
+            <h1 class="text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              Turn your curiosity into a clear
+              <span class="text-emerald-600">career roadmap</span>.
+            </h1>
+            <p class="mt-4 max-w-xl text-sm text-slate-600 sm:text-base">
+              Phenka is the all-in-one platform that guides Cambodian youth from
+              learning to community to launching real projects.
+            </p>
+          }
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <app-button [variant]="'primary'" [size]="'lg'" [fullWidth]="false" routerLink="/roadmap">
+            Explore Career Roadmaps
+          </app-button>
+          <app-button [variant]="'outlined'" [size]="'lg'" [fullWidth]="false" routerLink="/register">
+            Create account
+          </app-button>
+          <p class="text-xs text-slate-500">
+            No account needed to explore roadmaps.
+          </p>
+        </div>
+        <div class="grid gap-4 text-xs text-slate-600 sm:grid-cols-3 sm:text-sm">
+          <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+            <div class="text-lg">🗺️</div>
+            <div class="mt-1 font-medium text-slate-900">Guided Career Paths</div>
+            <p class="mt-1 leading-relaxed">Follow step-by-step roadmaps for tech, business, and more.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+            <div class="text-lg">📚</div>
+            <div class="mt-1 font-medium text-slate-900">Learning Playlists</div>
+            <p class="mt-1 leading-relaxed">Curated resources for each step, ready to explore.</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
+            <div class="text-lg">🌱</div>
+            <div class="mt-1 font-medium text-slate-900">From Idea to Startup</div>
+            <p class="mt-1 leading-relaxed">Grow from learner to entrepreneur with community support.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-4 rounded-2xl border border-slate-200 bg-gradient-to-b from-emerald-50 to-white p-4 shadow-sm md:mt-0">
+        <div class="flex items-center justify-between gap-3">
+          <div>
+            <div class="text-xs font-medium uppercase tracking-[0.18em] text-emerald-700">Highlighted</div>
+            <div class="mt-1 text-sm font-semibold text-slate-900">Popular Roadmaps</div>
+          </div>
+          <a routerLink="/roadmap" class="text-xs font-medium text-emerald-700 hover:underline">See all</a>
+        </div>
+        <div class="space-y-3 text-xs text-slate-600">
+          <div class="flex items-start justify-between gap-3 rounded-xl bg-white/80 p-3 shadow-sm">
+            <div>
+              <div class="text-sm font-medium text-slate-900">Web Developer</div>
+              <p class="mt-1 leading-relaxed">From basic HTML/CSS to modern frameworks and projects.</p>
+            </div>
+            <span class="rounded-full text-center bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700">High Demand</span>
+          </div>
+          <div class="flex items-start justify-between gap-3 rounded-xl bg-white/80 p-3 shadow-sm">
+            <div>
+              <div class="text-sm font-medium text-slate-900">Digital Marketing</div>
+              <p class="mt-1 leading-relaxed">Grow brands using social media, content, and analytics.</p>
+            </div>
+            <span class="rounded-full bg-blue-100 px-2 py-0.5 text-[10px] font-medium text-blue-700 text-center">Creative</span>
+          </div>
+          <div class="flex items-start justify-between gap-3 rounded-xl bg-white/80 p-3 shadow-sm">
+            <div>
+              <div class="text-sm font-medium text-slate-900">Entrepreneur Roadmap</div>
+              <p class="mt-1 leading-relaxed">Validate ideas, build MVPs, and launch youth-led startups.</p>
+            </div>
+            <span class="rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-medium text-orange-700 text-center">Founder Path</span>
+          </div>
+        </div>
+        <div class="mt-1 rounded-xl border border-dashed border-emerald-100 bg-emerald-50/60 p-3 text-xs text-emerald-800">
+          🔓 Roadmaps are always open. Sign in only when you're ready to track
+          progress and access admin tools.
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform pillars -->
+    <section class="mt-16 space-y-8">
+      <div class="max-w-xl space-y-3">
+        <h2 class="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
+          A full platform for learning, community, and entrepreneurship.
+        </h2>
+        <p class="text-sm text-slate-600 sm:text-base">
+          SparkWorld connects the dots for Cambodian youth: clear paths, real
+          skills, meaningful projects, and a supportive community.
+        </p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div class="flex items-center gap-2 text-sm font-semibold text-slate-900">
+            <span class="text-lg">📈</span>
+            Career Roadmaps
+          </div>
+          <p class="mt-2 text-xs leading-relaxed text-slate-600">
+            Choose a path in tech, business, or engineering. Each roadmap is
+            broken into practical steps with resources and milestones.
+          </p>
+          <a routerLink="/roadmap" class="mt-3 inline-flex text-xs font-medium text-emerald-700 hover:underline">
+            Explore roadmaps
+          </a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div class="flex items-center gap-2 text-sm font-semibold text-slate-900">
+            <span class="text-lg">👥</span>
+            Learning & Community
+          </div>
+          <p class="mt-2 text-xs leading-relaxed text-slate-600">
+            Join learning tracks, peer groups, and community projects. Share
+            progress, ask questions, and grow with others.
+          </p>
+          <a routerLink="/admin/community" class="mt-3 inline-flex text-xs font-medium text-emerald-700 hover:underline">
+            Join the community (login)
+          </a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div class="flex items-center gap-2 text-sm font-semibold text-slate-900">
+            <span class="text-lg">🚀</span>
+            Startup & Entrepreneur
+          </div>
+          <p class="mt-2 text-xs leading-relaxed text-slate-600">
+            Move from ideas to pilots and real ventures with mentor support,
+            tools, and visibility.
+          </p>
+          <a routerLink="/admin/entrepreneur" class="mt-3 inline-flex text-xs font-medium text-emerald-700 hover:underline">
+            Explore founder tools (login)
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

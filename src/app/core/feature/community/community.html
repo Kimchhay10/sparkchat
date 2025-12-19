@@ -1,0 +1,175 @@
+<div class="p-6 space-y-6">
+  <!-- Header -->
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
+          🏘️ Community Problem-Solver
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 mt-1">
+          Youth-led solutions for local community challenges
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <app-button type="outlined">Report Issue</app-button>
+        <app-button type="primary">Start Project</app-button>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      @for (stat of stats(); track stat.label) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ stat.label }}</p>
+              <p class="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1">{{ stat.value }}</p>
+              <p class="text-xs text-brand mt-1">{{ stat.trend }}</p>
+            </div>
+            <div class="text-4xl">{{ stat.icon }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      📋 Project Categories
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      @for (category of categories(); track category.name) {
+        <button class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700 hover:border-brand hover:shadow-lg transition-all text-center">
+          <div class="text-4xl mb-2">{{ category.icon }}</div>
+          <p class="font-semibold text-gray-900 dark:text-gray-100">{{ category.name }}</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ category.projects }} projects</p>
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Active Projects -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      🚀 Active Projects
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+      @for (project of activeProjects(); track project.id) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="text-4xl">{{ project.icon }}</div>
+              <span class="px-2 py-1 text-xs font-semibold rounded" [ngClass]="{
+                'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400': project.status === 'Active',
+                'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400': project.status === 'Planning',
+                'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-400': project.status === 'Completed'
+              }">
+                {{ project.status }}
+              </span>
+            </div>
+
+            <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100">{{ project.title }}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ project.titleKm }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">{{ project.description }}</p>
+
+            <div class="mt-4 space-y-2">
+              <div class="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
+                <span>📍 {{ project.location }}</span>
+                <span>👥 {{ project.volunteers }}/{{ project.volunteersNeeded }} volunteers</span>
+              </div>
+
+              <!-- Funding Progress -->
+              <div>
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-gray-600 dark:text-gray-400">Funding</span>
+                  <span class="text-brand font-semibold">${{ project.fundingCurrent }}/${{ project.fundingGoal }}</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                  <div class="bg-brand h-2 rounded-full transition-all"
+                    [style.width.%]="(project.fundingCurrent / project.fundingGoal) * 100"></div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between text-xs pt-2">
+                <span class="text-gray-600 dark:text-gray-400">Impact: {{ project.impact }}</span>
+                <span class="text-gray-600 dark:text-gray-400">by {{ project.creator }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6 flex gap-2">
+            <app-button class="flex-1" type="outlined">Volunteer</app-button>
+            <app-button class="flex-1" type="primary">Fund</app-button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Reported Issues -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      🔔 Community Issues
+    </h2>
+    <div class="space-y-3">
+      @for (issue of reportedIssues(); track issue.id) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:shadow-md transition-all">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-1 text-xs font-semibold rounded" [ngClass]="{
+                  'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400': issue.priority === 'High',
+                  'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400': issue.priority === 'Medium',
+                  'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-400': issue.priority === 'Low'
+                }">
+                  {{ issue.priority }} Priority
+                </span>
+                <span class="px-2 py-1 text-xs font-semibold rounded bg-brand/10 text-brand">
+                  {{ issue.category }}
+                </span>
+                <span class="px-2 py-1 text-xs font-semibold rounded" [ngClass]="{
+                  'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400': issue.status === 'Reported',
+                  'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400': issue.status === 'In Progress',
+                  'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400': issue.status === 'Resolved'
+                }">
+                  {{ issue.status }}
+                </span>
+              </div>
+              <h3 class="font-bold text-gray-900 dark:text-gray-100">{{ issue.title }}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ issue.description }}</p>
+              <div class="flex items-center gap-4 mt-2 text-xs text-gray-600 dark:text-gray-400">
+                <span>📍 {{ issue.location }}</span>
+                <span>👤 {{ issue.reportedBy }}</span>
+                <span>📅 {{ issue.reportedDate }}</span>
+              </div>
+            </div>
+            <div class="ml-4 flex flex-col items-center gap-1">
+              <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <span class="text-2xl">👍</span>
+              </button>
+              <span class="text-xs font-semibold text-brand">{{ issue.votes }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- My Contributions -->
+  @if (myContributions().length > 0) {
+    <div class="bg-gradient-to-r from-brand/10 to-purple-500/10 rounded-xl p-6 border border-brand/20">
+      <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        🌟 My Contributions
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        @for (contribution of myContributions(); track contribution.project) {
+          <div class="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
+            <p class="font-semibold text-gray-900 dark:text-gray-100">{{ contribution.project }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ contribution.role }}</p>
+            <p class="text-xs text-brand mt-2">⏱️ {{ contribution.hours }} hours volunteered</p>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

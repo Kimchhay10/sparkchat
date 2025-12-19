@@ -1,0 +1,524 @@
+<div class="p-4 md:p-6">
+  @if (!selectedRoadmap()) {
+    <!-- Roadmap List View -->
+    <div class="space-y-6">
+      <!-- Header -->
+      <div>
+        @if (isKhmer()) {
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
+            🗺️ ផែនទីអាជីពសម្រាប់យុវជន
+          </h1>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            ជ្រើសរើសផ្លូវអាជីពរបស់អ្នក និងរៀនសូត្រជាជំហានៗ
+          </p>
+        } @else {
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
+            🗺️ Youth Career Roadmaps
+          </h1>
+          <p class="text-gray-600 dark:text-gray-400 mt-1">
+            Choose your career path and follow step‑by‑step learning.
+          </p>
+        }
+      </div>
+
+      <!-- Categories -->
+      <div class="flex flex-wrap gap-2">
+        @for (category of categories(); track category.name) {
+          <button
+            (click)="selectCategory(category.name)"
+            class="px-3 md:px-4 py-2 rounded-lg font-medium transition-all border text-sm md:text-base"
+            [ngClass]="{
+              'bg-brand text-white border-brand': selectedCategory() === category.name,
+              'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-brand': selectedCategory() !== category.name
+            }"
+          >
+            <span class="mr-1 md:mr-2">{{ category.icon }}</span>
+            {{ isKhmer() ? category.nameKm : category.name }}
+            <span class="ml-1 text-xs opacity-75">({{ category.count }})</span>
+          </button>
+        }
+      </div>
+
+      <!-- Roadmaps Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        @for (roadmap of filteredRoadmaps(); track roadmap.id) {
+          <button
+            (click)="selectRoadmap(roadmap)"
+            class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 md:p-6 hover:shadow-lg hover:border-brand transition-all text-left"
+          >
+            <!-- Header -->
+            <div class="flex items-start justify-between mb-3 md:mb-4">
+              <div class="text-4xl md:text-5xl">{{ roadmap.icon }}</div>
+              <span class="px-2 py-1 text-xs font-semibold rounded" [ngClass]="{
+                'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400': roadmap.demandLevel === 'High',
+                'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400': roadmap.demandLevel === 'Medium',
+                'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400': roadmap.demandLevel === 'Growing'
+              }">
+                {{ isKhmer() ? roadmap.demandLevelKm : roadmap.demandLevel }}
+              </span>
+            </div>
+
+            <!-- Content -->
+            <h3 class="font-bold text-base md:text-lg text-gray-900 dark:text-gray-100 mb-1">
+              {{ isKhmer() ? roadmap.titleKm : roadmap.title }}
+            </h3>
+            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-3 md:mb-4">
+              {{ isKhmer() ? roadmap.descriptionKm : roadmap.description }}
+            </p>
+
+            <!-- Stats -->
+            <div class="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400 pt-3 md:pt-4 border-t border-gray-200 dark:border-gray-700">
+              <span>💰 {{ isKhmer() ? roadmap.averageSalaryKm : roadmap.averageSalary }}</span>
+              <span>
+                📚
+                @if (isKhmer()) {
+                  {{ roadmap.steps.length }} ជំហាន
+                } @else {
+                  {{ roadmap.steps.length }} steps
+                }
+              </span>
+            </div>
+
+            <!-- Popularity Bar -->
+            <div class="mt-3">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-gray-600 dark:text-gray-400">
+                  {{ isKhmer() ? 'ប្រជាប្រិយភាព' : 'Popularity' }}
+                </span>
+                <span class="text-brand font-semibold">{{ roadmap.popularity }}%</span>
+              </div>
+              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                <div class="bg-brand h-1.5 rounded-full transition-all" [style.width.%]="roadmap.popularity"></div>
+              </div>
+            </div>
+          </button>
+        }
+      </div>
+    </div>
+  } @else {
+    <!-- Roadmap Tree View -->
+    <div class="space-y-4 md:space-y-6">
+      <!-- Back Button & Header -->
+      <div>
+        <button
+          (click)="backToList()"
+          class="inline-flex items-center gap-2 text-brand hover:underline mb-4 text-sm md:text-base"
+        >
+          <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          {{ isKhmer() ? 'ត្រឡប់ក្រោយ' : 'Back' }}
+        </button>
+
+        <div class="flex items-start gap-4 md:gap-6">
+          <div class="text-5xl md:text-6xl">{{ selectedRoadmap()!.icon }}</div>
+          <div class="flex-1">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
+              {{ isKhmer() ? selectedRoadmap()!.titleKm : selectedRoadmap()!.title }}
+            </h1>
+            <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 mt-2">
+              {{ isKhmer() ? selectedRoadmap()!.descriptionKm : selectedRoadmap()!.description }}
+            </p>
+            <div class="flex flex-wrap items-center gap-2 md:gap-4 mt-3 text-xs md:text-sm">
+              <span class="px-2 md:px-3 py-1 rounded-full font-medium" [ngClass]="{
+                'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400': selectedRoadmap()!.demandLevel === 'High',
+                'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400': selectedRoadmap()!.demandLevel === 'Medium',
+                'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400': selectedRoadmap()!.demandLevel === 'Growing'
+              }">
+                {{ isKhmer() ? selectedRoadmap()!.demandLevelKm : selectedRoadmap()!.demandLevel }}
+              </span>
+              <span class="text-gray-600 dark:text-gray-400">
+                💰 {{ isKhmer() ? selectedRoadmap()!.averageSalaryKm : selectedRoadmap()!.averageSalary }}
+              </span>
+              <span class="text-gray-600 dark:text-gray-400">
+                ⏱️
+                @if (isKhmer()) {
+                  ~{{ selectedRoadmap()!.steps.length * 2 }}-{{ selectedRoadmap()!.steps.length * 3 }} ខែ
+                } @else {
+                  ~{{ selectedRoadmap()!.steps.length * 2 }}-{{ selectedRoadmap()!.steps.length * 3 }} months
+                }
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tree View -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 md:p-6">
+        <h2 class="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6">
+          @if (isKhmer()) { 🌳 ផែនទីរៀនសូត្រ } @else { 🌳 Learning roadmap }
+        </h2>
+
+        <div class="space-y-2">
+          @for (step of selectedRoadmap()!.steps; track step.id; let i = $index; let isLast = $last) {
+            <div class="relative">
+              <!-- Vertical Line -->
+              @if (!isLast) {
+                <div class="absolute left-5 md:left-6 top-12 md:top-14 bottom-0 w-0.5 bg-brand/30"></div>
+              }
+
+              <!-- Step Item -->
+              <button
+                (click)="selectStep(step)"
+                class="w-full flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg border-2 transition-all relative z-10"
+                [ngClass]="{
+                  'border-brand bg-brand/5': selectedStep()?.id === step.id,
+                  'border-gray-200 dark:border-gray-700 hover:border-brand hover:bg-brand/5': selectedStep()?.id !== step.id
+                }"
+              >
+                <!-- Step Number -->
+                <div class="flex-shrink-0">
+                  <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-base md:text-lg bg-brand text-white relative z-10">
+                    {{ i + 1 }}
+                  </div>
+                </div>
+
+                <!-- Step Content -->
+                <div class="flex-1 text-left">
+                  <div class="flex items-start justify-between gap-2">
+                    <div class="flex-1">
+                      <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-gray-100">
+                        {{ isKhmer() ? step.titleKm : step.title }}
+                      </h3>
+                    </div>
+                    <span class="px-2 py-1 bg-brand/10 text-brand rounded text-xs font-medium flex-shrink-0">
+                      ⏱️ {{ isKhmer() ? step.durationKm : step.duration }}
+                    </span>
+                  </div>
+
+                  <!-- Skills Preview -->
+                  <div class="flex flex-wrap gap-1 md:gap-2 mt-2">
+                    @for (skill of (isKhmer() ? step.skillsKm : step.skills).slice(0, 3); track skill) {
+                      <span class="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 rounded text-xs">
+                        {{ skill }}
+                      </span>
+                    }
+                    @if ((isKhmer() ? step.skillsKm.length : step.skills.length) > 3) {
+                      <span class="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded text-xs">
+                        +{{ (isKhmer() ? step.skillsKm.length : step.skills.length) - 3 }}
+                      </span>
+                    }
+                  </div>
+
+                  <!-- Click to view hint -->
+                  <p class="text-xs text-brand mt-2 flex items-center gap-1">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    {{ isKhmer() ? 'ចុចដើម្បីមើលព័ត៌មានលម្អិត' : 'Click to view details' }}
+                  </p>
+                </div>
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Tips -->
+      <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/50 rounded-xl p-4 md:p-6">
+        <h3 class="text-base md:text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
+          {{ isKhmer() ? '💡 យុទ្ធសាស្រ្តជោគជ័យ' : '💡 Success strategies' }}
+        </h3>
+        <ul class="space-y-2 text-sm md:text-base text-gray-700 dark:text-gray-300">
+          @if (isKhmer()) {
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>ហាត់ប្រាណជារៀងរាល់ថ្ងៃ យ៉ាងតិច ២-៣ ម៉ោង</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>បង្កើតគម្រោងពិតប្រាកដ ទន្ទឹមនឹងការរៀនទ្រឹស្តី</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>ចូលរួមសហគមន៍ និងស្វែងរកអ្នកណែនាំ</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>ចែករំលែកដំណើរការរៀនសូត្រលើបណ្តាញសង្គម</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>កុំរំលងមូលដ្ឋាន ពីព្រោះវាសំខាន់ណាស់</span>
+            </li>
+          } @else {
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>Practice consistently at least 2–3 hours per day.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>Build real projects alongside theory to deepen understanding.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>Join communities and look for mentors to guide you.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>Share your learning journey publicly to stay motivated.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-base md:text-lg">✅</span>
+              <span>Never skip the fundamentals — they are critical for growth.</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Step Detail Popover -->
+    @if (showStepPopover() && selectedStep()) {
+      <div class="fixed inset-0 z-50 flex items-center justify-center p-4" (click)="closePopover()">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+        <!-- Popover Content -->
+        <div
+          class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto border-2 border-brand"
+          (click)="$event.stopPropagation()"
+        >
+          <!-- Close Button -->
+          <button
+            (click)="closePopover()"
+            class="absolute top-3 right-3 w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center justify-center transition-colors z-10"
+          >
+            <svg class="w-5 h-5 md:w-6 md:h-6 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+
+          <div class="p-6 md:p-8">
+            <!-- Header -->
+            <div class="mb-6">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand text-white flex items-center justify-center font-bold text-lg md:text-xl">
+                  {{ selectedRoadmap()!.steps.indexOf(selectedStep()!) + 1 }}
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
+                    {{ isKhmer() ? selectedStep()!.titleKm : selectedStep()!.title }}
+                  </h3>
+                </div>
+                <span class="px-3 py-1.5 bg-brand/10 text-brand rounded-lg text-sm font-medium">
+                  ⏱️ {{ isKhmer() ? selectedStep()!.durationKm : selectedStep()!.duration }}
+                </span>
+              </div>
+
+              <p class="text-sm md:text-base text-gray-700 dark:text-gray-300">
+                {{ isKhmer() ? selectedStep()!.descriptionKm : selectedStep()!.description }}
+              </p>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="mb-6">
+              <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <span class="text-xl">🎯</span>
+                {{ isKhmer() ? 'ជំនាញត្រូវរៀនសូត្រ' : 'Skills to learn' }}
+              </h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                @for (skill of (isKhmer() ? selectedStep()!.skillsKm : selectedStep()!.skills); track skill; let i = $index) {
+                  <div class="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-100 dark:border-blue-800/30">
+                    <div class="w-6 h-6 rounded-full bg-brand text-white flex items-center justify-center text-xs font-bold flex-shrink-0">
+                      {{ i + 1 }}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+                        {{ skill }}
+                      </p>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="mb-6">
+              <h4 class="text-base md:text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <span class="text-xl">📚</span>
+                {{ isKhmer() ? 'ធនធានសម្រាប់រៀន' : 'Learning resources' }}
+              </h4>
+              <div class="space-y-2">
+                @for (resource of selectedStep()!.resources; track resource.title) {
+                  <button
+                    (click)="selectResource(resource)"
+                    class="w-full flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-brand hover:bg-brand/5 transition-all group text-left"
+                  >
+                    <div class="w-10 h-10 rounded-lg bg-brand/10 flex items-center justify-center text-brand flex-shrink-0">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                      </svg>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-2 mb-1">
+                        <p class="text-sm font-bold text-gray-900 dark:text-gray-100 group-hover:text-brand transition-colors">
+                          {{ isKhmer() ? resource.titleKm : resource.title }}
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded text-xs font-medium">
+                          {{ isKhmer() ? resource.typeKm : resource.type }}
+                        </span>
+                      </div>
+                    </div>
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-brand transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                }
+              </div>
+            </div>
+
+            <!-- Action Hint -->
+            <div class="bg-brand/10 border border-brand/20 rounded-lg p-4">
+              <p class="text-sm text-gray-700 dark:text-gray-300 text-center">
+                {{ isKhmer() ? '💪 ត្រៀមខ្លួនដើម្បីចាប់ផ្តើមរៀនសូត្រ និងអភិវឌ្ឍជំនាញថ្មី!' : '💪 Get ready to start learning and growing new skills!' }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Resource Detail Modal -->
+    @if (showResourceDetail() && selectedResource()) {
+      <div class="fixed inset-0 z-[60] flex items-center justify-center p-4" (click)="closeResourceDetail()">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        <!-- Modal Content -->
+        <div
+          class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto border-2 border-brand"
+          (click)="$event.stopPropagation()"
+        >
+          <!-- Close Button -->
+          <button
+            (click)="closeResourceDetail()"
+            class="absolute top-4 right-4 w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 flex items-center justify-center transition-colors z-10"
+          >
+            <svg class="w-6 h-6 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+
+          <div class="p-6 md:p-8">
+            <!-- Header -->
+            <div class="mb-6 pr-8">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand to-purple-600 flex items-center justify-center text-3xl flex-shrink-0">
+                  📚
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    {{ isKhmer() ? selectedResource()!.titleKm : selectedResource()!.title }}
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-lg text-sm font-semibold">
+                      {{ isKhmer() ? selectedResource()!.typeKm : selectedResource()!.type }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="space-y-3 p-4 bg-gray-50 dark:bg-gray-900/50 rounded-xl">
+                <div>
+                  <p class="text-sm font-semibold text-brand mb-1">
+                    @if (isKhmer()) { 📝 ការពិពណ៌នា } @else { 📝 Description }
+                  </p>
+                  <p class="text-base text-gray-800 dark:text-gray-200 leading-relaxed">
+                    {{ isKhmer() ? selectedResource()!.descriptionKm : selectedResource()!.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Topics Covered -->
+            <div class="mb-6">
+              <h4 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+                <span class="text-2xl">🎓</span>
+                {{ isKhmer() ? 'ប្រធានបទដែលគ្របដណ្តប់' : 'Topics covered' }}
+              </h4>
+
+              <div class="grid grid-cols-1 gap-3">
+                @for (topic of (isKhmer() ? selectedResource()!.topicsKm : selectedResource()!.topics); track topic; let i = $index) {
+                  <div class="p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30">
+                    <div class="flex items-start gap-3">
+                      <div class="w-8 h-8 rounded-lg bg-brand text-white flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                        {{ i + 1 }}
+                      </div>
+                      <div class="flex-1">
+                        <p class="text-base font-bold text-gray-900 dark:text-gray-100 mb-1">
+                          {{ topic }}
+                        </p>
+                      </div>
+                      <div class="text-2xl opacity-50">
+                        @if (i === 0) { 🎯 }
+                        @if (i === 1) { 💡 }
+                        @if (i === 2) { ⚡ }
+                        @if (i === 3) { 🚀 }
+                        @if (i === 4) { ✨ }
+                        @if (i > 4) { 📌 }
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+
+            <!-- Learning Path -->
+            <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border-2 border-yellow-200 dark:border-yellow-800/50 rounded-xl p-5">
+              <h4 class="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3 flex items-center gap-2">
+                <span class="text-xl">💡</span>
+                {{ isKhmer() ? 'របៀបរៀនប្រកបដោយប្រសិទ្ធភាព' : 'Effective learning tips' }}
+              </h4>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                  <span class="text-lg">✅</span>
+                  <div>
+                    <span class="font-semibold">អានជាជំហានៗ / Read Step by Step:</span>
+                    <span class="ml-1">ចាប់ផ្តើមពីប្រធានបទដំបូង រួចបន្តទៅប្រធានបទបន្ទាប់</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                  <span class="text-lg">✅</span>
+                  <div>
+                    <span class="font-semibold">ហាត់ធ្វើ / Practice:</span>
+                    <span class="ml-1">ធ្វើតាមឧទាហរណ៍ និងបង្កើតគម្រោងផ្ទាល់ខ្លួន</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                  <span class="text-lg">✅</span>
+                  <div>
+                    <span class="font-semibold">កត់ត្រា / Take Notes:</span>
+                    <span class="ml-1">សរសេរចំណាំសំខាន់ៗដើម្បីងាយស្រួលចងចាំ</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                  <span class="text-lg">✅</span>
+                  <div>
+                    <span class="font-semibold">ពិនិត្យឡើងវិញ / Review:</span>
+                    <span class="ml-1">ពិនិត្យមេរៀនចាស់ម្តងរៀងរាល់សប្តាហ៍</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Action Button -->
+            <div class="mt-6 flex gap-3">
+              <button
+                (click)="closeResourceDetail()"
+                class="flex-1 px-6 py-3 bg-brand hover:bg-brand/90 text-white rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                យល់ហើយ / Got It
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  }
+</div>

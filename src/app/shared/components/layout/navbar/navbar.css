@@ -1,0 +1,27 @@
+@reference "../../../../../styles.css";
+
+/* Navbar animations */
+button {
+  user-select: none;
+}
+
+/* Smooth tooltip animation */
+.group:hover > div[class*="tooltip"] {
+  animation: fadeInDown 0.2s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icon rotation animations */
+svg {
+  transition: transform 0.2s ease-in-out;
+}

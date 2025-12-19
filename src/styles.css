@@ -1,16 +1,94 @@
 @import "tailwindcss";
-@layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css";
 
+
+/* Local Inter font (served from public/asset/fonts) */
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/asset/fonts/Inter-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@theme {
+  /* Base */
+  --color-brand: #0e613d;
+  /* Foreground (text/icons) */
+  --color-fg-brand-subtle: color-mix(in srgb, var(--color-brand) 30%, white);
+  --color-fg-brand: var(--color-brand);
+  --color-fg-brand-strong: color-mix(in srgb, var(--color-brand) 80%, black);
+
+  /* Background / UI */
+  --color-brand-softer: color-mix(in srgb, var(--color-brand) 8%, white);
+  --color-brand-soft: color-mix(in srgb, var(--color-brand) 16%, white);
+  --color-brand-medium: color-mix(in srgb, var(--color-brand) 40%, white);
+  --color-brand-strong: color-mix(in srgb, var(--color-brand) 75%, black);
+}
+
+
+
+@layer theme, base, components, utilities;
 @layer base {
   body {
-    font-family: "Montserrat", 'Kantumruy Pro', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    min-height: 100vh;
+    font-family: "Inter", "SF Pro Display", 'Kantumruy Pro', sans-serif !important;
   }
 
   @keyframes gradientShift {
@@ -47,4 +125,31 @@
     scrollbar-width: thin;
     scrollbar-color: #667eea #f093fb;
   }
+}
+
+
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.modal-fade-in-animation {
+  animation: modalFadeIn 0.3s;
+}
+.modal-fade-out-animation {
+  animation: modalFadeOut 0.3;
 }

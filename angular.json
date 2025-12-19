@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sparkchat": {
+    "phenka": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/sparkchat",
+            "outputPath": "dist/phenka",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -26,7 +26,12 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets/fonts",
+              {
+                "glob": "**/*.json",
+                "input": "src/app/core/feature",
+                "output": "app/core/feature"
+              },
+              "src/asset/fonts",
               "src/assets/images"
             ],
             "styles": ["src/styles.css"],
@@ -62,16 +67,16 @@
           "options": {},
           "configurations": {
             "production": {
-              "buildTarget": "sparkchat:build:production"
+              "buildTarget": "phenka:build:production"
             },
             "development": {
-              "buildTarget": "sparkchat:build:development"
+              "buildTarget": "phenka:build:development"
             },
             "en": {
-              "buildTarget": "sparkchat:build:en"
+              "buildTarget": "phenka:build:en"
             },
             "km": {
-              "buildTarget": "sparkchat:build:km"
+              "buildTarget": "phenka:build:km"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +87,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/sparkchat/server",
+            "outputPath": "dist/phenka/server",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -102,12 +107,12 @@
           "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
-              "buildTarget": "sparkchat:build:development",
-              "serverTarget": "sparkchat:server:development"
+              "buildTarget": "phenka:build:development",
+              "serverTarget": "phenka:server:development"
             },
             "production": {
-              "buildTarget": "sparkchat:build:production",
-              "serverTarget": "sparkchat:server:production"
+              "buildTarget": "phenka:build:production",
+              "serverTarget": "phenka:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -119,10 +124,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "sparkchat:build:production"
+              "buildTarget": "phenka:build:production"
             },
             "development": {
-              "buildTarget": "sparkchat:build:development"
+              "buildTarget": "phenka:build:development"
             }
           },
           "defaultConfiguration": "production"

@@ -1,0 +1,145 @@
+<div class="p-6 space-y-6">
+  <!-- Header -->
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
+          🎓 Learning Platform
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 mt-1">
+          Khmer-English Skill Development for Cambodia's Youth
+        </p>
+      </div>
+      <app-button type="primary">Browse All Courses</app-button>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      @for (stat of stats(); track stat.label) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ stat.label }}</p>
+              <p class="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1">{{ stat.value }}</p>
+              <p class="text-xs text-brand mt-1">{{ stat.trend }}</p>
+            </div>
+            <div class="text-4xl">{{ stat.icon }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      📚 Browse by Category
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      @for (category of categories(); track category.name) {
+        <button class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700 hover:border-brand hover:shadow-lg transition-all text-center">
+          <div class="text-4xl mb-2">{{ category.icon }}</div>
+          <p class="font-semibold text-gray-900 dark:text-gray-100">{{ category.name }}</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ category.courses }} courses</p>
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- My Learning -->
+  @if (enrolledCourses().length > 0) {
+    <div>
+      <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        📖 Continue Learning
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        @for (course of enrolledCourses(); track course.id) {
+          <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all">
+            <div class="p-6">
+              <div class="text-5xl mb-4">{{ course.thumbnail }}</div>
+              <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100">{{ course.title }}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ course.titleKm }}</p>
+              <div class="flex items-center gap-2 mt-3 text-xs text-gray-600 dark:text-gray-400">
+                <span class="px-2 py-1 bg-brand/10 text-brand rounded">{{ course.level }}</span>
+                <span>⏱️ {{ course.duration }}</span>
+                <span>⭐ {{ course.rating }}</span>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="mt-4">
+                <div class="flex justify-between text-xs mb-1">
+                  <span class="text-gray-600 dark:text-gray-400">Progress</span>
+                  <span class="text-brand font-semibold">{{ course.progress }}%</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                  <div class="bg-brand h-2 rounded-full transition-all" [style.width.%]="course.progress"></div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6">
+              <app-button class="w-full" type="primary">Continue Learning</app-button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- Featured Courses -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      ⭐ Featured Courses
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      @for (course of featuredCourses(); track course.id) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all">
+          <div class="p-6">
+            <div class="text-5xl mb-4">{{ course.thumbnail }}</div>
+            <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100">{{ course.title }}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ course.titleKm }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">{{ course.description }}</p>
+            <div class="flex items-center gap-2 mt-3 text-xs text-gray-600 dark:text-gray-400">
+              <span class="px-2 py-1 bg-brand/10 text-brand rounded">{{ course.level }}</span>
+              <span>⏱️ {{ course.duration }}</span>
+              <span>👥 {{ course.students }}</span>
+            </div>
+            <div class="flex items-center justify-between mt-3 text-xs">
+              <span class="text-gray-600 dark:text-gray-400">by {{ course.instructor }}</span>
+              <span class="text-yellow-500">⭐ {{ course.rating }}</span>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <app-button class="w-full" type="outlined">Enroll Now</app-button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Gamification Section -->
+  <div class="bg-gradient-to-r from-brand/10 to-purple-500/10 rounded-xl p-6 border border-brand/20">
+    <div class="flex items-center justify-between">
+      <div>
+        <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">🏆 Your Achievements</h2>
+        <p class="text-gray-600 dark:text-gray-400 mt-1">Keep learning to unlock more badges!</p>
+      </div>
+      <div class="flex gap-4">
+        <div class="text-center">
+          <div class="text-4xl mb-1">🥇</div>
+          <p class="text-xs font-semibold">Leaderboard</p>
+          <p class="text-xs text-brand">#127</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-1">🔥</div>
+          <p class="text-xs font-semibold">Streak</p>
+          <p class="text-xs text-brand">7 days</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-1">⚡</div>
+          <p class="text-xs font-semibold">Points</p>
+          <p class="text-xs text-brand">1,250</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

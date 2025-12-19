@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ToastContainer } from './shared/ui/toast/toast-container';
+import { ToastService } from './services/toast-service';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  imports: [RouterModule, ToastContainer],
 })
 export class AppComponent {
-  title = 'sparkchat';
+  readonly toastService = inject(ToastService);
+  title = 'Phenka ផែនការ';
+
+  onToastClose = (id: string) => {
+    this.toastService.dismiss(id);
+  };
 }

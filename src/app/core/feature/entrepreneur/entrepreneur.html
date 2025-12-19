@@ -1,0 +1,210 @@
+<div class="p-6 space-y-6">
+  <!-- Header -->
+  <div class="flex flex-col gap-4">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">
+          💼 Entrepreneur Hub
+        </h1>
+        <p class="text-gray-600 dark:text-gray-400 mt-1">
+          From idea to success - Your entrepreneurship journey starts here
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <app-button type="outlined">Find Mentor</app-button>
+        <app-button type="primary">Submit Idea</app-button>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      @for (stat of stats(); track stat.label) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ stat.label }}</p>
+              <p class="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1">{{ stat.value }}</p>
+              <p class="text-xs text-brand mt-1">{{ stat.trend }}</p>
+            </div>
+            <div class="text-4xl">{{ stat.icon }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Startup Journey Steps -->
+  <div class="bg-gradient-to-r from-brand/10 to-purple-500/10 rounded-xl p-6 border border-brand/20">
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      🎯 Your Startup Journey
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div class="text-center">
+        <div class="text-4xl mb-2">💡</div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Idea</p>
+        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Validate your concept</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl mb-2">📝</div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Planning</p>
+        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Business plan & strategy</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl mb-2">🔨</div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Build MVP</p>
+        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Create & test product</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl mb-2">🚀</div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Launch</p>
+        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Go to market</p>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl mb-2">📈</div>
+        <p class="font-semibold text-gray-900 dark:text-gray-100">Growth</p>
+        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Scale your business</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      🏢 Startup Categories
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      @for (category of categories(); track category.name) {
+        <button class="bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-200 dark:border-gray-700 hover:border-brand hover:shadow-lg transition-all text-center">
+          <div class="text-4xl mb-2">{{ category.icon }}</div>
+          <p class="font-semibold text-gray-900 dark:text-gray-100">{{ category.name }}</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ category.startups }} startups</p>
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Featured Startups -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      ⭐ Featured Startups
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      @for (startup of featuredStartups(); track startup.id) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg transition-all">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-4">
+              <div class="text-4xl">{{ startup.icon }}</div>
+              <span class="px-2 py-1 text-xs font-semibold rounded bg-brand/10 text-brand">
+                {{ startup.stage }}
+              </span>
+            </div>
+
+            <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100">{{ startup.title }}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ startup.titleKm }}</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">{{ startup.description }}</p>
+
+            <div class="mt-4 space-y-2">
+              <div class="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
+                <span>👥 Team: {{ startup.teamSize }}</span>
+                <span>👨‍🏫 {{ startup.mentors }} mentors</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-gray-600 dark:text-gray-400">💰 Seeking: ${{ startup.fundingNeeded.toLocaleString() }}</span>
+                <span class="text-gray-600 dark:text-gray-400">by {{ startup.founder }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <app-button class="w-full" type="outlined">View Details</app-button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Mentors Section -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      👨‍🏫 Connect with Mentors
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      @for (mentor of topMentors(); track mentor.id) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-all">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl">{{ mentor.avatar }}</div>
+            <div class="flex-1">
+              <h3 class="font-bold text-lg text-gray-900 dark:text-gray-100">{{ mentor.name }}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">{{ mentor.company }}</p>
+              <div class="flex items-center gap-1 mt-1">
+                <span class="text-yellow-500">⭐</span>
+                <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">{{ mentor.rating }}</span>
+                <span class="text-xs text-gray-600 dark:text-gray-400">({{ mentor.sessionsCompleted }} sessions)</span>
+              </div>
+              <div class="flex flex-wrap gap-1 mt-3">
+                @for (skill of mentor.expertise; track skill) {
+                  <span class="px-2 py-1 text-xs bg-brand/10 text-brand rounded">{{ skill }}</span>
+                }
+              </div>
+              <div class="flex items-center justify-between mt-3 text-xs text-gray-600 dark:text-gray-400">
+                <span>💼 {{ mentor.experience }}</span>
+                <span>📅 {{ mentor.availability }}</span>
+              </div>
+            </div>
+          </div>
+          <app-button class="w-full mt-4" type="primary">Request Session</app-button>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Funding Opportunities -->
+  <div>
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      💰 Funding Opportunities
+    </h2>
+    <div class="space-y-3">
+      @for (funding of fundingOpportunities(); track funding.id) {
+        <div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 hover:shadow-md transition-all">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-1 text-xs font-semibold rounded" [ngClass]="{
+                  'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400': funding.type === 'Grant',
+                  'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400': funding.type === 'Competition',
+                  'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400': funding.type === 'Investor',
+                  'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400': funding.type === 'Accelerator'
+                }">
+                  {{ funding.type }}
+                </span>
+                <span class="text-xs text-gray-600 dark:text-gray-400">💰 {{ funding.amount }}</span>
+              </div>
+              <h3 class="font-bold text-gray-900 dark:text-gray-100">{{ funding.title }}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ funding.eligibility }}</p>
+              <div class="flex items-center gap-4 mt-2 text-xs text-gray-600 dark:text-gray-400">
+                <span>🏢 {{ funding.provider }}</span>
+                <span>📅 Deadline: {{ funding.deadline }}</span>
+              </div>
+            </div>
+            <app-button type="outlined">Apply</app-button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Learning Resources -->
+  <div class="bg-gradient-to-r from-purple-500/10 to-brand/10 rounded-xl p-6 border border-purple-500/20">
+    <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+      📚 Free Resources
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      @for (resource of learningResources(); track resource.title) {
+        <button class="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4 hover:bg-white dark:hover:bg-gray-800 transition-all text-center">
+          <div class="text-3xl mb-2">{{ resource.icon }}</div>
+          <p class="font-semibold text-sm text-gray-900 dark:text-gray-100">{{ resource.title }}</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">{{ resource.type }}</p>
+        </button>
+      }
+    </div>
+  </div>
+</div>

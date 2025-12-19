@@ -1,0 +1,15 @@
+svg {
+  overflow: visible;
+}
+
+polyline, path {
+  vector-effect: non-scaling-stroke;
+}
+
+.bar-container {
+  transition: all 0.3s ease;
+}
+
+g:hover path {
+  filter: brightness(1.1);
+}

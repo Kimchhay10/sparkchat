@@ -1,0 +1,162 @@
+<div>
+  <!-- Mobile Overlay Backdrop -->
+  @if (isMobileOpen$ | async) {
+    <div
+      class="fixed inset-0 bg-black/50 z-40 lg:hidden"
+      (click)="sidebarService.setMobileOpen(false)"
+    ></div>
+  }
+
+  <aside
+    class="fixed h-[calc(100vh-30px)] flex bg-gray-100 dark:bg-gray-900 rounded-[18px] flex-col top-4 bottom-1 text-gray-900 dark:text-gray-100 transition-all duration-300 ease-in-out z-50"
+    [ngClass]="{
+      'w-[180px]':
+        (isExpanded$ | async) || (isMobileOpen$ | async) || (isHovered$ | async),
+      'w-[70px]': !(
+        (isExpanded$ | async) ||
+        (isMobileOpen$ | async) ||
+        (isHovered$ | async)
+      ),
+      'left-3': (isMobileOpen$ | async),
+      '-left-[200px]': !(isMobileOpen$ | async),
+      'lg:left-3': true,
+      'lg:translate-x-0': true
+    }"
+  >
+    <div
+      class="py-2 flex px-4 items-center justify-between"
+      [ngClass]="{
+        'lg:justify-center': !((isExpanded$ | async) || (isHovered$ | async)),
+        'lg:justify-start': (isExpanded$ | async) || (isHovered$ | async)
+      }"
+    >
+      <a routerLink="/admin/dashboard" class="flex flex-row items-center gap-1">
+        <svg height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path style="fill:#FFE477;"
+              d="M439.668,183.652c0,55.541-24.821,107.52-68.118,142.581c-16.14,13.023-28.27,31.499-32.056,52.202 H172.537c-3.674-20.703-15.804-39.068-31.833-51.979C88.167,283.938,63.569,218.49,75.146,151.263 C87.946,76.355,146.825,16.807,221.4,3.117C232.974,1.002,244.551,0,256.015,0c42.852,0.111,84.37,14.915,117.538,42.518 C415.514,77.579,439.668,129.002,439.668,183.652z">
+            </path>
+            <path style="fill:#FFB655;"
+              d="M439.668,183.652c0,55.541-24.821,107.52-68.118,142.581c-16.14,13.023-28.27,31.499-32.056,52.202 h-83.478V0c42.852,0.111,84.37,14.915,117.538,42.518C415.514,77.579,439.668,129.002,439.668,183.652z">
+            </path>
+            <path style="fill:#79695A;"
+              d="M256.015,512c-9.217,0-16.696-7.473-16.696-16.696v-33.391c0-9.223,7.479-16.696,16.696-16.696 c9.217,0,16.696,7.473,16.696,16.696v33.391C272.711,504.527,265.232,512,256.015,512z">
+            </path>
+            <path style="fill:#6C5B52;"
+              d="M272.711,495.304v-33.391c0-9.223-7.479-16.696-16.696-16.696V512 C265.232,512,272.711,504.527,272.711,495.304z">
+            </path>
+            <path style="fill:#DDDD47;"
+              d="M256.015,411.826c-9.217,0-16.696-7.473-16.696-16.696V250.435c0-9.223,7.479-16.696,16.696-16.696 c9.217,0,16.696,7.473,16.696,16.696V395.13C272.711,404.353,265.232,411.826,256.015,411.826z">
+            </path>
+            <path style="fill:#C7D100;"
+              d="M272.711,395.13V250.435c0-9.223-7.479-16.696-16.696-16.696v178.087 C265.232,411.826,272.711,404.353,272.711,395.13z">
+            </path>
+            <path style="fill:#DBE1F1;"
+              d="M289.407,478.609h-66.783c-27.662,0-50.087-22.424-50.087-50.087v-50.087h166.956v50.087 C339.494,456.184,317.068,478.609,289.407,478.609z">
+            </path>
+            <path style="fill:#D0D5E5;"
+              d="M256.015,478.609h33.391c27.664,0,50.087-22.424,50.087-50.087v-50.087h-83.478V478.609z"></path>
+            <path style="fill:#7CCC92;"
+              d="M356.189,133.565h-33.391c-27.27,0-51.534,13.245-66.783,33.614 c-15.249-20.369-39.513-33.614-66.783-33.614h-33.391c-9.239,0-16.696,7.457-16.696,16.696v33.391 c0,46.08,37.398,83.478,83.478,83.478h66.783c46.08,0,83.478-37.398,83.478-83.478v-33.391 C372.885,141.023,365.427,133.565,356.189,133.565z">
+            </path>
+            <path style="fill:#34B772;"
+              d="M372.885,150.261v33.391c0,46.08-37.398,83.478-83.478,83.478h-33.391v-99.951 c15.249-20.369,39.513-33.614,66.783-33.614h33.391C365.427,133.565,372.885,141.023,372.885,150.261z">
+            </path>
+          </g>
+        </svg>
+        <h1 class="text-[18px] font-medium">Phenka ផែនការ</h1>
+        <!-- <img ngSrc="/asset/logo.png" width="170" height="40" priority=""/> -->
+      </a>
+
+      <!-- Mobile Close Button -->
+      <button
+        type="button"
+        (click)="sidebarService.setMobileOpen(false)"
+        class="lg:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+        [attr.aria-label]="'Close menu'"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar pt-2">
+      <nav class="mb-3 flex flex-col gap-2 justify-between h-screen">
+        <div class="flex flex-col gap-1 relative">
+          <!-- Animated Indicator -->
+          <div
+            class="bg-brand h-8 w-1.5 rounded-r-full absolute left-0 top-0 transition-transform duration-300 z-20"
+            [style.transform]="'translateY(' + (getActiveIndex() * 38) + 'px)'"
+          ></div>
+
+          @for(item of navItems; track item.name) {
+            <a
+              [routerLink]="item.path"
+              routerLinkActive="active"
+              (click)="onNavItemClick()"
+              class="relative cursor-pointer flex flex-row items-center gap-2 bg-transparent duration-300 hover:bg-brand-soft p-1.5 rounded-lg group"
+            >
+              <div class="flex flex-row items-center gap-2 pl-2">
+                <div class="nav-icon w-5 h-5 flex items-center justify-center">
+                  <app-icon [name]="item.icon" size="20" />
+                </div>
+                @if((isExpanded$ | async) || (isHovered$ | async)) {
+                  <span class="text-gray-700 dark:text-gray-300 font-medium text-sm">{{ 'navigation.' + item.name.toLowerCase() | translate }}</span>
+                  @if(item.new) {
+                    <span class="ml-auto px-1.5 py-0.5 text-[10px] font-medium text-white bg-brand rounded-full">{{ 'common.new' | translate }}</span>
+                  }
+                }
+              </div>
+            </a>
+          }
+        </div>
+
+        <div class="px-2 pb-3 space-y-3">
+          <!-- Language Toggle -->
+          <button
+            type="button"
+            (click)="toggleLanguage()"
+            class="flex w-full items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 px-3 py-2 text-xs font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            <span class="flex items-center gap-2">
+              <span>
+                {{ langService.currentLang() === 'en' ? '🇺🇸' : '🇰🇭' }}
+              </span>
+              <span class="uppercase">{{ langService.currentLang() }}</span>
+            </span>
+            <span class="text-[10px] text-gray-500 dark:text-gray-400">
+              {{ 'navigation.language' | translate }}
+            </span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button
+            type="button"
+            (click)="cycleTheme()"
+            class="flex w-full items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 px-3 py-2 text-xs font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            <span class="flex items-center gap-2">
+              <app-icon [name]="themeIcon" size="16"></app-icon>
+              <span>{{ themeLabel }}</span>
+            </span>
+            <span class="text-[10px] text-gray-500 dark:text-gray-400">
+              {{ 'theme.title' | translate }}
+            </span>
+          </button>
+
+          <app-button class="w-full" type="outlined" (click)="onOpenLogoutModal()">
+            {{ 'navigation.logout' | translate }}
+          </app-button>
+        </div>
+      </nav>
+    </div>
+  </aside>
+</div>
+
+<app-modal [isOpen]="openLogoutModal()" (open)="onOpenLogoutModal()" (close)="onCloseLogoutModal()" (confirm)="onLogout()">
+  Test Modal
+</app-modal>
